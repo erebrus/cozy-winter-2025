@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmout20j8x6uv"]
+
+[ext_resource type="PackedScene" uid="uid://dusl3angbsux3" path="res://src/items/item.tscn" id="1_h65u5"]
+[ext_resource type="Script" path="res://src/items/fireplace.gd" id="2_urlwt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ltr"]
+size = Vector2(64, 64)
+
+[node name="Fireplace" instance=ExtResource("1_h65u5")]
+script = ExtResource("2_urlwt")
+fire_lit = true
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_a8ltr")
+
+[node name="ColorRect" parent="." index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.574667, 0.12, 1)
+
+[node name="Timer" type="Timer" parent="." index="2"]
+one_shot = true

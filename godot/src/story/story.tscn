@@ -1,0 +1,64 @@
+[gd_scene load_steps=16 format=3 uid="uid://y7n82k7uopcl"]
+
+[ext_resource type="Script" path="res://src/story/story.gd" id="1_8ydxg"]
+[ext_resource type="Script" path="res://src/characters/character_resource.gd" id="2_g10ax"]
+[ext_resource type="Script" path="res://src/story/story_scene.gd" id="3_4i0t4"]
+[ext_resource type="Script" path="res://src/story/characters.gd" id="3_yvj76"]
+[ext_resource type="Resource" uid="uid://c40pthk4vi4xc" path="res://assets/story/the_fireplace.tres" id="5_bsuht"]
+[ext_resource type="Script" path="res://src/story/triggers/interact_with_item_trigger.gd" id="5_vffih"]
+[ext_resource type="Script" path="res://src/story/triggers/interact_with_npc_trigger.gd" id="7_2uwx2"]
+
+[sub_resource type="Resource" id="Resource_s6t5o"]
+script = ExtResource("2_g10ax")
+name = "NPC A"
+
+[sub_resource type="Resource" id="Resource_8ww03"]
+script = ExtResource("2_g10ax")
+name = "NPC B"
+
+[sub_resource type="Resource" id="Resource_2ij5q"]
+script = ExtResource("2_g10ax")
+name = "NPC C"
+
+[sub_resource type="Resource" id="Resource_4uckd"]
+script = ExtResource("3_yvj76")
+NPC_A = SubResource("Resource_s6t5o")
+NPC_B = SubResource("Resource_8ww03")
+NPC_C = SubResource("Resource_2ij5q")
+
+[sub_resource type="Resource" id="Resource_l23q8"]
+script = ExtResource("5_vffih")
+item = 0
+
+[sub_resource type="Resource" id="Resource_qqq2k"]
+script = ExtResource("3_4i0t4")
+story_line = ExtResource("5_bsuht")
+start_title = "start"
+trigger = SubResource("Resource_l23q8")
+repeat = false
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([0, 1])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_t1ax3"]
+script = ExtResource("7_2uwx2")
+npc = 1
+
+[sub_resource type="Resource" id="Resource_bjdtg"]
+script = ExtResource("3_4i0t4")
+story_line = ExtResource("5_bsuht")
+start_title = "fire_out"
+trigger = SubResource("Resource_t1ax3")
+repeat = true
+require_passed_titles = Array[String](["start"])
+require_npcs_present = Array[int]([1])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String](["fire_lit"])
+
+[node name="Story" type="Node"]
+script = ExtResource("1_8ydxg")
+NPC = SubResource("Resource_4uckd")
+scenes = Array[ExtResource("3_4i0t4")]([SubResource("Resource_qqq2k"), SubResource("Resource_bjdtg")])

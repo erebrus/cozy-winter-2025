@@ -1,17 +1,18 @@
-[gd_scene format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=3 format=3 uid="uid://ke438w5ne7cw"]
 
-[node name="Main" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="PackedScene" uid="uid://cmout20j8x6uv" path="res://src/items/fireplace.tscn" id="1_u8jin"]
+[ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="2_y6je2"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Main" type="Node"]
+
+[node name="Fireplace" parent="." instance=ExtResource("1_u8jin")]
+position = Vector2(1106, 308)
+
+[node name="Character" parent="." instance=ExtResource("2_y6je2")]
+position = Vector2(308, 192)
+
+[node name="Character2" parent="." instance=ExtResource("2_y6je2")]
+position = Vector2(302, 458)
+id = 1
+
+[connection signal="input_event" from="Fireplace" to="Fireplace" method="_on_input_event"]

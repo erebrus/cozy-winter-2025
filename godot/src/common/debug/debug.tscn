@@ -16,9 +16,19 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="DebugPanel" parent="MarginContainer" instance=ExtResource("2_j5q3p")]
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 8
+mouse_filter = 2
+split_offset = 400
+
+[node name="Control" type="Control" parent="MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="DebugPanel" parent="MarginContainer/HSplitContainer" instance=ExtResource("2_j5q3p")]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Version" type="Label" parent="MarginContainer"]
 unique_name_in_owner = true

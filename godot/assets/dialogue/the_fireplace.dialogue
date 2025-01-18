@@ -1,0 +1,9 @@
+~ start
+NPC_A: *sigh* it is so cozy in here, I love a fireplace in the winter.
+NPC_B: It is too warm! I wish you'd let the fire calm down from time to time...
+=> END
+
+~ fire_out
+NPC_B: *sigh* finally, I can put on my favorite scarf and enjoy my hot cocoa!
+=> END
+
