@@ -22,10 +22,11 @@ Events="*res://src/common/events.gd"
 Globals="*res://src/common/globals.tscn"
 Logger="*res://addons/gs_logger/logger.gd"
 Debug="*res://src/common/debug/debug.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/gs_logger/plugin.cfg", "res://addons/xsm/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gs_logger/plugin.cfg", "res://addons/xsm/plugin.cfg")
 
 [input]
 
