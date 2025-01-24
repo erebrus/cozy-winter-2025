@@ -61,7 +61,7 @@ func _on_sequence_triggered(sequence: StorySequence) -> void:
 	current_sequence = sequence
 	DialogueManager.show_dialogue_balloon(sequence.dialogue, sequence.start_title)
 	await DialogueManager.dialogue_ended
-	sequence.has_played = true
+	sequence.finish()
 	
 	if not sequence.repeat:
 		ready_sequences.erase(sequence)

@@ -7,6 +7,7 @@ extends PanelContainer
 @onready var sequence_list: ItemList = %SequenceList
 @onready var sequence_info: MarginContainer = %SequenceInfo
 
+
 func _ready() -> void:
 	hide()
 	 

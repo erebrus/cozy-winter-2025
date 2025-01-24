@@ -3,6 +3,8 @@ class_name StorySequence extends Resource
 
 signal ready_changed(value: bool)
 signal triggered
+signal finished
+
 
 @export var dialogue: DialogueResource
 
@@ -56,6 +58,12 @@ func setup() -> void:
 		_add_requirement(TitlePassedSequenceRequirement.new(sequence_id(sequence_id)))
 	
 	trigger.triggered.connect(_on_triggered)
+	
+
+func finish() -> void:
+	Logger.info("Sequence %s finished playing" % id)
+	has_played = true
+	finished.emit()
 	
 
 func _add_requirement(r: SequenceRequirement) -> void:
