@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="StoryLine" load_steps=3 format=3 uid="uid://c40pthk4vi4xc"]
-
-[ext_resource type="Resource" uid="uid://ddka0lt4erw7c" path="res://assets/dialogue/the_fireplace.dialogue" id="1_v4ciw"]
-[ext_resource type="Script" path="res://src/narrative/story_line.gd" id="2_hxshv"]
-
-[resource]
-script = ExtResource("2_hxshv")
-id = "the_fireplace"
-dialogue = ExtResource("1_v4ciw")

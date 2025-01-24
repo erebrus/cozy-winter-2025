@@ -13,16 +13,13 @@ var flags: Dictionary # Dictionary[String, bool]
 var characters: Dictionary # [Types.NPC, Character]
 var scenes_by_id: Dictionary # [String, StoryScene]
 
-var story_lines: Array[StoryLine]
-
 var ready_scenes: Array[StoryScene]
-var current_story: StoryLine
-
+var current_sequence: StoryScene
 
 func _ready() -> void:
 	_init_characters()
 	_init_scenes()
-	DialogueManager.passed_title.connect(func(title): title_passed.emit("%s:%s" % [current_story.id, title]))
+	DialogueManager.passed_title.connect(func(title): title_passed.emit("%s:%s" % [current_sequence.story_id, title]))
 	
 
 func character_by(id: Types.NPC) -> Character:
@@ -45,9 +42,6 @@ func _init_characters() -> void:
 
 func _init_scenes() -> void:
 	for scene in scenes:
-		if not story_lines.has(scene.story_line):
-			story_lines.append(scene.story_line)
-		
 		scene.setup()
 		
 		assert(not scenes_by_id.has(scene.id), "Duplicate scene %s" % scene.id)
@@ -64,8 +58,8 @@ func _on_scene_ready_changed(is_ready: bool, scene: StoryScene) -> void:
 	
 
 func _on_scene_triggered(scene: StoryScene) -> void:
-	current_story = scene.story_line
-	DialogueManager.show_dialogue_balloon(scene.story_line.dialogue, scene.start_title)
+	current_sequence = scene
+	DialogueManager.show_dialogue_balloon(scene.dialogue, scene.start_title)
 	await DialogueManager.dialogue_ended
 	scene.has_played = true
 	

@@ -4,8 +4,8 @@ class_name StoryScene extends Resource
 signal ready_changed(value: bool)
 signal triggered
 
+@export var dialogue: DialogueResource
 
-@export var story_line: StoryLine
 @export var start_title: String
 @export var trigger: SceneTrigger
 @export var repeat: bool
@@ -20,6 +20,7 @@ signal triggered
 @export var require_flags_false: Array[String]
 
 
+var story_id: String
 var id: String
 var requirements: Array[SceneRequirement]
 
@@ -35,8 +36,7 @@ var has_played: bool
 
 
 func setup() -> void:
-	assert(not story_line.scenes.has(start_title), "Duplicate scene for storyline %s and start %s" % [story_line.id, start_title])
-	story_line.scenes[start_title] = self
+	story_id = dialogue.resource_path.get_basename().get_file()
 	
 	id = _get_scene_id(start_title)
 	
@@ -74,7 +74,7 @@ func _get_scene_id(scene_id: String) -> String:
 	if scene_id.is_empty() or scene_id.contains(":"):
 		return scene_id
 	else:
-		return "%s:%s" % [story_line.id, scene_id]
+		return "%s:%s" % [story_id, scene_id]
 	
 
 func _on_requirements_changed(_value: bool) -> void:
