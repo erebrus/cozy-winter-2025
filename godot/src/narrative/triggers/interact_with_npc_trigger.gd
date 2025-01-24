@@ -1,4 +1,4 @@
-class_name InteractWithNpcSceneTrigger extends SceneTrigger
+class_name InteractWithNpcSequenceTrigger extends SequenceTrigger
 
 @export var npc: Types.NPC
 

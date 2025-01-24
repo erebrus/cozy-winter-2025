@@ -1,4 +1,4 @@
-class_name SceneRequirement extends RefCounted
+class_name SequenceRequirement extends RefCounted
 
 signal status_changed(met: bool)
 

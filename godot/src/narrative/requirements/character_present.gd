@@ -1,4 +1,4 @@
-class_name CharacterPresentSceneRequirement extends SceneRequirement
+class_name CharacterPresentSequenceRequirement extends SequenceRequirement
 
 var character_id: Types.NPC
 

@@ -1,4 +1,4 @@
-class_name InteractWithItemSceneTrigger extends SceneTrigger
+class_name InteractWithItemSequenceTrigger extends SequenceTrigger
 
 @export var item: Types.Item
 

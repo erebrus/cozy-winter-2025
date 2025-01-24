@@ -1,18 +1,18 @@
-class_name TitlePassedSceneRequirement extends SceneRequirement
+class_name TitlePassedSequenceRequirement extends SequenceRequirement
 
-var scene_id: String
+var sequence_id: String
 
 
 func _init(id: String) -> void:
-	scene_id = id
+	sequence_id = id
 	Narrative.title_passed.connect(_on_title_passed)
 	
 
 func _on_title_passed(title: String) -> void:
-	if title == scene_id: 
+	if title == sequence_id: 
 		is_met = true
 
 
 func get_name() -> String:
-	return "%s passed" % scene_id
+	return "%s passed" % sequence_id
 	

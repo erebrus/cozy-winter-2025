@@ -1,4 +1,4 @@
-class_name FlagSetSceneRequirement extends SceneRequirement
+class_name FlagSetSequenceRequirement extends SequenceRequirement
 
 var flag: String
 var should_be_set: bool

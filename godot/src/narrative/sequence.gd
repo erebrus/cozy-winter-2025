@@ -1,4 +1,4 @@
-class_name StoryScene extends Resource
+class_name StorySequence extends Resource
 
 
 signal ready_changed(value: bool)
@@ -7,7 +7,7 @@ signal triggered
 @export var dialogue: DialogueResource
 
 @export var start_title: String
-@export var trigger: SceneTrigger
+@export var trigger: SequenceTrigger
 @export var repeat: bool
 
 @export_category("Requirements")
@@ -22,7 +22,7 @@ signal triggered
 
 var story_id: String
 var id: String
-var requirements: Array[SceneRequirement]
+var requirements: Array[SequenceRequirement]
 
 var is_ready: bool = false:
 	set(value):
@@ -38,27 +38,27 @@ var has_played: bool
 func setup() -> void:
 	story_id = dialogue.resource_path.get_basename().get_file()
 	
-	id = _get_scene_id(start_title)
+	id = sequence_id(start_title)
 	
 	for npc_id in require_npcs_present:
-		_add_requirement(CharacterPresentSceneRequirement.new(npc_id, true))
+		_add_requirement(CharacterPresentSequenceRequirement.new(npc_id, true))
 		
 	for npc_id in require_npcs_missing:
-		_add_requirement(CharacterPresentSceneRequirement.new(npc_id, false))
+		_add_requirement(CharacterPresentSequenceRequirement.new(npc_id, false))
 		
 	for flag in require_flags_true:
-		_add_requirement(FlagSetSceneRequirement.new(flag, true))
+		_add_requirement(FlagSetSequenceRequirement.new(flag, true))
 		
 	for flag in require_flags_false:
-		_add_requirement(FlagSetSceneRequirement.new(flag, false))
+		_add_requirement(FlagSetSequenceRequirement.new(flag, false))
 		
-	for scene_id in require_passed_titles:
-		_add_requirement(TitlePassedSceneRequirement.new(_get_scene_id(scene_id)))
+	for sequence_id in require_passed_titles:
+		_add_requirement(TitlePassedSequenceRequirement.new(sequence_id(sequence_id)))
 	
 	trigger.triggered.connect(_on_triggered)
 	
 
-func _add_requirement(r: SceneRequirement) -> void:
+func _add_requirement(r: SequenceRequirement) -> void:
 	r.status_changed.connect(_on_requirements_changed)
 	requirements.append(r)
 	
@@ -70,11 +70,11 @@ func _check_ready() -> bool:
 	return true
 	
 
-func _get_scene_id(scene_id: String) -> String:
-	if scene_id.is_empty() or scene_id.contains(":"):
-		return scene_id
+func sequence_id(sequence_id: String) -> String:
+	if sequence_id.is_empty() or sequence_id.contains(":"):
+		return sequence_id
 	else:
-		return "%s:%s" % [story_id, scene_id]
+		return "%s:%s" % [story_id, sequence_id]
 	
 
 func _on_requirements_changed(_value: bool) -> void:
@@ -86,6 +86,6 @@ func _on_requirements_changed(_value: bool) -> void:
 
 func _on_triggered() -> void:
 	if is_ready and (repeat or not has_played):
-		Logger.info("Scene %s triggered" % id)
+		Logger.info("Sequence %s triggered" % id)
 		triggered.emit()
 	 

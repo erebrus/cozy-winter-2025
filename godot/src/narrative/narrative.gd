@@ -2,23 +2,23 @@ extends Node
 
 
 signal flag_updated(flag: String, value: bool)
-signal title_passed(scene_id: String)
+signal title_passed(sequence_id: String)
 
 
 @export var NPC: Characters
-@export var scenes: Array[StoryScene]
+@export var sequences: Array[StorySequence]
 
 
 var flags: Dictionary # Dictionary[String, bool]
 var characters: Dictionary # [Types.NPC, Character]
-var scenes_by_id: Dictionary # [String, StoryScene]
+var sequences_by_id: Dictionary # [String, StorySequence]
 
-var ready_scenes: Array[StoryScene]
-var current_sequence: StoryScene
+var ready_sequences: Array[StorySequence]
+var current_sequence: StorySequence
 
 func _ready() -> void:
 	_init_characters()
-	_init_scenes()
+	_init_sequences()
 	DialogueManager.passed_title.connect(func(title): title_passed.emit("%s:%s" % [current_sequence.story_id, title]))
 	
 
@@ -40,28 +40,28 @@ func _init_characters() -> void:
 		characters[npc.id] = npc
 	
 
-func _init_scenes() -> void:
-	for scene in scenes:
-		scene.setup()
+func _init_sequences() -> void:
+	for sequence in sequences:
+		sequence.setup()
 		
-		assert(not scenes_by_id.has(scene.id), "Duplicate scene %s" % scene.id)
-		scenes_by_id[scene.id] = scene
-		scene.ready_changed.connect(_on_scene_ready_changed.bind(scene))
-		scene.triggered.connect(_on_scene_triggered.bind(scene))
+		assert(not sequences_by_id.has(sequence.id), "Duplicate sequence %s" % sequence.id)
+		sequences_by_id[sequence.id] = sequence
+		sequence.ready_changed.connect(_on_sequence_ready_changed.bind(sequence))
+		sequence.triggered.connect(_on_sequence_triggered.bind(sequence))
 	
 
-func _on_scene_ready_changed(is_ready: bool, scene: StoryScene) -> void:
+func _on_sequence_ready_changed(is_ready: bool, sequence: StorySequence) -> void:
 	if is_ready:
-		ready_scenes.append(scene)
+		ready_sequences.append(sequence)
 	else:
-		ready_scenes.erase(scene)
+		ready_sequences.erase(sequence)
 	
 
-func _on_scene_triggered(scene: StoryScene) -> void:
-	current_sequence = scene
-	DialogueManager.show_dialogue_balloon(scene.dialogue, scene.start_title)
+func _on_sequence_triggered(sequence: StorySequence) -> void:
+	current_sequence = sequence
+	DialogueManager.show_dialogue_balloon(sequence.dialogue, sequence.start_title)
 	await DialogueManager.dialogue_ended
-	scene.has_played = true
+	sequence.has_played = true
 	
-	if not scene.repeat:
-		ready_scenes.erase(scene)
+	if not sequence.repeat:
+		ready_sequences.erase(sequence)

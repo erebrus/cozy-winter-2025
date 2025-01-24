@@ -1,4 +1,4 @@
-class_name SceneTrigger extends Resource
+class_name SequenceTrigger extends Resource
 
 signal triggered
 

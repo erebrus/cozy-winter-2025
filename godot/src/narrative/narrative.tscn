@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/narrative/narrative.gd" id="1_p0wp7"]
 [ext_resource type="Script" path="res://src/characters/character_resource.gd" id="2_e65np"]
 [ext_resource type="Script" path="res://src/narrative/characters.gd" id="3_wxtvl"]
-[ext_resource type="Script" path="res://src/narrative/story_scene.gd" id="4_vxvc0"]
+[ext_resource type="Script" path="res://src/narrative/sequence.gd" id="4_vxvc0"]
 [ext_resource type="Resource" uid="uid://ddka0lt4erw7c" path="res://assets/dialogue/the_fireplace.dialogue" id="5_jlldi"]
 [ext_resource type="Script" path="res://src/narrative/triggers/interact_with_item_trigger.gd" id="6_lymlp"]
 [ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="7_rvh23"]
@@ -61,4 +61,4 @@ require_flags_false = Array[String](["fire_lit"])
 [node name="Narrative" type="Node"]
 script = ExtResource("1_p0wp7")
 NPC = SubResource("Resource_4uckd")
-scenes = Array[ExtResource("4_vxvc0")]([SubResource("Resource_qqq2k"), SubResource("Resource_bjdtg")])
+sequences = Array[ExtResource("4_vxvc0")]([SubResource("Resource_qqq2k"), SubResource("Resource_bjdtg")])

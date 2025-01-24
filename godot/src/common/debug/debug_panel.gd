@@ -1,11 +1,11 @@
 extends PanelContainer
 
-@export var StorySceneInfoScene: PackedScene
+@export var StorySequenceInfoScene: PackedScene
 
 
-@onready var scene_category: OptionButton = %SceneCategory
-@onready var scene_list: ItemList = %SceneList
-@onready var scene_info: MarginContainer = %SceneInfo
+@onready var sequence_category: OptionButton = %SequenceCategory
+@onready var sequence_list: ItemList = %SequenceList
+@onready var sequence_info: MarginContainer = %SequenceInfo
 
 func _ready() -> void:
 	hide()
@@ -20,20 +20,20 @@ func _input(event: InputEvent) -> void:
 	
 
 func open() -> void:
-	_show_scenes(scene_category.selected)
+	_show_sequences(sequence_category.selected)
 	show()
 	
 
-func _show_scenes(category: int) -> void:
-	var scenes: Array[StoryScene]
+func _show_sequences(category: int) -> void:
+	var sequences: Array[StorySequence]
 	match category:
 		0:
-			scenes = Narrative.scenes
+			sequences = Narrative.sequences
 		1:
-			scenes = Narrative.ready_scenes
-	scene_list.clear()
-	for scene in scenes:
-		scene_list.add_item(scene.id, null, true)
+			sequences = Narrative.ready_sequences
+	sequence_list.clear()
+	for sequence in sequences:
+		sequence_list.add_item(sequence.id, null, true)
 	
 
 func _on_music_tension_toggle_pressed() -> void:
@@ -51,14 +51,14 @@ func _on_win_game_pressed():
 	Globals.do_win()
 	
 
-func _on_scene_category_item_selected(index):
-	_show_scenes(index)
+func _on_sequence_category_item_selected(index):
+	_show_sequences(index)
 
 
-func _on_scene_list_item_selected(index):
-	for child in scene_info.get_children():
+func _on_sequence_list_item_selected(index):
+	for child in sequence_info.get_children():
 		child.queue_free()
-	var scene_id = scene_list.get_item_text(index)
-	var scene = StorySceneInfoScene.instantiate()
-	scene.scene = Narrative.scenes_by_id[scene_id]
-	scene_info.add_child(scene)
+	var sequence_id = sequence_list.get_item_text(index)
+	var sequence = StorySequenceInfoScene.instantiate()
+	sequence.sequence = Narrative.sequences_by_id[sequence_id]
+	sequence_info.add_child(sequence)
