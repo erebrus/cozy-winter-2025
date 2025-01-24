@@ -8,7 +8,7 @@ var resource: Character
 
 
 func _ready() -> void:
-	resource = Story.character_by(id)
+	resource = Narrative.character_by(id)
 	resource.character_entered.emit()
 	
 

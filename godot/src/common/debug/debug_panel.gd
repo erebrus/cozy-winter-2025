@@ -28,9 +28,9 @@ func _show_scenes(category: int) -> void:
 	var scenes: Array[StoryScene]
 	match category:
 		0:
-			scenes = Story.scenes
+			scenes = Narrative.scenes
 		1:
-			scenes = Story.ready_scenes
+			scenes = Narrative.ready_scenes
 	scene_list.clear()
 	for scene in scenes:
 		scene_list.add_item(scene.id, null, true)
@@ -60,5 +60,5 @@ func _on_scene_list_item_selected(index):
 		child.queue_free()
 	var scene_id = scene_list.get_item_text(index)
 	var scene = StorySceneInfoScene.instantiate()
-	scene.scene = Story.scenes_by_id[scene_id]
+	scene.scene = Narrative.scenes_by_id[scene_id]
 	scene_info.add_child(scene)

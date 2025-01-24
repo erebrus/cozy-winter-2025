@@ -13,14 +13,14 @@ func _ready() -> void:
 
 func lit_fire() -> void:
 	fire_lit = true
-	Story.set_flag("fire_lit", true)
+	Narrative.set_flag("fire_lit", true)
 	timer.start()
 	
 
 func fire_out() -> void:
 	Logger.info("Fire out")
 	fire_lit = false
-	Story.set_flag("fire_lit", false)
+	Narrative.set_flag("fire_lit", false)
 	
 
 func interact() -> void:

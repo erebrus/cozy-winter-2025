@@ -8,7 +8,7 @@ func _init(id: Types.NPC, in_scene: bool) -> void:
 	character_id = id
 	should_be_in_scene = in_scene
 	
-	var character = Story.character_by(character_id)
+	var character = Narrative.character_by(character_id)
 	
 	character.character_entered.connect(func(): is_met = should_be_in_scene)
 	character.character_left.connect(func(): is_met = not should_be_in_scene)

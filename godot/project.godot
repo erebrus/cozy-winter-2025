@@ -24,11 +24,11 @@ Globals="*res://src/common/globals.tscn"
 Logger="*res://addons/gs_logger/logger.gd"
 Debug="*res://src/common/debug/debug.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Story="*res://src/story/story.tscn"
+Narrative="*res://src/narrative/narrative.tscn"
 
 [dialogue_manager]
 
-general/states=["Story"]
+general/states=["Narrative"]
 
 [editor_plugins]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://035aqb1motrn"]
 
-[ext_resource type="Script" path="res://src/story/debug/scene_state.gd" id="1_305ad"]
+[ext_resource type="Script" path="res://src/narrative/debug/scene_state.gd" id="1_305ad"]
 
 [node name="SceneState" type="PanelContainer"]
 anchors_preset = 15

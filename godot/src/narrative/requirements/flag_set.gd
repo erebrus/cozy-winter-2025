@@ -9,11 +9,11 @@ func _init(id: String, flag_set: bool) -> void:
 	should_be_set = flag_set
 	
 	if should_be_set:
-		is_met = Story.flags.has(flag) and Story.flags[flag]
+		is_met = Narrative.flags.has(flag) and Narrative.flags[flag]
 	else:
-		is_met = not Story.flags.has(flag) or not Story.flags[flag]
+		is_met = not Narrative.flags.has(flag) or not Narrative.flags[flag]
 	
-	Story.flag_updated.connect(_on_flag_updated)
+	Narrative.flag_updated.connect(_on_flag_updated)
 	
 
 func _on_flag_updated(updated_flag: String, value: bool) -> void:

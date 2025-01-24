@@ -5,7 +5,7 @@ var scene_id: String
 
 func _init(id: String) -> void:
 	scene_id = id
-	Story.title_passed.connect(_on_title_passed)
+	Narrative.title_passed.connect(_on_title_passed)
 	
 
 func _on_title_passed(title: String) -> void:

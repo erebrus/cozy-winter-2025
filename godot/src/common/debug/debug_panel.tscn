@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ctrd2c74fom4t"]
 
 [ext_resource type="Script" path="res://src/common/debug/debug_panel.gd" id="1_ihtat"]
-[ext_resource type="PackedScene" uid="uid://035aqb1motrn" path="res://src/story/debug/scene_state.tscn" id="2_2nxyc"]
+[ext_resource type="PackedScene" uid="uid://035aqb1motrn" path="res://src/narrative/debug/scene_state.tscn" id="2_2nxyc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvt4n"]
 content_margin_left = 8.0
