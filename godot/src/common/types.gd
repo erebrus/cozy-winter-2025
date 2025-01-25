@@ -1,7 +1,21 @@
 extends Node
 
+
 enum GameMusic {EASY, NORMAL, HARD}
 
+enum NodeType {	
+	COFFEE,
+	TEA,
+	COCOA,
+	MILK,
+	SOY_MILK,
+	ALMOND_MILK,
+	WHITE_SUGAR,
+	BROWN_SUGAR,
+	HONEY,
+	LOVE,
+	CONNECTOR
+}
 
 enum NPC {
 	BUZZ,

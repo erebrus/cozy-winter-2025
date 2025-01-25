@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgk54q0n80a4r"]
+
+[ext_resource type="Script" path="res://src/match3/nodes/node_tile.gd" id="1_vqlch"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xp3fs"]
+radius = 48.0
+
+[node name="NodeTile" type="Area2D"]
+script = ExtResource("1_vqlch")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xp3fs")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

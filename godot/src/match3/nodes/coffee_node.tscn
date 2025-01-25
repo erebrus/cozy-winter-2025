@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b204jqfq73uf3"]
+
+[ext_resource type="PackedScene" uid="uid://cgk54q0n80a4r" path="res://src/match3/nodes/node_tile.tscn" id="1_ge3q7"]
+[ext_resource type="Texture2D" uid="uid://opcf7gtqpo76" path="res://assets/placeholder/gfx/match3/coffee.png" id="2_w4bmu"]
+
+[node name="CoffeeNode" instance=ExtResource("1_ge3q7")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_w4bmu")

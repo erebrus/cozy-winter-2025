@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b85iy5itdkklv"]
+
+[ext_resource type="Script" path="res://src/match3/board.gd" id="1_c6gyl"]
+[ext_resource type="Texture2D" uid="uid://cwn7h2j76t65t" path="res://assets/placeholder/gfx/match3/back.png" id="2_4obtv"]
+[ext_resource type="PackedScene" uid="uid://7tm7cx22utdu" path="res://src/match3/match_line.tscn" id="3_l31ky"]
+
+[node name="Board" type="Node2D"]
+script = ExtResource("1_c6gyl")
+cell_size = 128
+back_tile_texture = ExtResource("2_4obtv")
+back_tile_scale = 0.5
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="Nodes" type="Polygon2D" parent="."]
+clip_children = 1
+polygon = PackedVector2Array(186, 63, -35, 358, 312, 342, 539, 106)
+
+[node name="MatchLine" parent="." instance=ExtResource("3_l31ky")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
