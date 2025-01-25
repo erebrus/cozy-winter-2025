@@ -1,4 +1,4 @@
-#dialogue can start only on day 2 when all customers from day 1 are done and we finished the day
+#dialogue can start only on day 2 when all customers from day 1 are done and we finished the day and Faro arrives
 
 ~ start_Faro
 Faro: Oh my, what a place! The light, the fireplace, the smell! Ah!
@@ -77,6 +77,7 @@ Faro: It smells so good! So different than green tea! *sip* Oh my wings! It’s 
 #if we made the wrong drink
 Faro: It looks really nice but… I think I wanted a specially made black tea blend. Well, it’s alright! I’m abroad so I’ll try it and I’m sure I’ll enjoy it anyway! => END
 
+#  dialogue starts only after ~ start_Faro is done and Buzz arrived
 ~ start_Buzz_day2
 Buzz: [#shivering] Another day with the snow. How are we going to survive?! Is it the end of the world?
 You: Oh Buzz, it’s not so bad out there.
@@ -121,7 +122,7 @@ Buzz: *sniff* She knows the best.
 You: Alright then, I know what you may want in that case. => END
 
 #dialogue ~ start_Buzz_day2 has to be done and we give the drink to Buzz
-~ Buzz_deliver
+~ Buzz_deliver2
 You: There you go, it should help you.
 #we give the correct drink - tea with lemon and cinnamon
 Buzz: ACHOO!
@@ -149,3 +150,54 @@ You: I do! Thank you! => Buzz_vase_put
 Buzz: Maybe you can put it on the counter? If you want of course.
 - You: That’s a great idea! Thanks for the gift! => END
 - You: I’ll see where I can put it, thank you! => END
+
+#  dialogue starts only after ~ start_Buzz_day2 is done and Hickory arrived
+~ start_Hickory
+Hickory: Hello! This weather is so cozy, isn’t it? Oh, I love winter!
+You: Hello! Welcome to "Snug as a Bug Cafe"! How can I help you? => start_Hickory_good
+You: Hi! Well, it’s a bit cold but the cafe is warm at least. => start_Hickory_bad
+
+~ start_Hickory_good
+Hickory: Ah yes! I’d love to drink something. Hm… Maybe chocolate? I don’t know. 
+Hickory: Something with milk, that’s for sure. An oat milk, please.
+- You: A tea or a coffee? => Hickory_good_tea_coffee
+- You: Doesn’t matter which drink? => Hickory_good_question
+
+~ start_Hickory_bad
+Hickory: Oh yes, the cafe is very comfortable and cozy indeed! You did a great job.
+Hickory: Can I ask for something to drink?
+- You: Of course! What would you like to drink? => Hickory_bad_question
+- You: Tell me what you want! => Hickory_bad_request
+
+~ Hickory_good_tea_coffee
+Hickory: You can decide, but it has to have an oat milk, please!
+Hickory: Oat milk always makes me feel more cozy.
+You: Alright, I’ll start preparing it right now! => END
+
+~ Hickory_good_question
+Hickory: It doesn’t matter! Just put some oat milk into it. 
+Hickory: It gives me such cozy vibes, I know it’s weird, but it’s just how the oat milk works on me, hehe.
+You: Okay, I’ll be right back! => END
+
+~ Hickory_bad_question
+Hickory: Hmm, I don’t know, heh. Can you just make something for me with oat milk? Whatever you think is best!
+You: Okay, give me a moment then! => END
+
+~ Hickory_bad_request
+Hickory: The thing is… I don’t know, hehe. The only thing I ask for is to add oat milk to it! 
+You: Understood! A few minutes and I’m back => END
+
+# the dialogue can start only after ~ start_Hickory is done and we make the coffee
+~ Hickory_deliver
+You: There’s your drink! 
+# if we made the correct drink
+Hickory: Ah, thank you! Amazing, just as I wanted! *sip* Ohhh, the oat milk hits the spot!
+You: I’m glad you like it! => Hickory_crochet
+
+#if we deliver the wrong drink
+Hickory: Does it have an oat milk? *sip* Oh, I think it doesn’t. But it’s alright, it’s tasty anyway! Thanks! => Hickory_crochet
+
+~ Hickory_crochet
+Hickory: You don’t mind if I sit by the fireplace and crochet, right?
+- You: Of course not! Enjoy your stay at "Snug as a Bug Cafe"! = END
+- You: I think it’s alright! You can enjoy your hobby here! => END

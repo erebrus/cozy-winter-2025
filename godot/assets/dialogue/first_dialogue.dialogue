@@ -48,7 +48,7 @@ Flutter: The weather forced me to stay at home, but it made me tired. I'd like s
 => answer_strong_sweet
 
 ~ Flutter_start_bad
-Flutter: Yes, I'd love to. Can you prepare me something strong, but also not too bitter? Is it possible? I need some energy for the rest of the day, I have a forced time off, but I became tired already. 
+Flutter: Yes, I'd love to. Can you prepare me something strong, but also not too bitter? Is it possible?  I need some energy for the rest of the day, I have forced time off, but I have become tired already.  
 => answer_strong_sweet
 
 ~ answer_strong_sweet
@@ -120,7 +120,7 @@ Indigo: Reminds me of Paler, a place where it's always winter and every house lo
 ~ start_Indigo_good
 Indigo: Yes, please! I don't know what I want, though… Tough decision.
 - You: Do you want a chocolate or a coffee? =>  Indigo_choice
-- You: Well, there're many options to pick from, take your time. => Indigo_options
+- You: Well, there are many options to pick from, take your time. => Indigo_options
 
 ~ start_Indigo_bad
 Indigo: Oh yes, definitely! Erm… Can I order something?
