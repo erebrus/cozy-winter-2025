@@ -1,4 +1,5 @@
 extends Line2D
+class_name MatchLine
 
 @export var min_match_length:=3
 var nodes:Array[NodeTile]
@@ -68,6 +69,11 @@ func last_ingredient()->NodeTile:
 				return 	nodes[i]
 	return null
 
+func clear():
+	clear_points()
+	nodes.clear()
+	matching=false
+	
 func _unhandled_input(event: InputEvent) -> void:
 	#if nodes.is_empty():
 		#return	
@@ -86,8 +92,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				else:
 					#TODO match insuficient, sfx?
 					pass
-				clear_points()
-				nodes.clear()
+				clear()
 				
 			
 			

@@ -12,9 +12,12 @@ back_tile_scale = 0.5
 
 [node name="Back" type="Node2D" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="Back"]
+texture = ExtResource("2_4obtv")
+
 [node name="Nodes" type="Polygon2D" parent="."]
 clip_children = 1
-polygon = PackedVector2Array(186, 63, -35, 358, 312, 342, 539, 106)
+polygon = PackedVector2Array(7, 55, 0, 339, 513, 289, 501, 45)
 
 [node name="MatchLine" parent="." instance=ExtResource("3_l31ky")]
 

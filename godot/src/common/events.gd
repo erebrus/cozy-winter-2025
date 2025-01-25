@@ -10,3 +10,5 @@ signal drink_completed(drink: Drink)
 signal node_entered(node:NodeTile)
 signal node_exited(node:NodeTile)
 signal nodes_matched(nodes:Array[NodeTile])
+
+signal start_crafting()

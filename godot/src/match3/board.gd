@@ -21,6 +21,7 @@ var NodeScenes = [
 @export var back_tile_scale:float=1.0
 @onready var back: Node2D = $Back
 @onready var nodes: Polygon2D = $Nodes
+@onready var match_line: Line2D = $MatchLine
 
 var tiles:Dictionary={
 	Types.NodeType.COFFEE:15,
@@ -48,6 +49,12 @@ func _ready() -> void:
 	_fill_bag()
 	_fill_board()
 	Events.nodes_matched.connect(_on_nodes_matched)
+	Events.start_crafting.connect(_on_start_crafting)
+	
+func _on_start_crafting():
+	Logger.info("Let's go")
+	if not visible: 
+		visible=true
 	
 func _fill_bag():
 	for node_tile in tiles.keys():			
@@ -67,6 +74,11 @@ func _fill_board():
 			
 				
 func _build_board():
+	while back.get_child_count():
+		var tile = back.get_child(0)
+		tile.queue_free()
+		back.remove_child(tile)
+		
 	for x in board_size.x:
 		var column=[]
 		for y in board_size.y:
@@ -164,3 +176,6 @@ func print_board():
 			line+="%s" % (cells[x][y].type if cells[x][y] else "''")+"\t"
 		print("|\t %s" % line)
 	
+func _input(event: InputEvent) -> void:
+	if visible and Input.is_action_just_pressed("right_click"):
+		visible=false

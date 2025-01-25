@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=8 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_p2o0a"]
 [ext_resource type="PackedScene" uid="uid://cnx7lim3cg7gj" path="res://src/environment/counter.tscn" id="2_2nu2v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vaopkmjtydwd" path="res://src/environment/wall.tscn" id="3_5vqml"]
 [ext_resource type="PackedScene" uid="uid://oro3v531fqoy" path="res://src/environment/fireplace.tscn" id="3_uhqmq"]
 [ext_resource type="Script" path="res://src/camera_2d.gd" id="5_53gr4"]
+[ext_resource type="PackedScene" uid="uid://b85iy5itdkklv" path="res://src/match3/board.tscn" id="7_wtyv4"]
 
 [node name="Cafe" type="Node"]
 script = ExtResource("1_p2o0a")
@@ -61,3 +62,22 @@ drag_bottom_margin = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("5_53gr4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.0
+offset_top = -392.0
+offset_right = -454.0
+offset_bottom = -392.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Board" parent="CanvasLayer/Control" instance=ExtResource("7_wtyv4")]
+visible = false
