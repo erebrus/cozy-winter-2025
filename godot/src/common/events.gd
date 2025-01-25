@@ -10,3 +10,7 @@ signal drink_completed(drink: Drink)
 signal node_entered(node:NodeTile)
 signal node_exited(node:NodeTile)
 signal nodes_matched(nodes:Array[NodeTile])
+
+
+func _ready():
+	drink_completed.connect(func(drink): Logger.info("Created drink %s" % drink))

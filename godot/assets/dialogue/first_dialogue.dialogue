@@ -23,11 +23,17 @@ Buzz: What?! Are you for real?! I feel even colder now, after hearing this. Can 
 You: Of course! Right on it! 
 => END
 
-# dialogue starts after ~start_Buzz is done and we give drink to Buzz
-~ deliver_chocolate
+# dialogue starts after ~start_Buzz is done and we give drink with chocolate and milk to Buzz
+~ Buzz_deliver_chocolate
 You: There you go. Hot chocolate with boiling-hot milk. 
 Buzz: Thank you! Just as I wanted! *slurp* Ahhh! That's it! 
 Buzz: You know, my mom used to make me hot milk every time I was very cold. It reminds me of her!
+=> END
+
+# dialogue starts after ~start_Buzz is done and we give drink without milk to Buzz
+~ Buzz_deliver_chocolate_incorrect
+You: There you go. Your hot chocolate .
+Buzz: Thank you! Just as I wanted! *slurp* Oh... It doesn't have any milk.
 => END
 
 #  dialogue starts only after ~start_Buzz is done and Flutter arrived
@@ -38,7 +44,7 @@ Flutter: Good morning. Is it a "Snug as a Bug Cafe"?
 => END
 
 ~ Flutter_start_good
-Flutter: The weather forced me to stay at home, but it made me tired. I’d like something with a kick, but also sweet, something that will give me the energy to soldier through the day.  
+Flutter: The weather forced me to stay at home, but it made me tired. I'd like something with a kick, but also sweet, something that will give me the energy to soldier through the day.  
 => answer_strong_sweet
 
 ~ Flutter_start_bad
@@ -58,27 +64,27 @@ Flutter: *sip* Oh it's perfect! Great caffeine kick, but no bitterness, only swe
 
 #dialogue starts after the ~start_Flutter is done and Orchidia arrives
 ~ start_Orchidia
-Orchidia: It’s freezing out there! I’m so glad that your place is open. 
+Orchidia: It's freezing out there! I'm so glad that your place is open. 
 You: Hello! Welcome to "Snug as a Bug Cafe"! => Orchidia_start_good
 You: Yes, the snowstorm was very heavy last night! => Orchidia_start_bad
 
 ~ Orchidia_start_good
-Orchidia: My husband told me about this place, and I’m surprised I’ve never been here.
-You: Well, I’m glad you visit now! => Orchidia_order_good
+Orchidia: My husband told me about this place, and I'm surprised I've never been here.
+You: Well, I'm glad you visit now! => Orchidia_order_good
 You: 
 
 ~ Orchidia_start_bad
-Orchidia: Indeed! I’m glad you have the fireplace on, it’s so warm here.
+Orchidia: Indeed! I'm glad you have the fireplace on, it's so warm here.
 Orchidia: Can I order something? => Orchidia_order_bad
 
 ~ Orchidia_order_good
-Orchidia: So, I assume you happen to have a coffee with milk, right? I’d like to order that, but additionally, please add something crunchy on top.
+Orchidia: So, I assume you happen to have a coffee with milk, right? I'd like to order that, but additionally, please add something crunchy on top.
 You: Alright, do you want something specific? => Orchidia_order_good_crunchy
 You: Do you want chocolate chips? => Orchidia_order_good_chocolate
 
 ~ Orchidia_order_bad
 You: Of course! What would you like to drink?
-Orchidia: Can you make me a coffee with milk and something crunchy? I’d like some surprise in my coffee.
+Orchidia: Can you make me a coffee with milk and something crunchy? I'd like some surprise in my coffee.
 You: Do you want chocolate chips? => Orchidia_order_bad_chocolate
 You: Maybe some chopped nuts?  => Orchidia_order_bad_nuts
 
@@ -86,32 +92,35 @@ You: Maybe some chopped nuts?  => Orchidia_order_bad_nuts
 Orchidia: No, surprise me! But no chocolate! => END
 
 ~ Orchidia_order_good_chocolate
-Orchidia: Oh no, no chocolate, please! I’m allergic! => END
+Orchidia: Oh no, no chocolate, please! I'm allergic! => END
 
 ~ Orchidia_order_bad_chocolate
-Orchidia: I’m allergic to chocolate, so no. => END
+Orchidia: I'm allergic to chocolate, so no. => END
 
 ~ Orchidia_order_bad_nuts
 Orchidia: Hmm, could be interesting. I believe you can make something delicious! => END
 
-#dialogue starts after ~ start_Orchidia is done and we give the drink to Orchidia
-~ Orchidia_deliver 
+#dialogue starts after ~ start_Orchidia is done and we give the correct drink, without chocolate
+~ Orchidia_deliver_correct 
 You: There you go, a coffee with milk and something crunchy on top.
-#if we make the correct drink, without chocolate
-Orchidia: Oh it smells so good! And no chocolate! Perfect! =>END
-#if we make the wrong drink with chocolate
-Orchidia: It looks amazing, but it has chocolate. It’s alright, I’ll scoop it out with a spoon, as I cannot eat it. Thank you anyway! => END
+Orchidia: Oh it smells so good! And no chocolate! Perfect! 
+=> END
 
-~start_Indigo
-Indigo: Oh it’s so lovely here! So warm and cozy, and the smell is amazing!
-Indigo: Reminds me of Paler, a place where it’s always winter and every house looks like this cafe! 
-You: I’m glad to hear that! Do you want me to make you a drink? => start_Indigo_good
-You: Paler? I’ve never been there, but if my cafe reminds you of it, I assume it’s good! => start_Indigo_bad
+#dialogue starts after ~ start_Orchidia is done and we give the incorrect drink, with chocolate
+~ Orchidia_deliver_incorrect
+You: There you go, a coffee with milk and something crunchy on top.
+Orchidia: It looks amazing, but it has chocolate. It's alright, I'll scoop it out with a spoon, as I cannot eat it. Thank you anyway! => END
+
+~ start_Indigo
+Indigo: Oh it's so lovely here! So warm and cozy, and the smell is amazing!
+Indigo: Reminds me of Paler, a place where it's always winter and every house looks like this cafe! 
+You: I'm glad to hear that! Do you want me to make you a drink? => start_Indigo_good
+You: Paler? I've never been there, but if my cafe reminds you of it, I assume it's good! => start_Indigo_bad
 
 ~ start_Indigo_good
-Indigo: Yes, please! I don’t know what I want, though… Tough decision.
+Indigo: Yes, please! I don't know what I want, though… Tough decision.
 You: Do you want a chocolate or a coffee? =>  Indigo_choice
-You: Well, there’re many options to pick from, take your time. => Indigo_options
+You: Well, there're many options to pick from, take your time. => Indigo_options
 
 ~ start_Indigo_bad
 Indigo: Oh yes, definitely! Erm… Can I order something?
@@ -125,22 +134,22 @@ Indigo: Not a coffee, but also not a plain chocolate. Oh and use soymilk, please
 You: Of course! On it!
 
 ~ Indigo_options
-Indigo: Hmm… Well… It’s tough…
+Indigo: Hmm… Well… It's tough…
 Indigo: I want a chocolate, on soymilk. And please add something sweet and something crunchy too.
-You: Alright, I’ll be right back! 
+You: Alright, I'll be right back! 
 
 ~ Indigo_coffee
-Indigo: Hmmmmm… I don’t want coffee. So I guess chocolate it is, but with soymilk. Can you also add something sweet and crunchy to it?
+Indigo: Hmmmmm… I don't want coffee. So I guess chocolate it is, but with soymilk. Can you also add something sweet and crunchy to it?
 You: No problem at all, I know what to make you! => END
 
 ~  Indigo_requests
-Indigo: I don’t want coffee and I want the drink to have soymilk. Also something sweet and crunchy in it.
-You: Noted, I’ll go make it for you! => END
+Indigo: I don't want coffee and I want the drink to have soymilk. Also something sweet and crunchy in it.
+You: Noted, I'll go make it for you! => END
 
 # dialogue starts when ~start_Indigo is done and we give the drink to Indigo
 ~ Indigo_deliver
-You: Here’s your drink. Hope you like it!
+You: Here's your drink. Hope you like it!
 # when we give the correct drink
 Indigo: Oh it looks amazing! *slurp* And it tastes even better! Thank you! => END
 # when we give the wrong drink
-Indigo: Wow, look at this! *slurp* Hmm, it’s good, but I think there’s something not right. Well, it tastes nice anyway! => END
+Indigo: Wow, look at this! *slurp* Hmm, it's good, but I think there's something not right. Well, it tastes nice anyway! => END

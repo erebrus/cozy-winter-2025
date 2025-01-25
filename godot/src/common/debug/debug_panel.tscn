@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctrd2c74fom4t"]
+[gd_scene load_steps=5 format=3 uid="uid://ctrd2c74fom4t"]
 
 [ext_resource type="Script" path="res://src/common/debug/debug_panel.gd" id="1_ihtat"]
 [ext_resource type="PackedScene" uid="uid://035aqb1motrn" path="res://src/narrative/debug/sequence_state.tscn" id="2_2nxyc"]
+[ext_resource type="PackedScene" uid="uid://cl8wuollxsu6k" path="res://src/drinks/debug/make_drink.tscn" id="3_u4ktp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvt4n"]
 content_margin_left = 8.0
@@ -32,6 +33,12 @@ layout_mode = 2
 layout_mode = 2
 focus_mode = 0
 text = "Swap Music"
+
+[node name="CreateDrink" type="Button" parent="VBoxContainer/HFlowContainer2"]
+layout_mode = 2
+focus_mode = 0
+text = "Win Game
+"
 
 [node name="GameOverLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -76,7 +83,11 @@ item_count = 1
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="MakeDrink" parent="." instance=ExtResource("3_u4ktp")]
+unique_name_in_owner = true
+
 [connection signal="pressed" from="VBoxContainer/HFlowContainer2/MusicTensionToggle" to="." method="_on_music_tension_toggle_pressed"]
+[connection signal="pressed" from="VBoxContainer/HFlowContainer2/CreateDrink" to="." method="_on_create_drink_pressed"]
 [connection signal="pressed" from="VBoxContainer/HFlowContainer/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="pressed" from="VBoxContainer/HFlowContainer/WinGame" to="." method="_on_win_game_pressed"]
 [connection signal="item_selected" from="VBoxContainer/SequenceCategory" to="." method="_on_sequence_category_item_selected"]

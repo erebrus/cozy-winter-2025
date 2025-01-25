@@ -63,3 +63,7 @@ func _on_sequence_list_item_selected(index):
 	var sequence = StorySequenceInfoScene.instantiate()
 	sequence.sequence = Narrative.sequences_by_id[sequence_id]
 	sequence_info.add_child(sequence)
+
+
+func _on_create_drink_pressed():
+	$MakeDrink.popup_centered()
