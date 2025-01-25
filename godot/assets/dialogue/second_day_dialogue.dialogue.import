@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dwvs22v2kd8fl"
+path="res://.godot/imported/second_day_dialogue.dialogue-8903293c6081f47218defc0e8b6c1b05.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/second_day_dialogue.dialogue"
+dest_files=["res://.godot/imported/second_day_dialogue.dialogue-8903293c6081f47218defc0e8b6c1b05.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,76 @@
+#dialogue can start only on day 2 when all customers from day 1 are done and we finished the day
+
+~ start_Faro
+Faro: Oh my, what a place! The light, the fireplace, the smell! Ah!
+You: Hello! Welcome to "Snug as a Bug Cafe"! Glad you like it, can I get you something? => Faro_start_good
+You: You’ve never been to a cafe before? => Faro_start_bad
+
+~ Faro_start_good
+Faro: Yes, please! What do you offer here exactly?
+You: You can have some coffee, tea, hot chocolate. I can mix and match ingredients for you. => Faro_good_what_to_drink
+You: Everything that you can find on the menu, if you need anything special to add to the drink, just let me know. => Faro_menu_choice
+
+~ Faro_start_bad
+Faro: Of course I have, but in my country, they look different. This one is so far from what I’m used to! 
+You: Oh I see! Well, I’m glad you like it here then! Do you want to drink anything? => Faro_bad_what_to_drink
+You: Now I’m intrigued how do they look like out there! Would you like something to drink? => Faro_bad_intrigued_what_to_drink
+
+~ Faro_good_what_to_drink
+Faro: What a rage of choices! Can I ask for a tea then? In my country I mostly drink green tea, but I want something different this time.
+You: Would you like to try a black tea? I can add some other ingredients to it if you wish. => Faro_good_black_tea
+You: Any other requests about your drink? => Faro_good_requests
+
+~ Faro_menu_choice
+Faro: Hmmm.. I see you have plenty of teas to offer. I want one then, but not a green tea, though. I drink it all the time at home.
+You: Okay, do you want me to add anything to it? => Faro_menu_add
+You: Noted! Maybe a black tea with some additional stuff can be interesting for you to try? => Faro_menu_offer
+
+~ Faro_bad_what_to_drink
+Faro: Of course! I want to try some black tea, I’ve never had it, I drink only green tea at home.
+You: Would you like some additional ingredients to it? => Faro_bad_ingredients_question
+You: Never? Oh wow, you have to try it then! Maybe I can add some other stuff to it too, to make the taste more interesting? => Faro_bad_ingredients_suggestion
+
+~ Faro_bad_intrigued_what_to_drink
+Faro: I see you offer some tea on the menu. I’m used to green tea, so can I ask for black tea? 
+You: Of course I can! Anything special you want to try it with? I can add something else to the leaves. => Faro_bad_intrigued_add
+You: Yes, no problem. Maybe you want to try a special blend? => Faro_bad_intrigued_special_blend
+
+~ Faro_good_black_tea
+Faro: Oh yes, yes, please! That sounds amazing! 
+You: Alright, I’ll surprise you then! => END
+
+~ Faro_good_requests
+Faro: Can you make a unique blend for me? Adding something else to the leaves?
+You: Yes, not a problem! I’ll do it right now! => END
+
+~ Faro_menu_add
+Faro: If you can, yes, please. Surprise me!
+You: I think I know what you may like! => END
+
+~ Faro_menu_offer
+Faro: Ohhh, I never had something like this before! Please do!
+You: Alright, on it! => END
+
+~ Faro_bad_ingredients_question
+Faro: If that’s an option, then yes!
+You: Okay, just give me a moment and I’ll be right back! => END
+
+~ Faro_bad_ingredients_suggestion
+Faro: That sounds like an amazing idea! Please do it!
+You: Perfect, I’ll be right back! => END
+
+~ Faro_bad_intrigued_add
+Faro: It sounds interesting, so yes!
+You: Okay, I’ll make it right now! => END
+
+~ Faro_bad_intrigued_special_blend
+Faro: A special blend, you say? Sounds good to me!
+You: Good! I’m gonna prepare it for you! => END
+
+#dialogue starts after ~ start_Faro is done and we give the drink to Faro
+You: Here’s your drink! Enjoy!
+#if we made the black tea with added ingredients
+Faro: It smells so good! So different than green tea! *sip* Oh my wings! It’s so good! I’ve never had something like this before! => END
+
+#if we made the wrong drink
+Faro: It looks really nice but… I think I wanted a specially made black tea blend. Well, it’s alright! I’m abroad so I’ll try it and I’m sure I’ll enjoy it anyway! => END
