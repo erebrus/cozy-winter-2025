@@ -76,3 +76,76 @@ Faro: It smells so good! So different than green tea! *sip* Oh my wings! It’s 
 
 #if we made the wrong drink
 Faro: It looks really nice but… I think I wanted a specially made black tea blend. Well, it’s alright! I’m abroad so I’ll try it and I’m sure I’ll enjoy it anyway! => END
+
+~ start_Buzz_day2
+Buzz: [#shivering] Another day with the snow. How are we going to survive?! Is it the end of the world?
+You: Oh Buzz, it’s not so bad out there.
+Buzz: What do you mean “not so bad”?! My mom is at the house under five blankets! 
+You: Is she sick? => Buzz_sick
+You: It sounds cozy to me. => Buzz_cozy
+
+~ Buzz_sick
+Buzz: Yes she is. She’s drinking some tea with lemon and cinnamon. Apparently, it’s supposed to help you recover faster. 
+Buzz: ACHOO!
+Buzz: See what this snow does to me?! I’m already sneezing!
+You: You should take some medicine. => Buzz_medicine
+You: Bless you! => Buzz_bless_you
+
+~ Buzz_cozy
+Buzz: It’s not cozy! She’s sick! 
+Buzz: ACHOOO!
+Buzz: Oh no, I’m getting sick too!
+You: I think you may be allergic to something. => Buzz_allergic
+You: Just take some ginger when you’re at home. => Buzz_ginger
+
+~ Buzz_medicine
+Buzz: I don’t think it’ll help.
+Buzz: ACHOOO!
+Buzz: *sniff* It’s just all because of this snow!
+You: I think I know what will make you feel better. => END
+
+~ Buzz_bless_you
+Buzz: Thanks… Although, I want something warm to drink. I think only this will help me with this - ACHOOO! 
+Buzz: With this snow, ugh…
+You: Alright, I know what you need. => END
+
+~ Buzz_allergic
+Buzz: Are you serious?! It’s not an allergy! Well, maybe an allergy to the snow.
+Buzz: ACHOO!
+Buzz: Oh I’m sorry, I think you may want to clean that…
+You: Yeah, but first let me give you a drink. => END
+
+~ Buzz_ginger
+Buzz: I hate ginger. Also, my mom says it doesn’t work. She knows - ACHOO!
+Buzz: *sniff* She knows the best.
+You: Alright then, I know what you may want in that case. => END
+
+#dialogue ~ start_Buzz_day2 has to be done and we give the drink to Buzz
+~ Buzz_deliver
+You: There you go, it should help you.
+#we give the correct drink - tea with lemon and cinnamon
+Buzz: ACHOO!
+Buzz: *sniff* Thank you… *sip* Ohhh, it’s good. I already feel better. => Buzz_gift
+
+#we give the wrong drink
+Buzz: Oh thank - ACHOO!
+Buzz: Thank you. *sniff* Hmm, I hope it’ll help. It’s not what my mom’s drinking, but I trust you! => Buzz_gift
+
+~ Buzz_gift
+Buzz: Oh, by the way, I have something for you. 
+#Buzz gives the gift - a small vase.
+You: Oh you didn’t have to! Thank you! => Buzz_thank_you
+You: It’s so pretty! Did you buy it on a trip? => Buzz_trip
+
+~ Buzz_thank_you
+Buzz: I’m happy you like it! My mom painted it, she’s talented, isn’t she?
+You: She is indeed! That’s so pretty! => Buzz_vase_put
+
+~ Buzz_trip
+Buzz: Oh no, my mom painted it. She loves painting on ceramics. I thought you might like it. 
+You: I do! Thank you! => Buzz_vase_put
+
+~ Buzz_vase_put
+Buzz: Maybe you can put it on the counter? If you want of course.
+You: That’s a great idea! Thanks for the gift! => END
+You: I’ll see where I can put it, thank you! => END
