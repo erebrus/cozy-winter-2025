@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgk54q0n80a4r"]
+[gd_scene load_steps=3 format=3 uid="uid://cgk54q0n80a4r"]
 
 [ext_resource type="Script" path="res://src/match3/nodes/node_tile.gd" id="1_vqlch"]
-[ext_resource type="Texture2D" uid="uid://4vqcykl47a65" path="res://assets/placeholder/gfx/match3/Tiles blue/tileBlue_32.png" id="2_1k8j3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xp3fs"]
 radius = 48.0
@@ -11,7 +10,6 @@ script = ExtResource("1_vqlch")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_1k8j3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xp3fs")

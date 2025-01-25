@@ -4,5 +4,5 @@
 
 [node name="MatchLine" type="Line2D"]
 width = 20.0
-default_color = Color(0.26046, 0.195543, 0.67868, 1)
+default_color = Color(0.698039, 2.78431, 0.0431373, 1)
 script = ExtResource("1_l3xuk")
