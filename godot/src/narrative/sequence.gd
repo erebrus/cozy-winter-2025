@@ -40,7 +40,7 @@ var has_played: bool
 func setup() -> void:
 	story_id = dialogue.resource_path.get_basename().get_file()
 	
-	id = sequence_id(start_title)
+	id = _get_sequence_id(start_title)
 	
 	for npc_id in require_npcs_present:
 		_add_requirement(CharacterPresentSequenceRequirement.new(npc_id, true))
@@ -55,9 +55,11 @@ func setup() -> void:
 		_add_requirement(FlagSetSequenceRequirement.new(flag, false))
 		
 	for sequence_id in require_passed_titles:
-		_add_requirement(TitlePassedSequenceRequirement.new(sequence_id(sequence_id)))
+		_add_requirement(TitlePassedSequenceRequirement.new(_get_sequence_id(sequence_id)))
 	
+	trigger.setup()
 	trigger.triggered.connect(_on_triggered)
+	is_ready = _check_ready()
 	
 
 func finish() -> void:
@@ -78,7 +80,7 @@ func _check_ready() -> bool:
 	return true
 	
 
-func sequence_id(sequence_id: String) -> String:
+func _get_sequence_id(sequence_id: String) -> String:
 	if sequence_id.is_empty() or sequence_id.contains(":"):
 		return sequence_id
 	else:

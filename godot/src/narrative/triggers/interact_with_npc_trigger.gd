@@ -3,7 +3,8 @@ class_name InteractWithNpcSequenceTrigger extends SequenceTrigger
 @export var npc: Types.NPC
 
 
-func _init() -> void:
+func setup() -> void:
+	super.setup()
 	Events.interacted_with_npc.connect(_on_interacted_with_npc)
 	
 

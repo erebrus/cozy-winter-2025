@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="StorySequence" load_steps=5 format=3 uid="uid://cm8xysgvlro6a"]
+
+[ext_resource type="Resource" uid="uid://bimcpmywr1tie" path="res://assets/dialogue/first_dialogue.dialogue" id="1_7a88s"]
+[ext_resource type="Script" path="res://src/narrative/sequence.gd" id="1_jfaiv"]
+[ext_resource type="Script" path="res://src/narrative/triggers/day_started_trigger.gd" id="3_pk86u"]
+
+[sub_resource type="Resource" id="Resource_mk1f2"]
+script = ExtResource("3_pk86u")
+day = 1
+
+[resource]
+script = ExtResource("1_jfaiv")
+dialogue = ExtResource("1_7a88s")
+start_title = "intro"
+trigger = SubResource("Resource_mk1f2")
+repeat = false
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])

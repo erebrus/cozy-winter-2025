@@ -1,12 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://y7n82k7uopcl"]
+[gd_scene load_steps=12 format=3 uid="uid://y7n82k7uopcl"]
 
 [ext_resource type="Script" path="res://src/narrative/narrative.gd" id="1_p0wp7"]
 [ext_resource type="Script" path="res://src/characters/character_resource.gd" id="2_e65np"]
 [ext_resource type="Script" path="res://src/narrative/characters.gd" id="3_wxtvl"]
 [ext_resource type="Script" path="res://src/narrative/sequence.gd" id="4_vxvc0"]
-[ext_resource type="Resource" uid="uid://bimcpmywr1tie" path="res://assets/dialogue/first_dialogue.dialogue" id="5_nfwih"]
-[ext_resource type="Script" path="res://src/narrative/triggers/interact_with_item_trigger.gd" id="6_lymlp"]
-[ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="7_rvh23"]
+[ext_resource type="Resource" uid="uid://cm8xysgvlro6a" path="res://src/narrative/sequences/day1_start.tres" id="5_thfgb"]
+[ext_resource type="Resource" uid="uid://r3kc51eop54i" path="res://src/narrative/sequences/buzz_start.tres" id="5_vbem2"]
+[ext_resource type="Resource" uid="uid://fkvvb6kv4dlj" path="res://src/narrative/sequences/flutter_start.tres" id="6_k4aoj"]
 
 [sub_resource type="Resource" id="Resource_s6t5o"]
 script = ExtResource("2_e65np")
@@ -26,39 +26,7 @@ NPC_A = SubResource("Resource_s6t5o")
 NPC_B = SubResource("Resource_8ww03")
 NPC_C = SubResource("Resource_2ij5q")
 
-[sub_resource type="Resource" id="Resource_l23q8"]
-script = ExtResource("6_lymlp")
-item = 0
-
-[sub_resource type="Resource" id="Resource_qqq2k"]
-script = ExtResource("4_vxvc0")
-dialogue = ExtResource("5_nfwih")
-start_title = "start_Buzz"
-trigger = SubResource("Resource_l23q8")
-repeat = false
-require_passed_titles = Array[String]([])
-require_npcs_present = Array[int]([0, 1])
-require_npcs_missing = Array[int]([])
-require_flags_true = Array[String]([])
-require_flags_false = Array[String]([])
-
-[sub_resource type="Resource" id="Resource_t1ax3"]
-script = ExtResource("7_rvh23")
-npc = 1
-
-[sub_resource type="Resource" id="Resource_bjdtg"]
-script = ExtResource("4_vxvc0")
-dialogue = ExtResource("5_nfwih")
-start_title = "start_Flutter"
-trigger = SubResource("Resource_t1ax3")
-repeat = true
-require_passed_titles = Array[String]([])
-require_npcs_present = Array[int]([1])
-require_npcs_missing = Array[int]([])
-require_flags_true = Array[String]([])
-require_flags_false = Array[String](["fire_lit"])
-
 [node name="Narrative" type="Node"]
 script = ExtResource("1_p0wp7")
 NPC = SubResource("Resource_4uckd")
-sequences = Array[ExtResource("4_vxvc0")]([SubResource("Resource_qqq2k"), SubResource("Resource_bjdtg")])
+sequences = Array[ExtResource("4_vxvc0")]([ExtResource("5_thfgb"), ExtResource("5_vbem2"), ExtResource("6_k4aoj")])

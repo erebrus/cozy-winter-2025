@@ -3,7 +3,8 @@ class_name InteractWithItemSequenceTrigger extends SequenceTrigger
 @export var item: Types.Item
 
 
-func _init() -> void:
+func setup() -> void:
+	super.setup()
 	Events.interacted_with_item.connect(_on_interacted_with_item)
 	
 

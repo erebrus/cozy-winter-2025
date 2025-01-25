@@ -1,5 +1,6 @@
 extends Node
 
+signal day_started
 
 signal flag_updated(flag: String, value: bool)
 signal title_passed(sequence_id: String)
@@ -16,6 +17,9 @@ var sequences_by_id: Dictionary # [String, StorySequence]
 var ready_sequences: Array[StorySequence]
 var current_sequence: StorySequence
 
+var current_day:= 0
+
+
 func _ready() -> void:
 	_init_characters()
 	_init_sequences()
@@ -30,6 +34,11 @@ func character_by(id: Types.NPC) -> Character:
 func set_flag(flag: String, value: bool) -> void:
 	flags[flag] = value
 	flag_updated.emit(flag, value)
+	
+
+func next_day() -> void:
+	current_day += 1
+	day_started.emit()
 	
 
 func _init_characters() -> void:
