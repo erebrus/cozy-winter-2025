@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://7tm7cx22utdu"]
+
+[ext_resource type="Script" path="res://src/match3/match_line.gd" id="1_l3xuk"]
+
+[node name="MatchLine" type="Line2D"]
+width = 20.0
+default_color = Color(0.26046, 0.195543, 0.67868, 1)
+script = ExtResource("1_l3xuk")
