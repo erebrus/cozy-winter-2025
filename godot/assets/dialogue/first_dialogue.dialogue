@@ -1,7 +1,7 @@
 # We could have a little scene for each day start
 ~ intro
 It's another winter day. The snow slowly falls from the sky, creating fluffy, white piles on the ground. The air is crisp and cold, slightly irritating the nostrils of the one breathing. 
-Days like this, make the (name of the cafe) a lively place,inviting with the warmth of the fireplace, sounds of cracking wood, and the smell of freshly brewed coffee and homemade hot chocolate.
+Days like this, make the "Snug as a Bug Cafe" a lively place,inviting with the warmth of the fireplace, sounds of cracking wood, and the smell of freshly brewed coffee and homemade hot chocolate.
 => END
 
 # After Buzz enters the cafe first and sits at the bar -> we DONT need to link from intro because there might be other thigs going on, we'll trigger this dialog when the start-of-day animations are done, and the character is seated
@@ -32,9 +32,9 @@ Buzz: You know, my mom used to make me hot milk every time I was very cold. It r
 
 #  dialogue starts only after ~start_Buzz is done and Flutter arrived
 ~ start_Flutter
-Flutter: Good morning. Is it a (name of the cafe)? 
+Flutter: Good morning. Is it a "Snug as a Bug Cafe"? 
 - You: Hello! Yes, you came to the right place. How can I help you? => Flutter_start_good
-- You: Good morning, correct! Welcome to (name of the cafe)! Would you like to drink anything? => Flutter_start_bad
+- You: Good morning, correct! Welcome to "Snug as a Bug Cafe"! Would you like to drink anything? => Flutter_start_bad
 => END
 
 ~ Flutter_start_good
@@ -55,3 +55,49 @@ Flutter: Yes, I'd love to. Can you prepare me something strong, but also not too
 You: There's your drink, hope you'll like it!
 Flutter: *sip* Oh it's perfect! Great caffeine kick, but no bitterness, only sweetness. Amazing job! 
 => END
+
+#dialogue starts after the ~start_Flutter is done and Orchidia arrives
+~ start_Orchidia
+Orchidia: It’s freezing out there! I’m so glad that your place is open. 
+You: Hello! Welcome to "Snug as a Bug Cafe"! => Orchidia_start_good
+You: Yes, the snowstorm was very heavy last night! => Orchidia_start_bad
+
+~ Orchidia_start_good
+Orchidia: My husband told me about this place, and I’m surprised I’ve never been here.
+You: Well, I’m glad you visit now! => Orchidia_order_good
+You: 
+
+~ Orchidia_start_bad
+Orchidia: Indeed! I’m glad you have the fireplace on, it’s so warm here.
+Orchidia: Can I order something? => Orchidia_order_bad
+
+~ Orchidia_order_good
+Orchidia: So, I assume you happen to have a coffee with milk, right? I’d like to order that, but additionally, please add something crunchy on top.
+You: Alright, do you want something specific? => Orchidia_order_good_crunchy
+You: Do you want chocolate chips? => Orchidia_order_good_chocolate
+
+~ Orchidia_order_bad
+You: Of course! What would you like to drink?
+Orchidia: Can you make me a coffee with milk and something crunchy? I’d like some surprise in my coffee.
+You: Do you want chocolate chips? => Orchidia_order_bad_chocolate
+You: Maybe some chopped nuts?  => Orchidia_order_bad_nuts
+
+~ Orchidia_order_good_crunchy
+Orchidia: No, surprise me! But no chocolate! => END
+
+~ Orchidia_order_good_chocolate
+Orchidia: Oh no, no chocolate, please! I’m allergic! => END
+
+~ Orchidia_order_bad_chocolate
+Orchidia: I’m allergic to chocolate, so no. => END
+
+~ Orchidia_order_bad_nuts
+Orchidia: Hmm, could be interesting. I believe you can make something delicious! => END
+
+#dialogue starts after ~ start_Orchidia is done and we give the drink to Orchidia
+~ Orchidia_deliver 
+You: There you go, a coffee with milk and something crunchy on top.
+#if we make the correct drink, without chocolate
+Orchidia: Oh it smells so good! And no chocolate! Perfect! =>END
+#if we make wrong drink with chocolate
+Orchidia: It looks amazing, but it has chocolate. It’s alright, I’ll scoop it out with a spoon, as I cannot eat it. Thank you anyway! => END
