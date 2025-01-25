@@ -1,15 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyln61pwn5ebm"]
+[gd_scene load_steps=5 format=3 uid="uid://cyln61pwn5ebm"]
 
 [ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_ltxrt"]
 [ext_resource type="Texture2D" uid="uid://c4ltnnf6uy4wn" path="res://assets/gfx/characters/character_2.png" id="2_qx884"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lixh"]
+atlas = ExtResource("2_qx884")
+region = Rect2(0, 0, 261, 252)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hql12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lixh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Hickory" instance=ExtResource("1_ltxrt")]
 id = 1
 character_name = "Hickory"
 
-[node name="CollisionShape2D" parent="." index="0"]
-polygon = PackedVector2Array(-107, -2, -87, -39, -125, -51, -81, -119, -54, -119, -62, -175, -30, -222, 48, -210, 134, -53, 94, -37, 111, 4, -1, 6)
-
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="0"]
 position = Vector2(-1, -115)
-texture = ExtResource("2_qx884")
+sprite_frames = SubResource("SpriteFrames_hql12")
+
+[node name="CollisionShape2D" parent="." index="1"]
+polygon = PackedVector2Array(-107, -2, -87, -39, -125, -51, -81, -119, -54, -119, -62, -175, -30, -222, 48, -210, 134, -53, 94, -37, 111, 4, -1, 6)

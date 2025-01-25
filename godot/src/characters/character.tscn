@@ -5,6 +5,6 @@
 [node name="Character" type="Area2D"]
 script = ExtResource("1_g2ram")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]

@@ -1,14 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://caqupjjwyqum2"]
+[gd_scene load_steps=5 format=3 uid="uid://caqupjjwyqum2"]
 
 [ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_cx0ms"]
 [ext_resource type="Texture2D" uid="uid://cr3g6tn6c5dei" path="res://assets/gfx/characters/character_1.png" id="2_1j4pk"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc7k2"]
+atlas = ExtResource("2_1j4pk")
+region = Rect2(0, 0, 414, 344)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cyb2d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc7k2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Buzz" instance=ExtResource("1_cx0ms")]
 character_name = "Buzz"
 
-[node name="CollisionShape2D" parent="." index="0"]
-polygon = PackedVector2Array(-196, -10, -126, -129, -158, -165, -16, -317, 28, -315, 164, -150, 137, -123, 199, 8, -184, 6)
-
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="0"]
 position = Vector2(2, -161)
-texture = ExtResource("2_1j4pk")
+sprite_frames = SubResource("SpriteFrames_cyb2d")
+
+[node name="CollisionShape2D" parent="." index="1"]
+polygon = PackedVector2Array(-196, -10, -126, -129, -158, -165, -16, -317, 28, -315, 164, -150, 137, -123, 199, 8, -184, 6)

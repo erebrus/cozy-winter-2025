@@ -1,15 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://7l4l8p0ithfl"]
+[gd_scene load_steps=5 format=3 uid="uid://7l4l8p0ithfl"]
 
 [ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_r0owd"]
 [ext_resource type="Texture2D" uid="uid://bgtgh86f6aohx" path="res://assets/gfx/characters/character_4.png" id="2_v6bhw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpgst"]
+atlas = ExtResource("2_v6bhw")
+region = Rect2(0, 0, 289, 345)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_481j8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpgst")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Flutter" instance=ExtResource("1_r0owd")]
 id = 3
 character_name = "Flutter"
 
-[node name="CollisionShape2D" parent="." index="0"]
-polygon = PackedVector2Array(-138, 0, -75, -152, -48, -168, -43, -189, -80, -258, 13, -315, 65, -291, 136, -221, 70, -239, 68, -200, 4, -162, 95, -54, 100, 10, -1, 20)
-
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="0"]
 position = Vector2(-3, -150)
-texture = ExtResource("2_v6bhw")
+sprite_frames = SubResource("SpriteFrames_481j8")
+
+[node name="CollisionShape2D" parent="." index="1"]
+polygon = PackedVector2Array(-138, 0, -75, -152, -48, -168, -43, -189, -80, -258, 13, -315, 65, -291, 136, -221, 70, -239, 68, -200, 4, -162, 95, -54, 100, 10, -1, 20)
