@@ -1,0 +1,64 @@
+~ intro
+It’s another winter day. The snow slowly falls from the sky, creating fluffy, white piles on the ground. 
+The air is crisp and cold, slightly irritating the nostrils of the one breathing. 
+Days like this, make the (name of the cafe) a lively place,inviting with the warmth of the fireplace, 
+sounds of cracking wood, and the smell of freshly brewed coffee and homemade hot chocolate.
+=> start_NPC1
+
+//NPC1 enters the cafe first and sits at the bar
+~ start_NPC1
+NPC 1: shivering It’s so cold today! I thought it was cold yesterday, but today it’s even worse!
+=> answer_cold
+
+~ answer_cold
+You: Hello! Hahaha, yes, I heard on the radio that today was supposed to be the coldest day of this week. 
+=> NPC1_pt1
+You: Hi! I know right?! I had to light the fireplace on as soon as I arrived, 
+the windows were covered in frost from the inside! 
+=> NPC1_pt2
+
+~ NPC1_pt1
+NPC 1: Is it?! Oh my, then I need something super hot to warm me up! 
+Can I have a hot chocolate, but can you make it with boiling-hot milk? 
+=> answer_chocolate
+
+~ NPC1_pt2
+NPC 1: What?! Are you for real?! I feel even colder now, after hearing this. 
+Can you make me a hot chocolate, with boiling-hot milk? I think, only this will make me feel warm enough. 
+=> answer_chocolate
+
+~ answer_chocolate
+You: Of course! Right on it! 
+=> deliver_chocolate
+
+~ deliver_chocolate
+You: There you go. Hot chocolate with boiling-hot milk. 
+NPC 1: Thank you! Just as I wanted! *slurp* Ahhh! That’s it! 
+NPC 1: You know, my mom used to make me hot milk every time I was very cold. It reminds me of her!
+=> END
+
+//dialogue starts only after the first conversation is done and the client arrived
+~ start_NPC2
+NPC 2: Good morning. Is it a (name of the cafe)? 
+=> answer_name_cafe
+
+~ answer_name_cafe
+You: Hello! Yes, you came to the right place. How can I help you? 
+=> NPC2_pt1
+You: Good morning, correct! Welcome to (name of the cafe)! Would you like to drink anything? 
+=> NPC2_pt2
+
+~ NPC2_pt1
+NPC 2: The weather tired me already, and it’s still morning. I’d like something with a kick, but also sweet, something that will give me the energy to soldier through the day. And the snow. =>answer_strong_sweet
+
+~ NPC2_pt2
+NPC 2: Yes, I’d love to. Can you prepare me something strong, but also not too bitter? Is it possible? I need some energy for the rest of the day, I have a long walk through the snow. =>answer_strong_sweet
+
+~ answer_strong_sweet
+You: Oh yeah, I know exactly what you need! Give me a few minutes, and I’ll be right back! => deliver_strong_sweet
+You: Hmm… I think I know what may fulfill your needs. Just give me a moment! => deliver_strong_sweet
+
+~ deliver_strong_sweet
+You: There’s your drink, hope you’ll like it!
+NPC 2: *sip* Oh it’s perfect! Great caffeine kick, but no bitterness, only sweetness. Amazing job! 
+=> END
