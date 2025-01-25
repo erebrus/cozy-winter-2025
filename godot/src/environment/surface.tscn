@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xd3enguwbs4"]
+
+[ext_resource type="Script" path="res://src/environment/surface.gd" id="1_48yoo"]
+
+[node name="Surface" type="Area2D"]
+script = ExtResource("1_48yoo")

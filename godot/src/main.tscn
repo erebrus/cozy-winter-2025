@@ -1,18 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=5 format=3 uid="uid://ke438w5ne7cw"]
 
-[ext_resource type="PackedScene" uid="uid://cmout20j8x6uv" path="res://src/items/fireplace.tscn" id="1_u8jin"]
-[ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="2_y6je2"]
+[ext_resource type="PackedScene" uid="uid://cnx7lim3cg7gj" path="res://src/environment/counter.tscn" id="2_2nu2v"]
+[ext_resource type="PackedScene" uid="uid://4goy8bdrv44l" path="res://src/environment/door.tscn" id="2_ts8ud"]
+[ext_resource type="PackedScene" uid="uid://vaopkmjtydwd" path="res://src/environment/wall.tscn" id="3_5vqml"]
+[ext_resource type="PackedScene" uid="uid://oro3v531fqoy" path="res://src/environment/fireplace.tscn" id="3_uhqmq"]
 
 [node name="Main" type="Node"]
 
-[node name="Fireplace" parent="." instance=ExtResource("1_u8jin")]
-position = Vector2(1106, 308)
+[node name="WallSurface" parent="." instance=ExtResource("3_5vqml")]
 
-[node name="Character" parent="." instance=ExtResource("2_y6je2")]
-position = Vector2(308, 192)
+[node name="Door" parent="." instance=ExtResource("2_ts8ud")]
+position = Vector2(1690, 610)
 
-[node name="Character2" parent="." instance=ExtResource("2_y6je2")]
-position = Vector2(302, 458)
-id = 1
+[node name="Fireplace" parent="." instance=ExtResource("3_uhqmq")]
+position = Vector2(-524, 698)
 
-[connection signal="input_event" from="Fireplace" to="Fireplace" method="_on_input_event"]
+[node name="Seats" type="Node2D" parent="."]
+
+[node name="Counter" parent="." instance=ExtResource("2_2nu2v")]

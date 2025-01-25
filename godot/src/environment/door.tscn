@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://4goy8bdrv44l"]
+
+[ext_resource type="PackedScene" uid="uid://xd3enguwbs4" path="res://src/environment/surface.tscn" id="1_70nnt"]
+[ext_resource type="Texture2D" uid="uid://b2kgokkohcgwx" path="res://assets/gfx/environment/door.png" id="2_7go7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7042"]
+size = Vector2(320, 404.739)
+
+[node name="Door" instance=ExtResource("1_70nnt")]
+id = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_7go7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -170.343)
+scale = Vector2(1, 1.01625)
+shape = SubResource("RectangleShape2D_v7042")

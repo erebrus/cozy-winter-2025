@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnx7lim3cg7gj"]
+
+[ext_resource type="PackedScene" uid="uid://xd3enguwbs4" path="res://src/environment/surface.tscn" id="1_qsw5n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lre4t"]
+size = Vector2(4141, 468)
+
+[node name="Counter" instance=ExtResource("1_qsw5n")]
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="0"]
+color = Color(0.11, 0.09614, 0.0407, 1)
+polygon = PackedVector2Array(-1344, 768, 3008, 768, 3008, 1152, -1344, 1152)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(823.5, 1109)
+shape = SubResource("RectangleShape2D_lre4t")

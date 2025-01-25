@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://oro3v531fqoy"]
+
+[ext_resource type="PackedScene" uid="uid://xd3enguwbs4" path="res://src/environment/surface.tscn" id="1_gshpf"]
+[ext_resource type="Texture2D" uid="uid://case4y4b5e3oc" path="res://assets/gfx/environment/fireplace.png" id="2_p68kw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td0ko"]
+size = Vector2(788, 50)
+
+[node name="Fireplace" instance=ExtResource("1_gshpf")]
+id = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_p68kw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -275)
+shape = SubResource("RectangleShape2D_td0ko")

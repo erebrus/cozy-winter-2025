@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://vaopkmjtydwd"]
+
+[ext_resource type="PackedScene" uid="uid://xd3enguwbs4" path="res://src/environment/surface.tscn" id="1_7730l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcjm1"]
+size = Vector2(4213, 474)
+
+[node name="WallSurface" instance=ExtResource("1_7730l")]
+input_pickable = false
+id = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(834.5, 394)
+shape = SubResource("RectangleShape2D_vcjm1")
