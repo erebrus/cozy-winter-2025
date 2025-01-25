@@ -7,8 +7,8 @@ Faro: Oh my, what a place! The light, the fireplace, the smell! Ah!
 
 ~ Faro_start_good
 Faro: Yes, please! What do you offer here exactly?
-You: You can have some coffee, tea, hot chocolate. I can mix and match ingredients for you. => Faro_good_what_to_drink
-You: Everything that you can find on the menu, if you need anything special to add to the drink, just let me know. => Faro_menu_choice
+- You: You can have some coffee, tea, hot chocolate. I can mix and match ingredients for you. => Faro_good_what_to_drink
+- You: Everything that you can find on the menu, if you need anything special to add to the drink, just let me know. => Faro_menu_choice
 
 ~ Faro_start_bad
 Faro: Of course I have, but in my country, they look different. This one is so far from what I’m used to! 
