@@ -4,9 +4,11 @@ enum GameMusic {EASY, NORMAL, HARD}
 
 
 enum NPC {
-	NPC_A,
-	NPC_B,
-	NPC_C
+	BUZZ,
+	HICKORY,
+	ORCHIDIA,
+	FLUTTER,
+	INDIGO
 }
 
 enum Item {

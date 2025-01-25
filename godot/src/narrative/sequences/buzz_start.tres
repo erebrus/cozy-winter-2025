@@ -1,21 +1,23 @@
-[gd_resource type="Resource" script_class="StorySequence" load_steps=5 format=3 uid="uid://r3kc51eop54i"]
+[gd_resource type="Resource" script_class="StorySequence" load_steps=6 format=3 uid="uid://r3kc51eop54i"]
 
+[ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_ocv8h"]
 [ext_resource type="Resource" uid="uid://bimcpmywr1tie" path="res://assets/dialogue/first_dialogue.dialogue" id="1_qwl8f"]
 [ext_resource type="Script" path="res://src/narrative/sequence.gd" id="2_6ywrj"]
-[ext_resource type="Script" path="res://src/narrative/triggers/interact_with_item_trigger.gd" id="3_5vsc1"]
+[ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="4_mvai5"]
 
-[sub_resource type="Resource" id="Resource_l23q8"]
-script = ExtResource("3_5vsc1")
-item = 0
+[sub_resource type="Resource" id="Resource_ereps"]
+script = ExtResource("4_mvai5")
+npc = 0
 
 [resource]
 script = ExtResource("2_6ywrj")
 dialogue = ExtResource("1_qwl8f")
 start_title = "start_Buzz"
-trigger = SubResource("Resource_l23q8")
+trigger = SubResource("Resource_ereps")
 repeat = false
+actions = Array[ExtResource("1_ocv8h")]([])
 require_passed_titles = Array[String]([])
-require_npcs_present = Array[int]([0, 1])
+require_npcs_present = Array[int]([0])
 require_npcs_missing = Array[int]([])
 require_flags_true = Array[String]([])
 require_flags_false = Array[String]([])

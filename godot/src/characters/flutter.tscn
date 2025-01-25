@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://7l4l8p0ithfl"]
+
+[ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_r0owd"]
+[ext_resource type="Texture2D" uid="uid://bgtgh86f6aohx" path="res://assets/gfx/characters/character_4.png" id="2_v6bhw"]
+
+[node name="Flutter" instance=ExtResource("1_r0owd")]
+id = 3
+character_name = "Flutter"
+
+[node name="CollisionShape2D" parent="." index="0"]
+polygon = PackedVector2Array(-138, 0, -75, -152, -48, -168, -43, -189, -80, -258, 13, -315, 65, -291, 136, -221, 70, -239, 68, -200, 4, -162, 95, -54, 100, 10, -1, 20)
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-3, -150)
+texture = ExtResource("2_v6bhw")

@@ -1,19 +1,21 @@
-extends CharacterBody2D
+class_name Character extends Area2D
 
+signal character_entered
+signal character_left
 
 @export var id: Types.NPC
+@export var character_name: String
 
 
-var resource: Character
-
-
-func _ready() -> void:
-	resource = Narrative.character_by(id)
-	resource.character_entered.emit()
-	
-
-func _exit_tree() -> void:
-	resource.character_left.emit()
+var in_scene: bool = false:
+	set(value):
+		if value == in_scene:
+			return
+		in_scene = value
+		if in_scene:
+			character_entered.emit()
+		else:
+			character_left.emit()
 	
 
 func interact() -> void:

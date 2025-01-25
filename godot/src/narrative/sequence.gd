@@ -12,6 +12,9 @@ signal finished
 @export var trigger: SequenceTrigger
 @export var repeat: bool
 
+@export var actions: Array[SequenceAction]
+
+
 @export_category("Requirements")
 @export var require_passed_titles: Array[String]
 
@@ -59,12 +62,18 @@ func setup() -> void:
 	
 	trigger.setup()
 	trigger.triggered.connect(_on_triggered)
+	
+	for action in actions:
+		action.setup()
+	
 	is_ready = _check_ready()
 	
 
 func finish() -> void:
 	Logger.info("Sequence %s finished playing" % id)
 	has_played = true
+	for action in actions:
+		action.execute()
 	finished.emit()
 	
 

@@ -9,6 +9,7 @@ var config:ConfigFile
 var in_game:=false
 var in_dialogue:=false
 
+var cafe: Cafe
 
 @onready var music_manager: MusicManager = $MusicManager
 @onready var ui_sfx: UiSfx = $UiSfx

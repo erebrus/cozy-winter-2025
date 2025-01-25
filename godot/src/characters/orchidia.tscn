@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5l1rci2ucdvn"]
+
+[ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_jxc48"]
+[ext_resource type="Texture2D" uid="uid://df2ntdsfdrxw" path="res://assets/gfx/characters/character_3.png" id="2_7g7g0"]
+
+[node name="Orchidia" instance=ExtResource("1_jxc48")]
+id = 2
+character_name = "Orchidia"
+
+[node name="CollisionShape2D" parent="." index="0"]
+polygon = PackedVector2Array(-88, -6, -56, -42, -47, -187, -104, -213, -83, -238, 8, -281, 64, -263, 31, -144, 58, -150, 138, -40, 108, 16, 48, 14, 47, -4)
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(13, -132)
+texture = ExtResource("2_7g7g0")

@@ -5,8 +5,6 @@ signal day_started
 signal flag_updated(flag: String, value: bool)
 signal title_passed(sequence_id: String)
 
-
-@export var NPC: Characters
 @export var sequences: Array[StorySequence]
 
 
@@ -19,6 +17,8 @@ var current_sequence: StorySequence
 
 var current_day:= 0
 
+
+@onready var character_container = $Characters
 
 func _ready() -> void:
 	_init_characters()
@@ -42,11 +42,11 @@ func next_day() -> void:
 	
 
 func _init_characters() -> void:
-	for i in Types.NPC.keys():
-		var npc = NPC.get(i) as Character
-		assert(npc != null, "Resource for NPC %s not configured" % [i])
-		npc.id = Types.NPC[i]
-		characters[npc.id] = npc
+	for character in character_container.get_children():
+		characters[character.id] = character
+		
+	for i in Types.NPC.values():
+		assert(characters.has(i), "Character %s not configured" % [Types.npc_key(i)])
 	
 
 func _init_sequences() -> void:

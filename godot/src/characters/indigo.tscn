@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhm2557sr8bls"]
+
+[ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_e6n2m"]
+[ext_resource type="Texture2D" uid="uid://c4l7lmjr34ojy" path="res://assets/gfx/characters/character_5.png" id="2_lsqjo"]
+
+[node name="Indigo" instance=ExtResource("1_e6n2m")]
+id = 4
+character_name = "Indigo"
+
+[node name="CollisionShape2D" parent="." index="0"]
+polygon = PackedVector2Array(-52, 13, -59, -12, -122, -29, -87, -120, -34, -132, -62, -168, -3, -244, 47, -249, 126, -194, 112, -148, 94, -136, 147, -1, 77, 25, 41, 6, -34, 22)
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(10, -115)
+texture = ExtResource("2_lsqjo")
