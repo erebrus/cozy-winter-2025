@@ -1,0 +1,57 @@
+# We could have a little scene for each day start
+~ intro
+It's another winter day. The snow slowly falls from the sky, creating fluffy, white piles on the ground. The air is crisp and cold, slightly irritating the nostrils of the one breathing. 
+Days like this, make the (name of the cafe) a lively place,inviting with the warmth of the fireplace, sounds of cracking wood, and the smell of freshly brewed coffee and homemade hot chocolate.
+=> END
+
+# After Buzz enters the cafe first and sits at the bar -> we DONT need to link from intro because there might be other thigs going on, we'll trigger this dialog when the start-of-day animations are done, and the character is seated
+~ start_Buzz
+Buzz: [#shivering] It's so cold today! I thought it was cold yesterday, but today it's even worse!
+- You: Hello! Hahaha, yes, I heard on the radio that today was supposed to be the coldest day of this week. => Buzz_start_good
+- You: Hi! I know right?! I had to light the fireplace on as soon as I arrived, the windows were covered in frost from the inside! => Buzz_start_bad
+=> END
+
+~ Buzz_start_good
+Buzz: Is it?! Oh my, then I need something super hot to warm me up! Can I have a hot chocolate, but can you make it with boiling-hot milk? 
+=> answer_chocolate
+
+~ Buzz_start_bad
+Buzz: What?! Are you for real?! I feel even colder now, after hearing this. Can you make me a hot chocolate, with boiling-hot milk? I think, only this will make me feel warm enough. 
+=> answer_chocolate
+
+~ answer_chocolate
+You: Of course! Right on it! 
+=> END
+
+# dialogue starts after ~start_Buzz is done and we give drink to Buzz
+~ deliver_chocolate
+You: There you go. Hot chocolate with boiling-hot milk. 
+Buzz: Thank you! Just as I wanted! *slurp* Ahhh! That's it! 
+Buzz: You know, my mom used to make me hot milk every time I was very cold. It reminds me of her!
+=> END
+
+#  dialogue starts only after ~start_Buzz is done and Flutter arrived
+~ start_Flutter
+Flutter: Good morning. Is it a (name of the cafe)? 
+- You: Hello! Yes, you came to the right place. How can I help you? => Flutter_start_good
+- You: Good morning, correct! Welcome to (name of the cafe)! Would you like to drink anything? => Flutter_start_bad
+=> END
+
+~ Flutter_start_good
+Flutter: The weather forced me to stay at home, but it made me tired. I’d like something with a kick, but also sweet, something that will give me the energy to soldier through the day.  
+=> answer_strong_sweet
+
+~ Flutter_start_bad
+Flutter: Yes, I'd love to. Can you prepare me something strong, but also not too bitter? Is it possible? I need some energy for the rest of the day, I have a forced time off, but I became tired already. 
+=> answer_strong_sweet
+
+~ answer_strong_sweet
+- You: Oh yeah, I know exactly what you need! Give me a few minutes, and I'll be right back! 
+- You: Hmm… I think I know what may fulfill your needs. Just give me a moment!
+=> END
+
+# dialogue starts after ~start_Flutter is done and we give drink to Flutter
+~ deliver_strong_sweet
+You: There's your drink, hope you'll like it!
+Flutter: *sip* Oh it's perfect! Great caffeine kick, but no bitterness, only sweetness. Amazing job! 
+=> END

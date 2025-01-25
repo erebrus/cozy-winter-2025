@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/characters/character_resource.gd" id="2_e65np"]
 [ext_resource type="Script" path="res://src/narrative/characters.gd" id="3_wxtvl"]
 [ext_resource type="Script" path="res://src/narrative/sequence.gd" id="4_vxvc0"]
-[ext_resource type="Resource" uid="uid://ddka0lt4erw7c" path="res://assets/dialogue/the_fireplace.dialogue" id="5_jlldi"]
+[ext_resource type="Resource" uid="uid://bimcpmywr1tie" path="res://assets/dialogue/first_dialogue.dialogue" id="5_nfwih"]
 [ext_resource type="Script" path="res://src/narrative/triggers/interact_with_item_trigger.gd" id="6_lymlp"]
 [ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="7_rvh23"]
 
@@ -32,8 +32,8 @@ item = 0
 
 [sub_resource type="Resource" id="Resource_qqq2k"]
 script = ExtResource("4_vxvc0")
-dialogue = ExtResource("5_jlldi")
-start_title = "start"
+dialogue = ExtResource("5_nfwih")
+start_title = "start_Buzz"
 trigger = SubResource("Resource_l23q8")
 repeat = false
 require_passed_titles = Array[String]([])
@@ -48,11 +48,11 @@ npc = 1
 
 [sub_resource type="Resource" id="Resource_bjdtg"]
 script = ExtResource("4_vxvc0")
-dialogue = ExtResource("5_jlldi")
-start_title = "fire_out"
+dialogue = ExtResource("5_nfwih")
+start_title = "start_Flutter"
 trigger = SubResource("Resource_t1ax3")
 repeat = true
-require_passed_titles = Array[String](["start"])
+require_passed_titles = Array[String]([])
 require_npcs_present = Array[int]([1])
 require_npcs_missing = Array[int]([])
 require_flags_true = Array[String]([])
