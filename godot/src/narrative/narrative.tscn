@@ -33,7 +33,7 @@ item = 0
 [sub_resource type="Resource" id="Resource_qqq2k"]
 script = ExtResource("4_vxvc0")
 dialogue = ExtResource("5_nfwih")
-start_title = "start_NPC1"
+start_title = "start_Buzz"
 trigger = SubResource("Resource_l23q8")
 repeat = false
 require_passed_titles = Array[String]([])
@@ -49,7 +49,7 @@ npc = 1
 [sub_resource type="Resource" id="Resource_bjdtg"]
 script = ExtResource("4_vxvc0")
 dialogue = ExtResource("5_nfwih")
-start_title = "start_NPC2"
+start_title = "start_Flutter"
 trigger = SubResource("Resource_t1ax3")
 repeat = true
 require_passed_titles = Array[String]([])

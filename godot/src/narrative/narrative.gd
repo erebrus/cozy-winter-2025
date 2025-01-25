@@ -19,7 +19,7 @@ var current_sequence: StorySequence
 func _ready() -> void:
 	_init_characters()
 	_init_sequences()
-	DialogueManager.passed_title.connect(func(title): title_passed.emit("%s:%s" % [current_sequence.story_id, title]))
+	DialogueManager.passed_title.connect(_on_title_passed)
 	
 
 func character_by(id: Types.NPC) -> Character:
@@ -65,3 +65,9 @@ func _on_sequence_triggered(sequence: StorySequence) -> void:
 	
 	if not sequence.repeat:
 		ready_sequences.erase(sequence)
+	
+
+func _on_title_passed(title: String): 
+	if Globals.in_game:
+		title_passed.emit("%s:%s" % [current_sequence.story_id, title])
+	
