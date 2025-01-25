@@ -25,14 +25,22 @@ Logger="*res://addons/gs_logger/logger.gd"
 Debug="*res://src/common/debug/debug.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Narrative="*res://src/narrative/narrative.tscn"
+HyperLog="*res://addons/hyperlog/hyperlog.tscn"
 
 [dialogue_manager]
 
 general/states=["Narrative"]
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gs_logger/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/xsm/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gs_logger/plugin.cfg", "res://addons/hyperlog/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/xsm/plugin.cfg")
 
 [input]
 
