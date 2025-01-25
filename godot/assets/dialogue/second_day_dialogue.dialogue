@@ -68,6 +68,8 @@ Faro: A special blend, you say? Sounds good to me!
 You: Good! I’m gonna prepare it for you! => END
 
 #dialogue starts after ~ start_Faro is done and we give the drink to Faro
+~ Faro_deliver
+
 You: Here’s your drink! Enjoy!
 #if we made the black tea with added ingredients
 Faro: It smells so good! So different than green tea! *sip* Oh my wings! It’s so good! I’ve never had something like this before! => END
