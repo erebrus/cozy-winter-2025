@@ -27,6 +27,8 @@ enum Item {
 	FIREPLACE
 }
 
+enum Group {BEVERAGE, MILK, SWEET, MECHANIC}
+
 func npc_key(value: NPC) -> String:
 	return NPC.keys()[value]
 	

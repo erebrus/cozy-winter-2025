@@ -3,6 +3,7 @@ class_name NodeTile
 
 @export var click_area_radius:=48.0
 @export var type:=Types.NodeType.COFFEE
+@export var group:=Types.Group.BEVERAGE
 const GRAVITY=1000
 @onready var sprite: Sprite2D = $Sprite2D
 

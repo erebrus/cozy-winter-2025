@@ -23,16 +23,17 @@ var NodeScenes = [
 @onready var nodes: Polygon2D = $Nodes
 
 var tiles:Dictionary={
-	Types.NodeType.COFFEE:15,
-	Types.NodeType.TEA:15,
-	Types.NodeType.COCOA:15,
-	Types.NodeType.MILK:5,
-	Types.NodeType.SOY_MILK:5,
-	Types.NodeType.ALMOND_MILK:5,
-	Types.NodeType.WHITE_SUGAR:5,
-	Types.NodeType.BROWN_SUGAR:5,
+	Types.NodeType.COFFEE:5,
+	Types.NodeType.TEA:5,
+	Types.NodeType.COCOA:5,
+	Types.NodeType.MILK:3,
+	Types.NodeType.SOY_MILK:3,
+	Types.NodeType.ALMOND_MILK:3,
+	Types.NodeType.WHITE_SUGAR:3,
+	Types.NodeType.BROWN_SUGAR:3,
+	Types.NodeType.HONEY:3,
 	Types.NodeType.LOVE:1,
-	Types.NodeType.CONNECTOR:1		
+	#Types.NodeType.CONNECTOR:1		
 }
 
 var tile_bag:Array[PackedScene]

@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bw1x0fwvnik58"]
 
 [ext_resource type="PackedScene" uid="uid://cgk54q0n80a4r" path="res://src/match3/nodes/node_tile.tscn" id="1_am3sb"]
-[ext_resource type="Texture2D" uid="uid://c1bucxw60lqq7" path="res://assets/placeholder/gfx/match3/soy_milk.png" id="2_5qq85"]
+[ext_resource type="Texture2D" uid="uid://c1bucxw60lqq7" path="res://assets/placeholder/gfx/backup/soy_milk.png" id="2_5qq85"]
 
 [node name="SoyMilkNode" instance=ExtResource("1_am3sb")]
 type = 4
+group = 1
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_5qq85")

@@ -49,17 +49,27 @@ func are_nodes_adjacent(node1:NodeTile, node2:NodeTile):
 		and abs(node2.cell.x-node2.cell.x) <=1 \
 		and node1.cell != node2.cell
 		
+func matched_nodes_of_group(group:Types.Group)->Array[NodeTile]:
+	Logger.info("groups %d vs %s" % [group, nodes.map(func(x): return "%s-%s" % [x.type, x.group])])
+	return nodes.filter(func (x): return x.group == group)
+	
 func node_can_match(node:NodeTile)->bool:
 	if nodes.is_empty():
+		Logger.info("empty- start match")
 		return true
 	var last:NodeTile = nodes[nodes.size()-1]
 	if not are_nodes_adjacent(last, node):
+		Logger.info("not adjacent - drop")
 		return false
-	
-	return node.type == last_ingredient().type or \
-		node.type == Types.NodeType.LOVE or\
-		node.type == Types.NodeType.CONNECTOR or\
-		last.type == Types.NodeType.CONNECTOR 
+	if node.group!=Types.Group.MECHANIC:
+		var of_group = matched_nodes_of_group(node.group)
+		Logger.info("type %s group %s groups '%s'" %[node.type, node.group, of_group])
+		if not of_group.is_empty() and of_group[0].type!=node.type:
+			Logger.info("group fail - drop")
+			return false
+		return true
+	else:
+		return node.type == Types.NodeType.LOVE
 	
 func last_ingredient()->NodeTile:
 	for i in range(nodes.size()-1,-1,-1):
