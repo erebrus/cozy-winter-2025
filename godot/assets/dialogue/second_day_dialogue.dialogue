@@ -2,8 +2,8 @@
 
 ~ start_Faro
 Faro: Oh my, what a place! The light, the fireplace, the smell! Ah!
-You: Hello! Welcome to "Snug as a Bug Cafe"! Glad you like it, can I get you something? => Faro_start_good
-You: You’ve never been to a cafe before? => Faro_start_bad
+- You: Hello! Welcome to "Snug as a Bug Cafe"! Glad you like it, can I get you something? => Faro_start_good
+- You: You’ve never been to a cafe before? => Faro_start_bad
 
 ~ Faro_start_good
 Faro: Yes, please! What do you offer here exactly?
@@ -12,28 +12,28 @@ You: Everything that you can find on the menu, if you need anything special to a
 
 ~ Faro_start_bad
 Faro: Of course I have, but in my country, they look different. This one is so far from what I’m used to! 
-You: Oh I see! Well, I’m glad you like it here then! Do you want to drink anything? => Faro_bad_what_to_drink
-You: Now I’m intrigued how do they look like out there! Would you like something to drink? => Faro_bad_intrigued_what_to_drink
+- You: Oh I see! Well, I’m glad you like it here then! Do you want to drink anything? => Faro_bad_what_to_drink
+- You: Now I’m intrigued how do they look like out there! Would you like something to drink? => Faro_bad_intrigued_what_to_drink
 
 ~ Faro_good_what_to_drink
 Faro: What a rage of choices! Can I ask for a tea then? In my country I mostly drink green tea, but I want something different this time.
-You: Would you like to try a black tea? I can add some other ingredients to it if you wish. => Faro_good_black_tea
-You: Any other requests about your drink? => Faro_good_requests
+- You: Would you like to try a black tea? I can add some other ingredients to it if you wish. => Faro_good_black_tea
+- You: Any other requests about your drink? => Faro_good_requests
 
 ~ Faro_menu_choice
 Faro: Hmmm.. I see you have plenty of teas to offer. I want one then, but not a green tea, though. I drink it all the time at home.
-You: Okay, do you want me to add anything to it? => Faro_menu_add
-You: Noted! Maybe a black tea with some additional stuff can be interesting for you to try? => Faro_menu_offer
+- You: Okay, do you want me to add anything to it? => Faro_menu_add
+- You: Noted! Maybe a black tea with some additional stuff can be interesting for you to try? => Faro_menu_offer
 
 ~ Faro_bad_what_to_drink
 Faro: Of course! I want to try some black tea, I’ve never had it, I drink only green tea at home.
-You: Would you like some additional ingredients to it? => Faro_bad_ingredients_question
-You: Never? Oh wow, you have to try it then! Maybe I can add some other stuff to it too, to make the taste more interesting? => Faro_bad_ingredients_suggestion
+- You: Would you like some additional ingredients to it? => Faro_bad_ingredients_question
+- You: Never? Oh wow, you have to try it then! Maybe I can add some other stuff to it too, to make the taste more interesting? => Faro_bad_ingredients_suggestion
 
 ~ Faro_bad_intrigued_what_to_drink
 Faro: I see you offer some tea on the menu. I’m used to green tea, so can I ask for black tea? 
-You: Of course I can! Anything special you want to try it with? I can add something else to the leaves. => Faro_bad_intrigued_add
-You: Yes, no problem. Maybe you want to try a special blend? => Faro_bad_intrigued_special_blend
+- You: Of course I can! Anything special you want to try it with? I can add something else to the leaves. => Faro_bad_intrigued_add
+- You: Yes, no problem. Maybe you want to try a special blend? => Faro_bad_intrigued_special_blend
 
 ~ Faro_good_black_tea
 Faro: Oh yes, yes, please! That sounds amazing! 
@@ -81,22 +81,22 @@ Faro: It looks really nice but… I think I wanted a specially made black tea bl
 Buzz: [#shivering] Another day with the snow. How are we going to survive?! Is it the end of the world?
 You: Oh Buzz, it’s not so bad out there.
 Buzz: What do you mean “not so bad”?! My mom is at the house under five blankets! 
-You: Is she sick? => Buzz_sick
-You: It sounds cozy to me. => Buzz_cozy
+- You: Is she sick? => Buzz_sick
+- You: It sounds cozy to me. => Buzz_cozy
 
 ~ Buzz_sick
 Buzz: Yes she is. She’s drinking some tea with lemon and cinnamon. Apparently, it’s supposed to help you recover faster. 
 Buzz: ACHOO!
 Buzz: See what this snow does to me?! I’m already sneezing!
-You: You should take some medicine. => Buzz_medicine
-You: Bless you! => Buzz_bless_you
+- You: You should take some medicine. => Buzz_medicine
+- You: Bless you! => Buzz_bless_you
 
 ~ Buzz_cozy
 Buzz: It’s not cozy! She’s sick! 
 Buzz: ACHOOO!
 Buzz: Oh no, I’m getting sick too!
-You: I think you may be allergic to something. => Buzz_allergic
-You: Just take some ginger when you’re at home. => Buzz_ginger
+- You: I think you may be allergic to something. => Buzz_allergic
+- You: Just take some ginger when you’re at home. => Buzz_ginger
 
 ~ Buzz_medicine
 Buzz: I don’t think it’ll help.
@@ -147,5 +147,5 @@ You: I do! Thank you! => Buzz_vase_put
 
 ~ Buzz_vase_put
 Buzz: Maybe you can put it on the counter? If you want of course.
-You: That’s a great idea! Thanks for the gift! => END
-You: I’ll see where I can put it, thank you! => END
+- You: That’s a great idea! Thanks for the gift! => END
+- You: I’ll see where I can put it, thank you! => END

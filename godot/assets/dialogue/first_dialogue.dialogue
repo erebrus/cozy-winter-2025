@@ -65,13 +65,13 @@ Flutter: *sip* Oh it's perfect! Great caffeine kick, but no bitterness, only swe
 #dialogue starts after the ~start_Flutter is done and Orchidia arrives
 ~ start_Orchidia
 Orchidia: It's freezing out there! I'm so glad that your place is open. 
-You: Hello! Welcome to "Snug as a Bug Cafe"! => Orchidia_start_good
-You: Yes, the snowstorm was very heavy last night! => Orchidia_start_bad
+- You: Hello! Welcome to "Snug as a Bug Cafe"! => Orchidia_start_good
+- You: Yes, the snowstorm was very heavy last night! => Orchidia_start_bad
 
 ~ Orchidia_start_good
 Orchidia: My husband told me about this place, and I'm surprised I've never been here.
-You: Well, I'm glad you visit now! => Orchidia_order_good
-You: 
+- You: Well, I'm glad you visit now! => Orchidia_order_good
+- You: High time for you to come here! => Orchidia_order_bad
 
 ~ Orchidia_start_bad
 Orchidia: Indeed! I'm glad you have the fireplace on, it's so warm here.
@@ -79,14 +79,14 @@ Orchidia: Can I order something? => Orchidia_order_bad
 
 ~ Orchidia_order_good
 Orchidia: So, I assume you happen to have a coffee with milk, right? I'd like to order that, but additionally, please add something crunchy on top.
-You: Alright, do you want something specific? => Orchidia_order_good_crunchy
-You: Do you want chocolate chips? => Orchidia_order_good_chocolate
+- You: Alright, do you want something specific? => Orchidia_order_good_crunchy
+- You: Do you want chocolate chips? => Orchidia_order_good_chocolate
 
 ~ Orchidia_order_bad
 You: Of course! What would you like to drink?
 Orchidia: Can you make me a coffee with milk and something crunchy? I'd like some surprise in my coffee.
-You: Do you want chocolate chips? => Orchidia_order_bad_chocolate
-You: Maybe some chopped nuts?  => Orchidia_order_bad_nuts
+- You: Do you want chocolate chips? => Orchidia_order_bad_chocolate
+- You: Maybe some chopped nuts?  => Orchidia_order_bad_nuts
 
 ~ Orchidia_order_good_crunchy
 Orchidia: No, surprise me! But no chocolate! => END
@@ -114,20 +114,20 @@ Orchidia: It looks amazing, but it has chocolate. It's alright, I'll scoop it ou
 ~ start_Indigo
 Indigo: Oh it's so lovely here! So warm and cozy, and the smell is amazing!
 Indigo: Reminds me of Paler, a place where it's always winter and every house looks like this cafe! 
-You: I'm glad to hear that! Do you want me to make you a drink? => start_Indigo_good
-You: Paler? I've never been there, but if my cafe reminds you of it, I assume it's good! => start_Indigo_bad
+- You: I'm glad to hear that! Do you want me to make you a drink? => start_Indigo_good
+- You: Paler? I've never been there, but if my cafe reminds you of it, I assume it's good! => start_Indigo_bad
 
 ~ start_Indigo_good
 Indigo: Yes, please! I don't know what I want, though… Tough decision.
-You: Do you want a chocolate or a coffee? =>  Indigo_choice
-You: Well, there're many options to pick from, take your time. => Indigo_options
+- You: Do you want a chocolate or a coffee? =>  Indigo_choice
+- You: Well, there're many options to pick from, take your time. => Indigo_options
 
 ~ start_Indigo_bad
 Indigo: Oh yes, definitely! Erm… Can I order something?
 You: Yes, of course. What would you like to drink today?
 Indigo: I have no idea, honestly. Can you surprise me?
-You: I can make you a coffee maybe? => Indigo_coffee
-You: Sure, but do you have any requests? => Indigo_requests
+- You: I can make you a coffee maybe? => Indigo_coffee
+- You: Sure, but do you have any requests? => Indigo_requests
 
 ~ Indigo_choice
 Indigo: Not a coffee, but also not a plain chocolate. Oh and use soymilk, please. Maybe something sweet and crunchy?
