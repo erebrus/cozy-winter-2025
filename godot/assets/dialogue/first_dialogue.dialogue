@@ -4,45 +4,45 @@ It's another winter day. The snow slowly falls from the sky, creating fluffy, wh
 Days like this, make the (name of the cafe) a lively place,inviting with the warmth of the fireplace, sounds of cracking wood, and the smell of freshly brewed coffee and homemade hot chocolate.
 => END
 
-# After NPC1 enters the cafe first and sits at the bar -> we DONT need to link from intro because there might be other thigs going on, we'll trigger this dialog when the start-of-day animations are done, and the character is seated
-~ start_NPC1
-NPC 1: [#shivering] It's so cold today! I thought it was cold yesterday, but today it's even worse!
-- You: Hello! Hahaha, yes, I heard on the radio that today was supposed to be the coldest day of this week. => NPC1_start_good
-- You: Hi! I know right?! I had to light the fireplace on as soon as I arrived, the windows were covered in frost from the inside! => NPC1_start_bad
+# After Buzz enters the cafe first and sits at the bar -> we DONT need to link from intro because there might be other thigs going on, we'll trigger this dialog when the start-of-day animations are done, and the character is seated
+~ start_Buzz
+Buzz: [#shivering] It's so cold today! I thought it was cold yesterday, but today it's even worse!
+- You: Hello! Hahaha, yes, I heard on the radio that today was supposed to be the coldest day of this week. => Buzz_start_good
+- You: Hi! I know right?! I had to light the fireplace on as soon as I arrived, the windows were covered in frost from the inside! => Buzz_start_bad
 => END
 
-~ NPC1_start_good
-NPC 1: Is it?! Oh my, then I need something super hot to warm me up! Can I have a hot chocolate, but can you make it with boiling-hot milk? 
+~ Buzz_start_good
+Buzz: Is it?! Oh my, then I need something super hot to warm me up! Can I have a hot chocolate, but can you make it with boiling-hot milk? 
 => answer_chocolate
 
-~ NPC1_start_bad
-NPC 1: What?! Are you for real?! I feel even colder now, after hearing this. Can you make me a hot chocolate, with boiling-hot milk? I think, only this will make me feel warm enough. 
+~ Buzz_start_bad
+Buzz: What?! Are you for real?! I feel even colder now, after hearing this. Can you make me a hot chocolate, with boiling-hot milk? I think, only this will make me feel warm enough. 
 => answer_chocolate
 
 ~ answer_chocolate
 You: Of course! Right on it! 
 => END
 
-# dialogue starts after ~start_NPC1 is done and we give drink to NPC1
+# dialogue starts after ~start_Buzz is done and we give drink to Buzz
 ~ deliver_chocolate
 You: There you go. Hot chocolate with boiling-hot milk. 
-NPC 1: Thank you! Just as I wanted! *slurp* Ahhh! That's it! 
-NPC 1: You know, my mom used to make me hot milk every time I was very cold. It reminds me of her!
+Buzz: Thank you! Just as I wanted! *slurp* Ahhh! That's it! 
+Buzz: You know, my mom used to make me hot milk every time I was very cold. It reminds me of her!
 => END
 
-#  dialogue starts only after ~start_NPC1 is done and NPC2 arrived
-~ start_NPC2
-NPC 2: Good morning. Is it a (name of the cafe)? 
-- You: Hello! Yes, you came to the right place. How can I help you? => NPC2_start_good
-- You: Good morning, correct! Welcome to (name of the cafe)! Would you like to drink anything? => NPC2_start_bad
+#  dialogue starts only after ~start_Buzz is done and Flutter arrived
+~ start_Flutter
+Flutter: Good morning. Is it a (name of the cafe)? 
+- You: Hello! Yes, you came to the right place. How can I help you? => Flutter_start_good
+- You: Good morning, correct! Welcome to (name of the cafe)! Would you like to drink anything? => Flutter_start_bad
 => END
 
-~ NPC2_start_good
-NPC 2: The weather tired me already, and it's still morning. I'd like something with a kick, but also sweet, something that will give me the energy to soldier through the day. And the snow. 
+~ Flutter_start_good
+Flutter: The weather forced me to stay at home, but it made me tired. I’d like something with a kick, but also sweet, something that will give me the energy to soldier through the day.  
 => answer_strong_sweet
 
-~ NPC2_start_bad
-NPC 2: Yes, I'd love to. Can you prepare me something strong, but also not too bitter? Is it possible? I need some energy for the rest of the day, I have a long walk through the snow. 
+~ Flutter_start_bad
+Flutter: Yes, I'd love to. Can you prepare me something strong, but also not too bitter? Is it possible? I need some energy for the rest of the day, I have a forced time off, but I became tired already. 
 => answer_strong_sweet
 
 ~ answer_strong_sweet
@@ -50,8 +50,8 @@ NPC 2: Yes, I'd love to. Can you prepare me something strong, but also not too b
 - You: Hmm… I think I know what may fulfill your needs. Just give me a moment!
 => END
 
-# dialogue starts after ~start_NPC2 is done and we give drink to NPC2
+# dialogue starts after ~start_Flutter is done and we give drink to Flutter
 ~ deliver_strong_sweet
 You: There's your drink, hope you'll like it!
-NPC 2: *sip* Oh it's perfect! Great caffeine kick, but no bitterness, only sweetness. Amazing job! 
+Flutter: *sip* Oh it's perfect! Great caffeine kick, but no bitterness, only sweetness. Amazing job! 
 => END
