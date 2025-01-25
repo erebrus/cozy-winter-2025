@@ -37,8 +37,7 @@ text = "Swap Music"
 [node name="CreateDrink" type="Button" parent="VBoxContainer/HFlowContainer2"]
 layout_mode = 2
 focus_mode = 0
-text = "Win Game
-"
+text = "Make Drink"
 
 [node name="GameOverLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
