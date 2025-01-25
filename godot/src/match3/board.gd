@@ -52,7 +52,6 @@ func _ready() -> void:
 	Events.start_crafting.connect(_on_start_crafting)
 	
 func _on_start_crafting():
-	Logger.info("Let's go")
 	if not visible: 
 		visible=true
 	
