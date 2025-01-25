@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://case4y4b5e3oc" path="res://assets/gfx/environment/fireplace.png" id="2_p68kw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_td0ko"]
-size = Vector2(788, 50)
+size = Vector2(395, 34)
 
 [node name="Fireplace" instance=ExtResource("1_gshpf")]
 id = 3
@@ -13,5 +13,5 @@ id = 3
 texture = ExtResource("2_p68kw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, -275)
+position = Vector2(0.5, -133)
 shape = SubResource("RectangleShape2D_td0ko")

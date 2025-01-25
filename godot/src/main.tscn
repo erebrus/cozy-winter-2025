@@ -1,20 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=6 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="PackedScene" uid="uid://cnx7lim3cg7gj" path="res://src/environment/counter.tscn" id="2_2nu2v"]
 [ext_resource type="PackedScene" uid="uid://4goy8bdrv44l" path="res://src/environment/door.tscn" id="2_ts8ud"]
 [ext_resource type="PackedScene" uid="uid://vaopkmjtydwd" path="res://src/environment/wall.tscn" id="3_5vqml"]
 [ext_resource type="PackedScene" uid="uid://oro3v531fqoy" path="res://src/environment/fireplace.tscn" id="3_uhqmq"]
+[ext_resource type="Script" path="res://src/camera_2d.gd" id="5_53gr4"]
 
 [node name="Main" type="Node"]
 
 [node name="WallSurface" parent="." instance=ExtResource("3_5vqml")]
 
 [node name="Door" parent="." instance=ExtResource("2_ts8ud")]
-position = Vector2(1690, 610)
+position = Vector2(1681, 475)
 
 [node name="Fireplace" parent="." instance=ExtResource("3_uhqmq")]
-position = Vector2(-524, 698)
+position = Vector2(-578, 559)
 
 [node name="Seats" type="Node2D" parent="."]
 
 [node name="Counter" parent="." instance=ExtResource("2_2nu2v")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, -540)
+limit_left = -1307
+limit_top = 1000
+limit_right = 2985
+limit_bottom = -1000
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_horizontal_offset = -0.5
+drag_left_margin = 0.8
+drag_right_margin = 0.8
+drag_bottom_margin = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("5_53gr4")
