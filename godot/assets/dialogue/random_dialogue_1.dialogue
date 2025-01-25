@@ -1,13 +1,13 @@
-//overheard dialogues, can be triggered anytime when the player is free
+#overheard dialogues, can be triggered anytime when the player is free
 ~ start_ranodm1
 randomNPC1: Yesterday I made a snowman, it was so nice, but a crow stole the carrot from it, 
 can you imagine? Just right after I finished. 
 randomNPC2: Do you have a picture of it? I’m sure it’s super cute even without a nose!
 => player_answer_random1
 
-//player can interact with the random NPCs after overhearing their conversation
+#player can interact with the random NPCs after overhearing their conversation
 ~ player_answer_random1
-You: I heard that eucalyptus or mint scents scare the crows off. Maybe you have to put some essential oils on the carrot before putting it on the snowman again.
+- You: I heard that eucalyptus or mint scents scare the crows off. Maybe you have to put some essential oils on the carrot before putting it on the snowman again.
 randomNPC1: Oh that’s actually a good idea, I may try that, thanks!
 randomNPC2: We should do it right now! Are you done with your drink? 
 => END
