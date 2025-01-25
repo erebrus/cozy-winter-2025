@@ -1,9 +1,28 @@
-[gd_resource type="Resource" script_class="StorySequence" load_steps=6 format=3 uid="uid://r3kc51eop54i"]
+[gd_resource type="Resource" script_class="StorySequence" load_steps=13 format=3 uid="uid://r3kc51eop54i"]
 
 [ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_ocv8h"]
 [ext_resource type="Resource" uid="uid://bimcpmywr1tie" path="res://assets/dialogue/first_dialogue.dialogue" id="1_qwl8f"]
 [ext_resource type="Script" path="res://src/narrative/sequence.gd" id="2_6ywrj"]
+[ext_resource type="Script" path="res://src/drinks/drink_requirement.gd" id="2_iareq"]
+[ext_resource type="Script" path="res://src/narrative/action/request_drink.gd" id="2_lx1kp"]
+[ext_resource type="Script" path="res://src/drinks/at_least_n_requirement.gd" id="3_5kjh1"]
+[ext_resource type="Script" path="res://src/drinks/drink_request.gd" id="3_wao54"]
 [ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="4_mvai5"]
+
+[sub_resource type="Resource" id="Resource_gro5t"]
+script = ExtResource("3_5kjh1")
+type = 3
+quantity = 1
+failure_sequence = "Buzz_deliver_chocolate_incorrect"
+
+[sub_resource type="Resource" id="Resource_wpp5e"]
+script = ExtResource("3_wao54")
+requirements = Array[ExtResource("2_iareq")]([SubResource("Resource_gro5t")])
+
+[sub_resource type="Resource" id="Resource_iah8u"]
+script = ExtResource("2_lx1kp")
+request = SubResource("Resource_wpp5e")
+correct_sequence = "Buzz_deliver_chocolate"
 
 [sub_resource type="Resource" id="Resource_ereps"]
 script = ExtResource("4_mvai5")
@@ -15,7 +34,7 @@ dialogue = ExtResource("1_qwl8f")
 start_title = "start_Buzz"
 trigger = SubResource("Resource_ereps")
 repeat = false
-actions = Array[ExtResource("1_ocv8h")]([])
+actions = Array[ExtResource("1_ocv8h")]([SubResource("Resource_iah8u")])
 require_passed_titles = Array[String]([])
 require_npcs_present = Array[int]([0])
 require_npcs_missing = Array[int]([])

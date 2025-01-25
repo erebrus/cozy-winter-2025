@@ -12,3 +12,6 @@ signal node_exited(node:NodeTile)
 signal nodes_matched(nodes:Array[NodeTile])
 
 signal start_crafting()
+
+func _ready():
+	drink_completed.connect(func(drink): Logger.info("Created drink %s" % drink))
