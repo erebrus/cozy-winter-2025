@@ -41,7 +41,61 @@ Flutter: I want to try your cappuccino! I’m sure it’ll be good!
 You: I hope so, haha! => END
 
 #dialogue starts after ~ start_Flutter_day3 and we deliver the drink
+~ Flutter_deliver_day3
 You: Here’s your cappuccino!
 Flutter: Ah, thank you! *sip* Oh.
 Flutter: Oh! OH! It’s so good.
 Flutter: It’s even better than the one in Abrama! Thank you! => END
+
+~ start_Beryl_day3
+# dialogue starts only on the day 3 and ~ start_Flutter_day3 is done
+Beryl: Hello! How are you?
+You: Oh hi, you seem more happy today! 
+Beryl: Yes, today I got 5 customers, so that’s better than yesterday!
+- You: I’m happy for you! => Beryl_day3_happy
+- You: So no coffee with chocolate for you today? => Beryl_day3_no_chocolate
+
+~ Beryl_day3_happy
+Beryl: Thank you! The snow slowly melts, so I’m glad my customers are coming back too. 
+Beryl: You know, as a fellow business owner, I assume you realize how worried I was.
+Beryl: A few days with slow business could impact my income a lot.
+- You: Yes, I totally understand. => Beryl_day3_understand
+- You: It’s only a few days, you should be alright! => Beryl_day3_alright
+
+~ Beryl_day3_no_chocolate
+Beryl: No, not this time! 
+Beryl: I was worried about my business because a few days without customers could rapidly impact my income.
+Beryl: But it seems to be better now, the snow starts to melt slowly.
+- You: Yes, it should go back to normal soon. => Beryl_day3_normal
+- You: I will miss it a little bit, honestly. => Beryl_day3_miss_it
+
+~ Beryl_day3_understand
+Beryl: To celebrate that amazing day, can I have a latte with chocolate sprinkles then?
+You: Of course! Be right back! => END
+
+~ Beryl_day3_alright
+Beryl: Oh I know, but it’s still worrying. I have bills to pay, a big family to feed, business to run.
+Beryl: I need money for all that. 
+You: Understandable, of course. 
+Beryl: Exactly.
+Beryl: Anyway, can I get a latte with chocolate sprinkles? I want to celebrate my good day! 
+You: Noted! Give me a few minutes! => END
+
+~ Beryl_day3_normal
+Beryl: I really hope so! I can’t wait for my business to flourish again!
+Beryl: It was a good day today anyway, so I’ll get something to celebrate it!
+Beryl: Can you make me a latte with chocolate sprinkles on top?
+You: Yes, on it! => END
+
+~ Beryl_day3_miss_it
+Beryl: What?! Miss the snowstorm? 
+Beryl: I mean, I guess for you it’s a good thing.
+Beryl: I won’t miss it for sure! But I will miss the coziness of your cafe during the winter weather.
+Beryl: To celebrate the snow melting, and my business going back to work, I’ll have a latte with chocolate sprinkles! 
+You: Alright! A few minutes and I’m back! => END
+
+# dialogue starts after ~ start_Beryl_day3 is done and we deliver the coffee
+~ Beryl_deliver_day3
+You: Here’s your latte, enjoy! 
+Beryl: Ah, perfect! *sip* Mmmm…
+Beryl: Perfect! Well, thank you, I’ll be going back to business soon! => END
