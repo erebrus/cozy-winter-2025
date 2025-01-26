@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="StorySequence" load_steps=3 format=3 uid="uid://djyvqud3kqp54"]
+
+[ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_doinb"]
+[ext_resource type="Script" path="res://src/narrative/sequence.gd" id="2_m4hmy"]
+
+[resource]
+script = ExtResource("2_m4hmy")
+start_title = ""
+repeat = false
+actions = Array[ExtResource("1_doinb")]([])
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])

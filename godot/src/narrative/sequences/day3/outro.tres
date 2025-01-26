@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EndOfDaySequence" load_steps=4 format=3 uid="uid://d3kttjmharsdi"]
+
+[ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_h0jky"]
+[ext_resource type="Script" path="res://src/narrative/end_of_day_sequence.gd" id="2_cy55a"]
+[ext_resource type="Resource" uid="uid://p5kt3qdjqf8n" path="res://third_day_dialogue.dialogue" id="2_yqdgt"]
+
+[resource]
+script = ExtResource("2_cy55a")
+dialogue = ExtResource("2_yqdgt")
+start_title = "intro2"
+repeat = false
+actions = Array[ExtResource("1_h0jky")]([])
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])

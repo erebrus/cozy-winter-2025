@@ -17,7 +17,7 @@ day = 2
 [resource]
 script = ExtResource("2_exq6f")
 dialogue = ExtResource("3_npfj5")
-start_title = "Day_start"
+start_title = "intro2"
 trigger = SubResource("Resource_p5afn")
 repeat = false
 actions = Array[ExtResource("1_ahmcj")]([SubResource("Resource_0crgh")])
