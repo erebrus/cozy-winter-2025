@@ -7,7 +7,7 @@ on:
 env:
   GODOT_VERSION: 4.3.stable
   EXPORT_NAME: cozy-winter-2025
-  ITCH_GAME: cozy-winter-jam-2025
+  ITCH_GAME: chrysalis-cafe
   ITCH_USER: erebrus
 
 jobs:
