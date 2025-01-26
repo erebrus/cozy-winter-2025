@@ -49,9 +49,6 @@ position = Vector2(1681, 475)
 visible = false
 position = Vector2(-578, 559)
 
-[node name="Counter" parent="." instance=ExtResource("2_2nu2v")]
-position = Vector2(879, 643)
-
 [node name="Seats" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(31, 691)
@@ -76,6 +73,9 @@ position = Vector2(2059, 1)
 
 [node name="Seat7" parent="Seats" instance=ExtResource("6_8j4sq")]
 position = Vector2(2746, -5)
+
+[node name="Counter" parent="." instance=ExtResource("2_2nu2v")]
+position = Vector2(879, 643)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, -540)
