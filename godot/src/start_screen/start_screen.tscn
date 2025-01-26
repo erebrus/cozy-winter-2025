@@ -1,14 +1,84 @@
-[gd_scene load_steps=3 format=3 uid="uid://tew5nggvlbv0"]
+[gd_scene load_steps=11 format=3 uid="uid://tew5nggvlbv0"]
 
+[ext_resource type="Texture2D" uid="uid://d2due55x448b2" path="res://assets/gfx/grabber.png" id="1_pmxnq"]
 [ext_resource type="Script" path="res://src/start_screen/start_screen.gd" id="1_yk0mb"]
+[ext_resource type="Texture2D" uid="uid://dtopv6usks2hf" path="res://assets/fonts/Title.png" id="3_erupn"]
 [ext_resource type="PackedScene" uid="uid://to3p8qv7p8yo" path="res://addons/sj/components/ui/settings/volume_slider.tscn" id="4_h2rxl"]
 
-[node name="StartScreen" type="TextureRect"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_646mb"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.322, 0.7, 0.3598, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fg1j2"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.3818, 0.83, 0.42662, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q08cr"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.322, 0.7, 0.3598, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Theme" id="Theme_s25m5"]
+default_font_size = 24
+HSlider/icons/grabber = ExtResource("1_pmxnq")
+HSlider/icons/grabber_highlight = ExtResource("1_pmxnq")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_646mb")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_fg1j2")
+HSlider/styles/slider = SubResource("StyleBoxFlat_q08cr")
+Label/colors/font_color = Color(0.266667, 0.560784, 0.423529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m46ha"]
+bg_color = Color(0.38179, 0.73, 0.3358, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_annva"]
+bg_color = Color(0.282353, 0.611765, 0.439216, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="StartScreen" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_s25m5")
+color = Color(0.819608, 0.847059, 0.654902, 1)
 script = ExtResource("1_yk0mb")
 
 [node name="StartButton" type="Button" parent="."]
@@ -17,17 +87,31 @@ offset_left = 1393.0
 offset_top = 353.0
 offset_right = 1833.0
 offset_bottom = 588.0
+theme_override_colors/font_hover_pressed_color = Color(0.32549, 0.211765, 0.129412, 1)
+theme_override_colors/font_hover_color = Color(0.32549, 0.211765, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.32549, 0.211765, 0.129412, 1)
+theme_override_colors/font_focus_color = Color(0.32549, 0.211765, 0.129412, 1)
+theme_override_colors/font_color = Color(0.32549, 0.211765, 0.129412, 1)
 theme_override_font_sizes/font_size = 96
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_m46ha")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m46ha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m46ha")
+theme_override_styles/normal = SubResource("StyleBoxFlat_annva")
 text = "START"
 
 [node name="VBoxContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -50.0
-grow_horizontal = 2
+offset_left = -576.0
+offset_top = -356.0
+offset_right = -76.0
+offset_bottom = -306.0
+grow_horizontal = 0
 grow_vertical = 0
 columns = 2
 
@@ -37,6 +121,7 @@ text = "SFX"
 
 [node name="SoundSlider" parent="VBoxContainer" instance=ExtResource("4_h2rxl")]
 layout_mode = 2
+value = 0.5
 bus_name = "Sfx"
 
 [node name="MusicLabel" type="Label" parent="VBoxContainer"]
@@ -47,6 +132,19 @@ text = "MUSIC"
 layout_mode = 2
 bus_name = "Music"
 
+[node name="AmbientLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "AMBIENT"
+
+[node name="AmbientSlider" parent="VBoxContainer" instance=ExtResource("4_h2rxl")]
+layout_mode = 2
+bus_name = "Ambient"
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(677, 406)
+texture = ExtResource("3_erupn")
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/SoundSlider" to="." method="_on_volume_changed"]
 [connection signal="value_changed" from="VBoxContainer/MusicSlider" to="." method="_on_volume_changed"]
+[connection signal="value_changed" from="VBoxContainer/AmbientSlider" to="." method="_on_volume_changed"]
