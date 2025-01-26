@@ -17,7 +17,7 @@ var cafe: Cafe
 
 func _ready():
 	_init_logger()
-	
+	music_manager.fade_in_game_music()
 	if get_tree().current_scene.scene_file_path == GAME_SCENE_PATH:
 		start_game()
 	
@@ -28,14 +28,9 @@ func go_to_main_menu():
 
 func start_game():
 	Logger.info("Starting Game")
-	in_game=true
-	
-	music_manager.fade_menu_music()
-	await get_tree().create_timer(1).timeout
-	music_manager.reset_synchronized_stream()
-
+	in_game=true	
 	get_tree().change_scene_to_file(GAME_SCENE_PATH)
-	music_manager.fade_in_game_music()
+	
 	
 
 func _init_logger():
