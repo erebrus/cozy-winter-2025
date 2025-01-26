@@ -1,0 +1,47 @@
+# dialogue starts only on the day 3 
+~ start_Flutter_day3
+Flutter: Ahhh, good to be here again. Hello.
+You: Hi! How are you today?
+Flutter: I’m good, thanks! 
+Flutter: You know, this place reminds me of one small cafe I used to visit a lot in Abrama. 
+- You: What reminds you of this place? => Flutter_day3_remind
+- You: Abrama? Where’s that? => Flutter_day3_Abrama
+
+~ Flutter_day3_remind
+Flutter: I think the variety of drinks. Oh, and the snow, haha! 
+Flutter: Abrama is very cold, constant winter, you know?
+Flutter: Once I had to cancel my flight due to heavy snow, so I was stuck there for another 3 days.
+Flutter: I remember that I found the best, small, local cafe there during that time. They had the tastiest cappuccino there. 
+- You: Would you like to have ours then and compare it? => Flutter_day3_ours
+- You: What would you like to drink? => Flutter_day3_what_to_drink
+
+~ Flutter_day3_Abrama
+Flutter: Oh you’ve never been there, I assume. 
+Flutter: It’s far, far, faaaar on the north. Very cold and very snowy, all the time.
+Flutter: Once I had a flight there, but due to a snowstorm I had to cancel it and had to stay there for another 3 days.
+Flutter: While I was there, I went to this small, local cafe.
+Flutter: They serve the best cappuccino I’ve ever had!
+- You: I’ll make you one then! => Flutter_day3_make_one
+- You: So do you want to try ours or have something else? => Flutter_day3_something_else
+
+~ Flutter_day3_ours
+Flutter: Yes, please! 
+You: Alright, I’ll do it right now! => END
+
+~ Flutter_day3_what_to_drink
+Flutter: I’d like to try your cappuccino!
+You: Perfect, I hope you’ll like it! => END
+
+~ Flutter_day3_make_one
+Flutter: Oh, amazing! Thank you! 
+You: Of course, give me a moment! => END
+
+~ Flutter_day3_something_else
+Flutter: I want to try your cappuccino! I’m sure it’ll be good!
+You: I hope so, haha! => END
+
+#dialogue starts after ~ start_Flutter_day3 and we deliver the drink
+You: Here’s your cappuccino!
+Flutter: Ah, thank you! *sip* Oh.
+Flutter: Oh! OH! It’s so good.
+Flutter: It’s even better than the one in Abrama! Thank you! => END
