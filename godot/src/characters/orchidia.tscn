@@ -171,9 +171,8 @@ character_name = "Orchidia"
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(12, -276)
 sprite_frames = SubResource("SpriteFrames_mc21f")
-animation = &"drink"
 autoplay = "default"
-frame_progress = 0.352609
+frame_progress = 0.24081
 
 [node name="CollisionShape2D" parent="." index="1"]
 visible = false
