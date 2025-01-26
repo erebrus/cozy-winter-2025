@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_p2o0a"]
 [ext_resource type="PackedScene" uid="uid://cnx7lim3cg7gj" path="res://src/environment/counter.tscn" id="2_2nu2v"]
-[ext_resource type="Texture2D" uid="uid://lq0niqwu82sj" path="res://assets/gfx/environment/cozygame_background_3.png" id="2_n880r"]
 [ext_resource type="PackedScene" uid="uid://4goy8bdrv44l" path="res://src/environment/door.tscn" id="2_ts8ud"]
+[ext_resource type="Texture2D" uid="uid://fvbdx1l45gj7" path="res://assets/gfx/environment/cozygame_background_final.png" id="2_yerdh"]
 [ext_resource type="PackedScene" uid="uid://vaopkmjtydwd" path="res://src/environment/wall.tscn" id="3_5vqml"]
 [ext_resource type="PackedScene" uid="uid://oro3v531fqoy" path="res://src/environment/fireplace.tscn" id="3_uhqmq"]
 [ext_resource type="Script" path="res://src/camera_2d.gd" id="5_53gr4"]
@@ -36,7 +36,7 @@ script = ExtResource("1_p2o0a")
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(879, 540)
-texture = ExtResource("2_n880r")
+texture = ExtResource("2_yerdh")
 
 [node name="WallSurface" parent="." instance=ExtResource("3_5vqml")]
 visible = false
@@ -50,10 +50,11 @@ visible = false
 position = Vector2(-578, 559)
 
 [node name="Counter" parent="." instance=ExtResource("2_2nu2v")]
+position = Vector2(879, 643)
 
 [node name="Seats" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, 768)
+position = Vector2(31, 691)
 
 [node name="Seat1" parent="Seats" instance=ExtResource("6_8j4sq")]
 position = Vector2(-938, -2)
