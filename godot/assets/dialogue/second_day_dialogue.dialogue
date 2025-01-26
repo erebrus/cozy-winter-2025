@@ -2,52 +2,52 @@
 
 ~ start_Faro
 Faro: Oh my, what a place! The light, the fireplace, the smell! Ah!
-- You: Hello! Welcome to "Snug as a Bug Cafe"! Glad you like it, can I get you something? 
-=> Faro_start_good
-- You: You’ve never been to a cafe before? 
-=> Faro_start_bad
+- You: Hello!
+	You: Hello! Welcome to "Snug as a Bug Cafe"! Glad you like it, can I get you something? => Faro_start_good
+- You: That's how cafe's are.
+	You: You’ve never been to a cafe before? => Faro_start_bad
 
 ~ Faro_start_good
 Faro: Yes, please! What do you offer here exactly?
-- You: You can have some coffee, tea, hot chocolate. I can mix and match ingredients for you. 
-=> Faro_good_what_to_drink
-- You: Everything that you can find on the menu, if you need anything special to add to the drink, just let me know. 
-=> Faro_menu_choice
+- You: There's a lot of options!
+	You: You can have some coffee, tea, hot chocolate. I can mix and match ingredients for you. => Faro_good_what_to_drink
+- You: Look on the menu!
+	You: Everything that you can find on the menu, if you need anything special to add to the drink, just let me know. => Faro_menu_choice
 
 ~ Faro_start_bad
 Faro: Of course I have, but in my country, they look different. This one is so far from what I’m used to! 
-- You: Oh I see! Well, I’m glad you like it here then! Do you want to drink anything? 
-=> Faro_bad_what_to_drink
-- You: Now I’m intrigued how do they look like out there! Would you like something to drink? 
-=> Faro_bad_intrigued_what_to_drink
+- You: Glad you like it!
+	You: Oh I see! Well, I’m glad you like it here then! Do you want to drink anything? => Faro_bad_what_to_drink
+- You: Now I’m intrigued!
+	You: Now I’m intrigued how do they look like out there! Would you like something to drink? => Faro_bad_intrigued_what_to_drink
 
 ~ Faro_good_what_to_drink
 Faro: What a rage of choices! Can I ask for a tea then? In my country I mostly drink green tea, but I want something different this time.
-- You: Would you like to try a black tea? I can add some other ingredients to it if you wish. 
-=> Faro_good_black_tea
-- You: Any other requests about your drink? 
-=> Faro_good_requests
+- You: Maybe black tea?
+	You: Would you like to try a black tea? I can add some other ingredients to it if you wish. => Faro_good_black_tea
+- You: Any requests?
+	You: Any other requests about your drink? => Faro_good_requests
 
 ~ Faro_menu_choice
 Faro: Hmmm.. I see you have plenty of teas to offer. I want one then, but not a green tea, though. I drink it all the time at home.
-- You: Okay, do you want me to add anything to it? 
-=> Faro_menu_add
-- You: Noted! Maybe a black tea with some additional stuff can be interesting for you to try? 
-=> Faro_menu_offer
+- You: Anything to it?
+	You: Okay, do you want me to add anything to it? => Faro_menu_add
+- You: Maybe some black tea?
+	You: Noted! Maybe a black tea with some additional stuff can be interesting for you to try? => Faro_menu_offer
 
 ~ Faro_bad_what_to_drink
 Faro: Of course! I want to try some black tea, I’ve never had it, I drink only green tea at home.
-- You: Would you like some additional ingredients to it? 
-=> Faro_bad_ingredients_question
-- You: Never? Oh wow, you have to try it then! Maybe I can add some other stuff to it too, to make the taste more interesting? 
-=> Faro_bad_ingredients_suggestion
+- You: Any additional stuff?
+	You: Would you like some additional ingredients to it? => Faro_bad_ingredients_question
+- You: Oh, never?
+	You: Never? Oh wow, you have to try it then! Maybe I can add some other stuff to it too, to make the taste more interesting? => Faro_bad_ingredients_suggestion
 
 ~ Faro_bad_intrigued_what_to_drink
 Faro: I see you offer some tea on the menu. I’m used to green tea, so can I ask for black tea? 
-- You: Of course I can! Anything special you want to try it with? I can add something else to the leaves. 
-=> Faro_bad_intrigued_add
-- You: Yes, no problem. Maybe you want to try a special blend? 
-=> Faro_bad_intrigued_special_blend
+- You: Of course I can!
+	You: Of course I can! Anything special you want to try it with? I can add something else to the leaves. => Faro_bad_intrigued_add
+- You: Yes, no problem.
+	You: Yes, no problem. Maybe you want to try a special blend? => Faro_bad_intrigued_special_blend
 
 ~ Faro_good_black_tea
 Faro: Oh yes, yes, please! That sounds amazing! 
@@ -92,27 +92,27 @@ Buzz: [#shivering] Another day with the snow. How are we going to survive?! Is i
 You: Oh Buzz, it’s not so bad out there.
 Buzz: What do you mean “not so bad”?! My mom is at the house under five blankets! 
 - You: Is she sick? 
-=> Buzz_sick
-- You: It sounds cozy to me. 
-=> Buzz_cozy
+	You: Is your mom sick or something? => Buzz_sick
+- You: It sounds cozy.
+	You: It sounds cozy to me. I'd love to be in her shoes right now! => Buzz_cozy
 
 ~ Buzz_sick
 Buzz: Yes she is. She’s drinking some tea with lemon and cinnamon. Apparently, it’s supposed to help you recover faster. 
 Buzz: ACHOO!
 Buzz: See what this snow does to me?! I’m already sneezing!
-- You: You should take some medicine. 
-=> Buzz_medicine
-- You: Bless you! 
-=> Buzz_bless_you
+- You: You should take some medicine.
+	You: You should take some medicine. Some vitamin C and all that. => Buzz_medicine
+- You: Bless you!
+	You: Bless you! Here's a tissue. => Buzz_bless_you
 
 ~ Buzz_cozy
 Buzz: It’s not cozy! She’s sick! 
 Buzz: ACHOOO!
 Buzz: Oh no, I’m getting sick too!
-- You: I think you may be allergic to something. 
-=> Buzz_allergic
-- You: Just take some ginger when you’re at home. 
-=> Buzz_ginger
+- You: Maybe an allergy?
+	You: I think you may be allergic to something. => Buzz_allergic
+- You: Ginger and tea may help.
+	You: Just take some ginger when you’re at home. => Buzz_ginger
 
 ~ Buzz_medicine
 Buzz: I don’t think it’ll help.
@@ -158,18 +158,18 @@ You: Hi! Well, it’s a bit cold but the cafe is warm at least.
 ~ start_Hickory_good
 Hickory: Ah yes! I’d love to drink something. Hm… Maybe chocolate? I don’t know. 
 Hickory: Something with milk, that’s for sure. An oat milk, please.
-- You: A tea or a coffee? 
-=> Hickory_good_tea_coffee
-- You: Doesn’t matter which drink? 
-=> Hickory_good_question
+- You: A tea or a coffee?
+	You: Can I interest you in some tea or maybe a coffee? => Hickory_good_tea_coffee
+- You: Doesn’t matter which drink?
+	You: Do you want a specific drink, or it doesn't matter? => Hickory_good_question
 
 ~ start_Hickory_bad
 Hickory: Oh yes, the cafe is very comfortable and cozy indeed! You did a great job.
 Hickory: Can I ask for something to drink?
-- You: Of course! What would you like to drink? 
-=> Hickory_bad_question
+- You: Of course!
+	You: Of course! What would you like to drink? => Hickory_bad_question
 - You: Tell me what you want! 
-=> Hickory_bad_request
+	You: Tell me what you want and I'll make it for you! => Hickory_bad_request
 
 ~ Hickory_good_tea_coffee
 Hickory: You can decide, but it has to have an oat milk, please!
@@ -203,59 +203,67 @@ You: I’m glad you like it!
 
 ~ Hickory_crochet
 Hickory: You don’t mind if I sit by the fireplace and crochet, right?
-- You: Of course not! Enjoy your stay at "Snug as a Bug Cafe"! => END
-- You: I think it’s alright! You can enjoy your hobby here! => END
+- You: Of course not! 
+	You: Of course not! Enjoy your stay at "Snug as a Bug Cafe"! => END
+- You: I think it’s alright!
+	You: I think it’s alright! You can enjoy your hobby here! => END
 
 #  dialogue starts only after ~ start_Hickory is done and Beryl arrives
 ~ start_Beryl2
 Beryl: Ugh, this snow. [# shivers] With weather like this, no customers are coming! 
 Beryl: Well, I guess it doesn’t apply to you.
-- You: Hello! Heh, yeah, the cafe is pretty lively. 
-=> start_Beryl2_good
-- You: Hi! Yes, I cannot complain! 
-=> start_Beryl2_bad
+- You: Hello! 
+	You: Hello! Heh, yeah, the cafe is pretty lively. => start_Beryl2_good
+- You: I cannot complain!
+	You: Hi! Yes, I cannot complain! => start_Beryl2_bad
 
 ~ start_Beryl2_good
 Beryl: I can tell! Lots of people here. It’s quite nice here, actually.
-- You: Thank you! I put lots of work into this cafe! 
-=> Beryl2_good_work
-- You: I hope your business won’t suffer because of the snow! 
-=> Beryl2_good_business
+- You: Thank you! 
+	You: You: Thank you! I put lots of work into this cafe! => Beryl2_good_work
+- You: All the best for your business!
+	You: I hope your business won’t suffer because of the snow! => Beryl2_good_business
 
 ~ start_Beryl2_bad
 Beryl: Oh yes, definitely you cannot complain! Today I had only 2 customers, I’m a little bit worried.
-- You: I’m sure when the snow melts, your customers will come back! 
-=> Beryl2_bad_customers
+- You: Your customers will come back!
+	You: I’m sure when the snow melts, your customers will come back! => Beryl2_bad_customers
 - You: Oh I’m sorry to hear that. 
-=> Beryl2_bad_sorry
+	You: I'm sorry to hear that, I hope it'll get better soon. => Beryl2_bad_sorry
 
 ~ Beryl2_good_work
 Beryl: Yes, I can see it. I love the fireplace. 
 Beryl: Well, let me see what you have on the menu…
 Beryl: I think I’ll get a black coffee with a hit of chocolate. 
-- You: Okay, anything else to it? 
-=> Beryl2_good_anything_else
-- You: Alright, black coffee with chocolate, got it. 
+- You: Okay, anything else to it?
+	You: Okay, you wish to have anything else to it? Some toppings maybe? => Beryl2_good_anything_else
+- You: Alright!
+	You: Alright, black coffee with chocolate, got it. 
 => Beryl2_good_coffee
 
 ~ Beryl2_good_business
 Beryl: I hope so too… I think I’ll get some coffee with chocolate to cheer me up a bit.
 - You: I hope this will help. 
+	You: I hope this will help. I'll make it super sweet for you.
 => Beryl2_good_help
-- You: Don’t worry, I’m sure it’ll be all good. 
+- You: Don’t worry!
+	You: Don’t worry, I’m sure it’ll be all good. 
 => Beryl2_good_dont_worry
 
 ~ Beryl2_bad_customers
 Beryl: I really hope so too…
 Beryl: Ehh… Can you make me a black coffee with some chocolate, please?
 - You: Of course. Only this? 
+	You: Do you want only this, or anything else?
 => Beryl2_bad_only_this
-- You: Yes of course! Some chocolate will definitely boost your mood! 
+- You: Yes of course!
+	You: Yes of course! Some chocolate will definitely boost your mood! 
 => Beryl2_bad_boost
 
 ~ Beryl2_bad_sorry
 Beryl: Ehh, it’s okay. I think some coffee with chocolate will help me feel less worried.
 - You: You’re totally right! 
+	You: You’re totally right! Chocolate is always a good option!
 => Beryl2_bad_right
 - You: I think so too, chocolate always makes me feel better too. 
 => Beryl2_bad_better
