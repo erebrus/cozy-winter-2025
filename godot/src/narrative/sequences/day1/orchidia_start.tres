@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="StorySequence" load_steps=13 format=3 uid="uid://bs12kygtunilk"]
+
+[ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_ax0dy"]
+[ext_resource type="Script" path="res://src/drinks/drink_requirement.gd" id="2_47eyg"]
+[ext_resource type="Script" path="res://src/drinks/at_most_n_requirement.gd" id="3_38uig"]
+[ext_resource type="Script" path="res://src/drinks/drink_request.gd" id="4_1ubli"]
+[ext_resource type="Script" path="res://src/narrative/action/request_drink.gd" id="5_3523q"]
+[ext_resource type="Resource" uid="uid://bimcpmywr1tie" path="res://assets/dialogue/first_dialogue.dialogue" id="6_t0hj8"]
+[ext_resource type="Script" path="res://src/narrative/sequence.gd" id="7_um017"]
+[ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="8_g8qeb"]
+
+[sub_resource type="Resource" id="Resource_8t6ye"]
+script = ExtResource("3_38uig")
+type = 2
+quantity = 0
+failure_sequence = "Orchidia_deliver_incorrect"
+
+[sub_resource type="Resource" id="Resource_ul64n"]
+script = ExtResource("4_1ubli")
+requirements = Array[ExtResource("2_47eyg")]([SubResource("Resource_8t6ye")])
+
+[sub_resource type="Resource" id="Resource_k75pd"]
+script = ExtResource("5_3523q")
+request = SubResource("Resource_ul64n")
+correct_sequence = "Orchidia_deliver_correct"
+
+[sub_resource type="Resource" id="Resource_u1p4r"]
+script = ExtResource("8_g8qeb")
+npc = 2
+
+[resource]
+script = ExtResource("7_um017")
+dialogue = ExtResource("6_t0hj8")
+start_title = "start_Orchidia"
+trigger = SubResource("Resource_u1p4r")
+repeat = false
+actions = Array[ExtResource("1_ax0dy")]([SubResource("Resource_k75pd")])
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])

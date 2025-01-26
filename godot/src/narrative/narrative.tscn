@@ -1,19 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://y7n82k7uopcl"]
+[gd_scene load_steps=14 format=3 uid="uid://y7n82k7uopcl"]
 
 [ext_resource type="Script" path="res://src/narrative/narrative.gd" id="1_p0wp7"]
 [ext_resource type="Script" path="res://src/narrative/sequence.gd" id="4_vxvc0"]
-[ext_resource type="Resource" uid="uid://cm8xysgvlro6a" path="res://src/narrative/sequences/day1_start.tres" id="5_thfgb"]
-[ext_resource type="Resource" uid="uid://r3kc51eop54i" path="res://src/narrative/sequences/buzz_start.tres" id="5_vbem2"]
-[ext_resource type="Resource" uid="uid://fkvvb6kv4dlj" path="res://src/narrative/sequences/flutter_start.tres" id="6_k4aoj"]
+[ext_resource type="Resource" uid="uid://cm8xysgvlro6a" path="res://src/narrative/sequences/day1/day1_start.tres" id="5_thfgb"]
+[ext_resource type="Resource" uid="uid://r3kc51eop54i" path="res://src/narrative/sequences/day1/buzz_start.tres" id="5_vbem2"]
+[ext_resource type="Resource" uid="uid://bs12kygtunilk" path="res://src/narrative/sequences/day1/orchidia_start.tres" id="6_c6w2d"]
+[ext_resource type="Resource" uid="uid://fkvvb6kv4dlj" path="res://src/narrative/sequences/day1/flutter_start.tres" id="6_k4aoj"]
+[ext_resource type="Resource" uid="uid://btteguefhxinv" path="res://src/narrative/sequences/day1/indigo_start.tres" id="7_spsdy"]
 [ext_resource type="PackedScene" uid="uid://cyln61pwn5ebm" path="res://src/characters/hickory.tscn" id="8_8hm1c"]
 [ext_resource type="PackedScene" uid="uid://caqupjjwyqum2" path="res://src/characters/buzz.tscn" id="8_ctxr6"]
+[ext_resource type="Resource" uid="uid://dbceb8t1e38q2" path="res://src/narrative/sequences/day1/day_end.tres" id="8_k7tug"]
 [ext_resource type="PackedScene" uid="uid://7l4l8p0ithfl" path="res://src/characters/flutter.tscn" id="9_koqkb"]
 [ext_resource type="PackedScene" uid="uid://c5l1rci2ucdvn" path="res://src/characters/orchidia.tscn" id="9_vr5ot"]
 [ext_resource type="PackedScene" uid="uid://dhm2557sr8bls" path="res://src/characters/indigo.tscn" id="10_0fgi6"]
 
 [node name="Narrative" type="Node"]
 script = ExtResource("1_p0wp7")
-sequences = Array[ExtResource("4_vxvc0")]([ExtResource("5_thfgb"), ExtResource("5_vbem2"), ExtResource("6_k4aoj")])
+sequences = Array[ExtResource("4_vxvc0")]([ExtResource("5_thfgb"), ExtResource("5_vbem2"), ExtResource("6_k4aoj"), ExtResource("6_c6w2d"), ExtResource("7_spsdy"), ExtResource("8_k7tug")])
 
 [node name="Characters" type="Node2D" parent="."]
 visible = false

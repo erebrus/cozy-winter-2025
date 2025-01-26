@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="StorySequence" load_steps=14 format=3 uid="uid://fkvvb6kv4dlj"]
+
+[ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_llrl0"]
+[ext_resource type="Script" path="res://src/narrative/action/enter_character.gd" id="2_5ft2x"]
+[ext_resource type="Script" path="res://src/drinks/drink_requirement.gd" id="3_huj0q"]
+[ext_resource type="Script" path="res://src/drinks/drink_request.gd" id="4_iquuh"]
+[ext_resource type="Script" path="res://src/narrative/action/request_drink.gd" id="5_7h81y"]
+[ext_resource type="Resource" uid="uid://bimcpmywr1tie" path="res://assets/dialogue/first_dialogue.dialogue" id="6_k3pkx"]
+[ext_resource type="Script" path="res://src/narrative/sequence.gd" id="7_wwthd"]
+[ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="8_3m6jw"]
+
+[sub_resource type="Resource" id="Resource_ci3qn"]
+script = ExtResource("2_5ft2x")
+character_id = 2
+
+[sub_resource type="Resource" id="Resource_mhy68"]
+script = ExtResource("2_5ft2x")
+character_id = 4
+
+[sub_resource type="Resource" id="Resource_bg7al"]
+script = ExtResource("4_iquuh")
+requirements = Array[ExtResource("3_huj0q")]([])
+
+[sub_resource type="Resource" id="Resource_chrnt"]
+script = ExtResource("5_7h81y")
+request = SubResource("Resource_bg7al")
+correct_sequence = "deliver_strong_sweet"
+
+[sub_resource type="Resource" id="Resource_t1ax3"]
+script = ExtResource("8_3m6jw")
+npc = 3
+
+[resource]
+script = ExtResource("7_wwthd")
+dialogue = ExtResource("6_k3pkx")
+start_title = "start_Flutter"
+trigger = SubResource("Resource_t1ax3")
+repeat = false
+actions = Array[ExtResource("1_llrl0")]([SubResource("Resource_ci3qn"), SubResource("Resource_mhy68"), SubResource("Resource_chrnt")])
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([3])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])

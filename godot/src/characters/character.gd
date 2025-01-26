@@ -18,6 +18,13 @@ var in_scene: bool = false:
 			character_left.emit()
 	
 
+func leave() -> void:
+	if in_scene:
+		Logger.info("%s leaves the cafe" % character_name)
+		reparent(Narrative.character_container)
+		in_scene = false
+	
+
 func interact() -> void:
 	Logger.info("Interacted with %s" % Types.npc_key(id))
 	Events.interacted_with_npc.emit(id)

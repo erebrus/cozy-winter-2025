@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="StorySequence" load_steps=16 format=3 uid="uid://btteguefhxinv"]
+
+[ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_81nkp"]
+[ext_resource type="Script" path="res://src/drinks/drink_requirement.gd" id="2_1ojq8"]
+[ext_resource type="Script" path="res://src/narrative/sequence.gd" id="2_bhef6"]
+[ext_resource type="Script" path="res://src/drinks/at_least_n_requirement.gd" id="3_q88h2"]
+[ext_resource type="Script" path="res://src/drinks/at_most_n_requirement.gd" id="4_8c7q5"]
+[ext_resource type="Script" path="res://src/drinks/drink_request.gd" id="5_0bwit"]
+[ext_resource type="Script" path="res://src/narrative/action/request_drink.gd" id="6_h50fs"]
+[ext_resource type="Resource" uid="uid://bimcpmywr1tie" path="res://assets/dialogue/first_dialogue.dialogue" id="7_qv5eh"]
+[ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="9_bh7xm"]
+
+[sub_resource type="Resource" id="Resource_55q0u"]
+script = ExtResource("3_q88h2")
+type = 2
+quantity = 1
+failure_sequence = "Indigo_deliver_incorrect"
+
+[sub_resource type="Resource" id="Resource_0brlu"]
+script = ExtResource("3_q88h2")
+type = 4
+quantity = 1
+failure_sequence = "Indigo_deliver_incorrect"
+
+[sub_resource type="Resource" id="Resource_hgv02"]
+script = ExtResource("4_8c7q5")
+type = 0
+quantity = 0
+failure_sequence = "Indigo_deliver_incorrect"
+
+[sub_resource type="Resource" id="Resource_q65e5"]
+script = ExtResource("5_0bwit")
+requirements = Array[ExtResource("2_1ojq8")]([SubResource("Resource_55q0u"), SubResource("Resource_0brlu"), SubResource("Resource_hgv02")])
+
+[sub_resource type="Resource" id="Resource_pmhc1"]
+script = ExtResource("6_h50fs")
+request = SubResource("Resource_q65e5")
+correct_sequence = "Indigo_deliver_correct"
+
+[sub_resource type="Resource" id="Resource_xlpvk"]
+script = ExtResource("9_bh7xm")
+npc = 4
+
+[resource]
+script = ExtResource("2_bhef6")
+dialogue = ExtResource("7_qv5eh")
+start_title = "start_Indigo"
+trigger = SubResource("Resource_xlpvk")
+repeat = false
+actions = Array[ExtResource("1_81nkp")]([SubResource("Resource_pmhc1")])
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])
