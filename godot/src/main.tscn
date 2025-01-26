@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=21 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_p2o0a"]
 [ext_resource type="PackedScene" uid="uid://cnx7lim3cg7gj" path="res://src/environment/counter.tscn" id="2_2nu2v"]
+[ext_resource type="Texture2D" uid="uid://lq0niqwu82sj" path="res://assets/gfx/environment/cozygame_background_3.png" id="2_n880r"]
 [ext_resource type="PackedScene" uid="uid://4goy8bdrv44l" path="res://src/environment/door.tscn" id="2_ts8ud"]
 [ext_resource type="PackedScene" uid="uid://vaopkmjtydwd" path="res://src/environment/wall.tscn" id="3_5vqml"]
 [ext_resource type="PackedScene" uid="uid://oro3v531fqoy" path="res://src/environment/fireplace.tscn" id="3_uhqmq"]
@@ -33,12 +34,19 @@ stream_2/stream = ExtResource("13_sytwd")
 [node name="Cafe" type="Node"]
 script = ExtResource("1_p2o0a")
 
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(879, 540)
+texture = ExtResource("2_n880r")
+
 [node name="WallSurface" parent="." instance=ExtResource("3_5vqml")]
+visible = false
 
 [node name="Door" parent="." instance=ExtResource("2_ts8ud")]
+visible = false
 position = Vector2(1681, 475)
 
 [node name="Fireplace" parent="." instance=ExtResource("3_uhqmq")]
+visible = false
 position = Vector2(-578, 559)
 
 [node name="Counter" parent="." instance=ExtResource("2_2nu2v")]
@@ -70,12 +78,11 @@ position = Vector2(2746, -5)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, -540)
-limit_left = -1307
+limit_left = -1037
 limit_top = 1000
-limit_right = 2985
+limit_right = 2790
 limit_bottom = -1000
 limit_smoothed = true
-position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_horizontal_offset = -0.5
 drag_left_margin = 0.8
@@ -87,7 +94,7 @@ script = ExtResource("5_53gr4")
 
 [node name="DoorSfx" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1679, 310)
+position = Vector2(2613, 453)
 stream = SubResource("AudioStreamRandomizer_hbq5w")
 bus = &"Sfx"
 
@@ -106,7 +113,8 @@ min_wait_time = 10.0
 max_wait_time = 100.0
 is_initially_random = false
 
-[node name="WinterStorm" type="AudioStreamPlayer" parent="Ambient"]
+[node name="WinterStorm" type="AudioStreamPlayer2D" parent="Ambient"]
+position = Vector2(1671, 339)
 stream = ExtResource("14_tfn1c")
 autoplay = true
 bus = &"Ambient"
@@ -118,7 +126,7 @@ autoplay = true
 bus = &"Ambient"
 
 [node name="Fireplace" type="AudioStreamPlayer2D" parent="Ambient"]
-position = Vector2(-586, 580)
+position = Vector2(721, 487)
 stream = ExtResource("16_ppidq")
 autoplay = true
 bus = &"Ambient"
