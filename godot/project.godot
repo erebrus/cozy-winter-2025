@@ -30,6 +30,7 @@ HyperLog="*res://addons/hyperlog/hyperlog.tscn"
 [dialogue_manager]
 
 general/states=["Narrative"]
+general/wrap_lines=true
 
 [display]
 

@@ -31,6 +31,15 @@ func character_by(id: Types.NPC) -> Character:
 	return characters[id]
 	
 
+func character_by_name(character_name: String) -> Character:
+	for character in characters.values():
+		if character.character_name == character_name:
+			return character
+			
+	push_error("Character %s not found" % character_name)
+	return null
+	
+
 func set_flag(flag: String, value: bool) -> void:
 	flags[flag] = value
 	flag_updated.emit(flag, value)

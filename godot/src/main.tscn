@@ -96,6 +96,8 @@ script = ExtResource("5_53gr4")
 unique_name_in_owner = true
 position = Vector2(2613, 453)
 stream = SubResource("AudioStreamRandomizer_hbq5w")
+max_distance = 4000.0
+attenuation = 0.31864
 bus = &"Sfx"
 
 [node name="Ambient" type="Node" parent="."]
