@@ -114,4 +114,5 @@ animation = &"drink"
 autoplay = "default"
 
 [node name="CollisionShape2D" parent="." index="1"]
+visible = false
 polygon = PackedVector2Array(-85, 1, -105, -104, -266, -211, -151, -448, -188, -521, 91, -651, 187, -564, 129, -396, 151, -285, 62, -146, 126, 2)

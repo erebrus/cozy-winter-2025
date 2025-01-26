@@ -31,6 +31,7 @@ HyperLog="*res://addons/hyperlog/hyperlog.tscn"
 
 general/states=["Narrative"]
 general/wrap_lines=true
+general/balloon_path="res://src/dialogue/balloon.tscn"
 
 [display]
 

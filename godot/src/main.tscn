@@ -106,7 +106,6 @@ bus = &"Sfx"
 [node name="CupsSfx" type="AudioStreamPlayer" parent="Ambient"]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_lvwfb")
-bus = &"Ambient"
 
 [node name="CupsTimer" type="Timer" parent="Ambient"]
 wait_time = 10.0
@@ -120,19 +119,16 @@ is_initially_random = false
 position = Vector2(1671, 339)
 stream = ExtResource("14_tfn1c")
 autoplay = true
-bus = &"Ambient"
 
 [node name="Chatter" type="AudioStreamPlayer" parent="Ambient"]
 stream = ExtResource("15_so2y7")
 volume_db = -5.0
 autoplay = true
-bus = &"Ambient"
 
 [node name="Fireplace" type="AudioStreamPlayer2D" parent="Ambient"]
 position = Vector2(721, 487)
 stream = ExtResource("16_ppidq")
 autoplay = true
-bus = &"Ambient"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
