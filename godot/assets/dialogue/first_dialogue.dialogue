@@ -7,9 +7,11 @@ Days like this, make the "Snug as a Bug Cafe" a lively place, inviting with the 
 # After Buzz enters the cafe first and sits at the bar -> we DONT need to link from intro because there might be other thigs going on, we'll trigger this dialog when the start-of-day animations are done, and the character is seated
 ~ start_Buzz
 Buzz: [#shivering] It's so cold today! I thought it was cold yesterday, but today it's even worse!
-- You: Hello! Hahaha, yes, I heard on the radio that today was supposed to be the coldest day of this week. 
+- You: Hello! It's the coldest day!
+	You: Hello! Hahaha, yes, I heard on the radio that today was supposed to be the coldest day of this week.
 => Buzz_start_good
-- You: Hi! I know right?! I had to light the fireplace on as soon as I arrived, the windows were covered in frost from the inside! 
+- You: Hi! I know right?!
+	You: Hi! I know right?! I had to light the fireplace on as soon as I arrived, the windows were covered in frost from the inside! 
 => Buzz_start_bad
 
 ~ Buzz_start_good
@@ -34,23 +36,24 @@ Buzz: You know, my mom used to make me hot milk every time I was very cold. It r
 #  dialogue starts only after ~start_Buzz is done and Flutter arrived
 ~ start_Flutter
 Flutter: Good morning. Is it a "Snug as a Bug Cafe"? 
-- You: Hello! Yes, you came to the right place. How can I help you? => Flutter_start_good
-- You: Good morning, correct! Welcome to "Snug as a Bug Cafe"! Would you like to drink anything? 
-=> Flutter_start_bad
+- You: Hello! How can I help you?
+	You: Hello! Yes, you came to the right place. How can I help you? => Flutter_start_good
+- You: Welcome to "Snug as a Bug Cafe"!
+	You: Good morning, correct! Welcome to "Snug as a Bug Cafe"! Would you like to drink anything? => Flutter_start_bad
 
 ~ Flutter_start_good
 Flutter: The weather forced me to stay at home, but it made me tired. I'd like something with a kick, but also sweet, something that will give me the energy to soldier through the day.  
-- You: Oh yeah, I know exactly what you need! Give me a few minutes, and I'll be right back! 
-=> deliver_strong_sweet
-- You: Hmm… I think I know what may fulfill your needs. Just give me a moment!
-=> deliver_strong_sweet
+- You: I know exactly what you need
+	You: Oh yeah, I know exactly what you need! Give me a few minutes, and I'll be right back! => deliver_strong_sweet
+- You: Just give me a moment!
+	You: Hmm… I think I know what may fulfill your needs. Just give me a moment! => deliver_strong_sweet
 
 ~ Flutter_start_bad
 Flutter: Yes, I'd love to. Can you prepare me something strong, but also not too bitter? Is it possible?  I need some energy for the rest of the day, I have forced time off, but I have become tired already.  
-- You: Yes of course, I have an idea for a drink like that! 
-=> deliver_strong_sweet
-- You: Okay, I'll do my best!
-=> deliver_strong_sweet
+- You: Yes of course!
+	You: Yes of course, I have an idea for a drink like that! => deliver_strong_sweet
+- You: Okay!
+	You: Okay, I'll do my best! => deliver_strong_sweet
 
 ~ deliver_strong_sweet
 You: There's your drink, hope you'll like it!
@@ -60,17 +63,17 @@ Flutter: *sip* Oh it's perfect! Great caffeine kick, but no bitterness, only swe
 #dialogue starts after the ~start_Flutter is done and Orchidia arrives
 ~ start_Orchidia
 Orchidia: It's freezing out there! I'm so glad that your place is open. 
-- You: Hello! Welcome to "Snug as a Bug Cafe"! 
-=> Orchidia_start_good
-- You: Yes, the snowstorm was very heavy last night! 
-=> Orchidia_start_bad
+- You: Hello!
+	You: Hello! Welcome to "Snug as a Bug Cafe"! => Orchidia_start_good
+- You: Oh yes!
+	You: Yes, the snowstorm was very heavy last night! => Orchidia_start_bad
 
 ~ Orchidia_start_good
 Orchidia: My husband told me about this place, and I'm surprised I've never been here.
-- You: Well, I'm glad you visit now! 
-=> Orchidia_order_good
-- You: High time for you to come here! 
-=> Orchidia_order_bad
+- You: Glad to have you here!
+	You: Well, I'm glad you visit now! => Orchidia_order_good
+- You: High time!
+	You: High time for you to come here! => Orchidia_order_bad
 
 ~ Orchidia_start_bad
 Orchidia: Indeed! I'm glad you have the fireplace on, it's so warm here.
@@ -79,18 +82,18 @@ Orchidia: Can I order something?
 
 ~ Orchidia_order_good
 Orchidia: So, I assume you happen to have a coffee with milk, right? I'd like to order that, but additionally, please add something crunchy on top.
-- You: Alright, do you want something specific? 
-=> Orchidia_order_good_crunchy
-- You: Do you want chocolate chips? 
-=> Orchidia_order_good_chocolate
+- You: Alright!
+	You: Alright, do you want something specific? => Orchidia_order_good_crunchy
+- You: Maybe chocolate chips?
+	You: Do you want chocolate chips? => Orchidia_order_good_chocolate
 
 ~ Orchidia_order_bad
 You: Of course! What would you like to drink?
 Orchidia: Can you make me a coffee with milk and something crunchy? I'd like some surprise in my coffee.
-- You: Do you want chocolate chips? 
-=> Orchidia_order_bad_chocolate
-- You: Maybe some chopped nuts?  
-=> Orchidia_order_bad_nuts
+- You: Chocolate chips?
+	You: Do you want chocolate chips? => Orchidia_order_bad_chocolate
+- You: Chopped nuts?
+	You: Maybe some chopped nuts? => Orchidia_order_bad_nuts
 
 ~ Orchidia_order_good_crunchy
 Orchidia: No, surprise me! But no chocolate!
@@ -116,26 +119,26 @@ Orchidia: Oh it smells so good! And no chocolate! Perfect!
 ~ start_Indigo
 Indigo: Oh it's so lovely here! So warm and cozy, and the smell is amazing!
 Indigo: Reminds me of Paler, a place where it's always winter and every house looks like this cafe! 
-- You: I'm glad to hear that! Do you want me to make you a drink? 
-=> start_Indigo_good
-- You: Paler? I've never been there, but if my cafe reminds you of it, I assume it's good! 
-=> start_Indigo_bad
+- You: Do you want a drink?
+	You: I'm glad to hear that! Do you want me to make you a drink? => start_Indigo_good
+- You: Paler?
+	You: Paler? I've never been there, but if my cafe reminds you of it, I assume it's good! => start_Indigo_bad
 
 ~ start_Indigo_good
 Indigo: Yes, please! I don't know what I want, though… Tough decision.
-- You: Do you want a chocolate or a coffee? 
-=> Indigo_choice
-- You: Well, there are many options to pick from, take your time. 
-=> Indigo_options
+- You: Chocolate or coffee?
+	You: Do you want a chocolate or a coffee? => Indigo_choice
+- You: Take your time.
+	You: Well, there are many options to pick from, take your time. => Indigo_options
 
 ~ start_Indigo_bad
 Indigo: Oh yes, definitely! Erm… Can I order something?
 You: Yes, of course. What would you like to drink today?
 Indigo: I have no idea, honestly. Can you surprise me?
-- You: I can make you a coffee maybe? 
-=> Indigo_coffee
-- You: Sure, but do you have any requests? 
-=> Indigo_requests
+- You: Myabe a coffee?
+	You: I can make you a coffee maybe? => Indigo_coffee
+- You: Any requests?
+	You: Sure, but do you have any requests? => Indigo_requests
 
 ~ Indigo_choice
 Indigo: Not a coffee, but also not a plain chocolate. Oh and use soymilk, please. Maybe something sweet and crunchy?
