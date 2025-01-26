@@ -60,10 +60,17 @@ script = ExtResource("1_yk0mb")
 
 [node name="StartButton" type="TextureButton" parent="."]
 layout_mode = 1
-offset_left = 925.0
-offset_top = 347.0
-offset_right = 1925.0
-offset_bottom = 1122.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 172.0
+offset_top = -67.0
+offset_right = 777.0
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("3_qo4os")
 texture_pressed = ExtResource("3_qo4os")
 texture_hover = ExtResource("3_qo4os")

@@ -84,6 +84,7 @@ layout_mode = 2
 
 [node name="MakeDrink" parent="." instance=ExtResource("3_u4ktp")]
 unique_name_in_owner = true
+visible = false
 
 [connection signal="pressed" from="VBoxContainer/HFlowContainer2/MusicTensionToggle" to="." method="_on_music_tension_toggle_pressed"]
 [connection signal="pressed" from="VBoxContainer/HFlowContainer2/CreateDrink" to="." method="_on_create_drink_pressed"]
