@@ -3,11 +3,7 @@ extends TextureRect
 
 func _ready() -> void:
 	Globals.in_game=false
-	Globals.music_manager.fade_in_menu_music()
 	
-
-func _exit_tree() -> void:
-	Globals.music_manager.fade_menu_music()
 	
 
 func _on_volume_changed(_value: float) -> void:
