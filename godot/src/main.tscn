@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=29 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_p2o0a"]
 [ext_resource type="PackedScene" uid="uid://cnx7lim3cg7gj" path="res://src/environment/counter.tscn" id="2_2nu2v"]
 [ext_resource type="PackedScene" uid="uid://4goy8bdrv44l" path="res://src/environment/door.tscn" id="2_ts8ud"]
 [ext_resource type="Texture2D" uid="uid://fvbdx1l45gj7" path="res://assets/gfx/environment/cozygame_background_final.png" id="2_yerdh"]
 [ext_resource type="PackedScene" uid="uid://vaopkmjtydwd" path="res://src/environment/wall.tscn" id="3_5vqml"]
+[ext_resource type="Texture2D" uid="uid://d367ho8w4ucpf" path="res://assets/gfx/environment/fire.png" id="3_qjgu5"]
 [ext_resource type="PackedScene" uid="uid://oro3v531fqoy" path="res://src/environment/fireplace.tscn" id="3_uhqmq"]
 [ext_resource type="Script" path="res://src/camera_2d.gd" id="5_53gr4"]
 [ext_resource type="PackedScene" uid="uid://bq84iubgb0pxf" path="res://src/environment/seat.tscn" id="6_8j4sq"]
@@ -18,6 +19,56 @@
 [ext_resource type="AudioStream" uid="uid://dtqi2tnft40uw" path="res://assets/sfx/Snowstorm_loop.wav" id="14_tfn1c"]
 [ext_resource type="AudioStream" uid="uid://bwsp2n2c5hgb7" path="res://assets/sfx/Chatter_loop.wav" id="15_so2y7"]
 [ext_resource type="AudioStream" uid="uid://16xmh0h6qkri" path="res://assets/sfx/Fireplace_loop.wav" id="16_ppidq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sel67"]
+atlas = ExtResource("3_qjgu5")
+region = Rect2(0, 0, 117, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvcvh"]
+atlas = ExtResource("3_qjgu5")
+region = Rect2(117, 0, 117, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ky7a"]
+atlas = ExtResource("3_qjgu5")
+region = Rect2(234, 0, 117, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5n81"]
+atlas = ExtResource("3_qjgu5")
+region = Rect2(0, 140, 117, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po3xe"]
+atlas = ExtResource("3_qjgu5")
+region = Rect2(117, 140, 117, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lebg2"]
+atlas = ExtResource("3_qjgu5")
+region = Rect2(234, 140, 117, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b11ev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sel67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvcvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ky7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5n81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_po3xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lebg2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hbq5w"]
 playback_mode = 1
@@ -37,6 +88,12 @@ script = ExtResource("1_p2o0a")
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(879, 540)
 texture = ExtResource("2_yerdh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(725, 464)
+sprite_frames = SubResource("SpriteFrames_b11ev")
+autoplay = "default"
+frame_progress = 0.965835
 
 [node name="WallSurface" parent="." instance=ExtResource("3_5vqml")]
 visible = false
