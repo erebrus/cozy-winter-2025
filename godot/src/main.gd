@@ -3,6 +3,8 @@ class_name Cafe extends Node
 
 var seats: Array[Marker2D]
 
+@onready var door_sfx := %DoorSfx
+
 
 func _ready() -> void:
 	Globals.cafe = self
@@ -15,7 +17,11 @@ func _ready() -> void:
 
 func seat_character(character: Character) -> void:
 	Logger.info("%s enters the cafe" % character.character_name)
-	character.reparent(_find_free_seat(character))
+	door_sfx.play()
+	await get_tree().create_timer(0.2).timeout
+	var seat = _find_free_seat(character)
+	await seat.seat_character()
+	character.reparent(seat)
 	character.position = Vector2.ZERO
 	character.in_scene = true
 	
@@ -27,9 +33,9 @@ func _find_free_seat(_character: Character) -> Marker2D:
 	for i in range(0, seats.size()):
 		var left_seat = max(0, preferred_seat - i)
 		var right_seat = min(preferred_seat + i, seats.size() - 1)
-		if not _is_seat_occupied(seats[left_seat]):
+		if seats[left_seat].is_free():
 			return seats[left_seat]
-		if not _is_seat_occupied(seats[right_seat]):
+		if seats[right_seat].is_free():
 			return seats[right_seat]
 		
 	push_error("There are no free seats")
