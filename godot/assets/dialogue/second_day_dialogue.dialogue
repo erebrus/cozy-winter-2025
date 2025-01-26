@@ -1,6 +1,6 @@
 #dialogue can start only on day 2 when all customers from day 1 are done and we finished the day and Faro arrives
-~ Day_start
-=> END
+~ intro2
+Today the snow starts to melt, the temperature is slightly higher and the weather is chaning. It seems that the snowstorm has passed.
 
 ~ start_Faro
 Faro: Oh my, what a place! The light, the fireplace, the smell! Ah!
@@ -316,8 +316,11 @@ You: It will, you’ll see!
 You: Here’s your drink, I hope it’ll help you feel better! 
 Beryl: *slurp* Ohhhh yes. Mmm, it’s delicious. I already feel a bit better, thank you so much!
 You: I’m so happy to hear that! 
-=> Beryl2_deliver
+=> outro2
+
+~ outro2
+The day is done, and so is the snowstorm, but the unusual individuals are forever in your memory. Moments like this make you happy to be an owner of the Chrysalis Cafe.
+=> END
 
 ~ Day_end
 => END
-
