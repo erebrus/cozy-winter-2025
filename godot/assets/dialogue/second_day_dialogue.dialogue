@@ -265,7 +265,8 @@ Beryl: Ehh, it’s okay. I think some coffee with chocolate will help me feel le
 - You: You’re totally right! 
 	You: You’re totally right! Chocolate is always a good option!
 => Beryl2_bad_right
-- You: I think so too, chocolate always makes me feel better too. 
+- You: I think so too!
+	You: I think so too, chocolate always makes me feel better too. 
 => Beryl2_bad_better
 
 ~ Beryl2_good_anything_else
