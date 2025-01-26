@@ -1,4 +1,6 @@
 #dialogue can start only on day 2 when all customers from day 1 are done and we finished the day and Faro arrives
+~ Day_start
+=> END
 
 ~ start_Faro
 Faro: Oh my, what a place! The light, the fireplace, the smell! Ah!
@@ -317,3 +319,4 @@ You: I’m so happy to hear that!
 
 ~ Day_end
 => END
+
