@@ -1,7 +1,7 @@
 # We could have a little scene for each day start
 ~ intro
 It's another winter day. The snow slowly falls from the sky, creating fluffy, white piles on the ground. The air is crisp and cold, slightly irritating the nostrils of the one breathing. 
-Days like this, make the "Snug as a Bug Cafe" a lively place, inviting with the warmth of the fireplace, sounds of cracking wood, and the smell of freshly brewed coffee and homemade hot chocolate.
+Days like this, make the "Chrysalis Cafe" a lively place, inviting with the warmth of the fireplace, sounds of cracking wood, and the smell of freshly brewed coffee and homemade hot chocolate.
 => END
 
 # After Buzz enters the cafe first and sits at the bar -> we DONT need to link from intro because there might be other thigs going on, we'll trigger this dialog when the start-of-day animations are done, and the character is seated
@@ -35,11 +35,11 @@ Buzz: You know, my mom used to make me hot milk every time I was very cold. It r
 
 #  dialogue starts only after ~start_Buzz is done and Flutter arrived
 ~ start_Flutter
-Flutter: Good morning. Is it a "Snug as a Bug Cafe"? 
+Flutter: Good morning. Is it a "Chrysalis Cafe"? 
 - You: Hello! How can I help you?
 	You: Hello! Yes, you came to the right place. How can I help you? => Flutter_start_good
-- You: Welcome to "Snug as a Bug Cafe"!
-	You: Good morning, correct! Welcome to "Snug as a Bug Cafe"! Would you like to drink anything? => Flutter_start_bad
+- You: Welcome to "Chrysalis Cafe"!
+	You: Good morning, correct! Welcome to "Chrysalis Cafe"! Would you like to drink anything? => Flutter_start_bad
 
 ~ Flutter_start_good
 Flutter: The weather forced me to stay at home, but it made me tired. I'd like something with a kick, but also sweet, something that will give me the energy to soldier through the day.  
@@ -64,7 +64,7 @@ Flutter: *sip* Oh it's perfect! Great caffeine kick, but no bitterness, only swe
 ~ start_Orchidia
 Orchidia: It's freezing out there! I'm so glad that your place is open. 
 - You: Hello!
-	You: Hello! Welcome to "Snug as a Bug Cafe"! => Orchidia_start_good
+	You: Hello! Welcome to "Chrysalis Cafe"! => Orchidia_start_good
 - You: Oh yes!
 	You: Yes, the snowstorm was very heavy last night! => Orchidia_start_bad
 

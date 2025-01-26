@@ -4,20 +4,20 @@ Flutter: Ahhh, good to be here again. Hello.
 You: Hi! How are you today?
 Flutter: I’m good, thanks! 
 Flutter: You know, this place reminds me of one small cafe I used to visit a lot in Abrama. 
-- You: What reminds you of this place? 
-=> Flutter_day3_remind
-- You: Abrama? Where’s that? 
-=> Flutter_day3_Abrama
+- You: What reminds you of this place?
+	You: What reminds you of this place? Is it the interior, or the drinks? => Flutter_day3_remind
+- You: Abrama? Where’s that?
+	You: Abrama? Where’s that? I've never heard of this place before. => Flutter_day3_Abrama
 
 ~ Flutter_day3_remind
 Flutter: I think the variety of drinks. Oh, and the snow, haha! 
 Flutter: Abrama is very cold, constant winter, you know?
 Flutter: Once I had to cancel my flight due to heavy snow, so I was stuck there for another 3 days.
 Flutter: I remember that I found the best, small, local cafe there during that time. They had the tastiest cappuccino there. 
-- You: Would you like to have ours then and compare it? 
-=> Flutter_day3_ours
-- You: What would you like to drink? 
-=> Flutter_day3_what_to_drink
+- You: Do you want cappuccino?
+	You: Would you like to have ours then and compare it? => Flutter_day3_ours
+- You: What is your order?
+	You: What would you like to drink? => Flutter_day3_what_to_drink
 
 ~ Flutter_day3_Abrama
 Flutter: Oh you’ve never been there, I assume. 
@@ -26,9 +26,9 @@ Flutter: Once I had a flight there, but due to a snowstorm I had to cancel it an
 Flutter: While I was there, I went to this small, local cafe.
 Flutter: They serve the best cappuccino I’ve ever had!
 - You: I’ll make you one then! 
-=> Flutter_day3_make_one
-- You: So do you want to try ours or have something else? 
-=> Flutter_day3_something_else
+	You: I’ll make you one then! I hope it'll be as good as the one you're talking about! => Flutter_day3_make_one
+- You: Do you want our cappuccino?
+	You: So do you want to try ours or have something else? => Flutter_day3_something_else
 
 ~ Flutter_day3_ours
 Flutter: Yes, please! 
@@ -63,28 +63,29 @@ Flutter: It’s even better than the one in Abrama! Thank you!
 Beryl: Hello! How are you?
 You: Oh hi, you seem more happy today! 
 Beryl: Yes, today I got 5 customers, so that’s better than yesterday!
-- You: I’m happy for you! 
-=> Beryl_day3_happy
-- You: So no coffee with chocolate for you today? 
+- You: I’m happy for you!
+	You: I’m happy for you! That's a great score compared to yesterday! => Beryl_day3_happy
+- You: A different drink for you today?
+	You: So no black coffee with chocolate for you today? 
 => Beryl_day3_no_chocolate
 
 ~ Beryl_day3_happy
 Beryl: Thank you! The snow slowly melts, so I’m glad my customers are coming back too. 
 Beryl: You know, as a fellow business owner, I assume you realize how worried I was.
 Beryl: A few days with slow business could impact my income a lot.
-- You: Yes, I totally understand. 
-=> Beryl_day3_understand
-- You: It’s only a few days, you should be alright! 
-=> Beryl_day3_alright
+- You: I get it.
+	You: Yes, I totally understand. => Beryl_day3_understand
+- You: It's just a few days.
+You: It’s only a few days, you should be alright! => Beryl_day3_alright
 
 ~ Beryl_day3_no_chocolate
 Beryl: No, not this time! 
 Beryl: I was worried about my business because a few days without customers could rapidly impact my income.
 Beryl: But it seems to be better now, the snow starts to melt slowly.
-- You: Yes, it should go back to normal soon. 
-=> Beryl_day3_normal
-- You: I will miss it a little bit, honestly. 
-=> Beryl_day3_miss_it
+- You: Oh yes.
+	You: Yes, it should go back to normal soon. => Beryl_day3_normal
+- You: I'll miss it.
+	You: I will miss it a little bit, honestly. => Beryl_day3_miss_it
 
 ~ Beryl_day3_understand
 Beryl: To celebrate that amazing day, can I have a latte with chocolate sprinkles then?
