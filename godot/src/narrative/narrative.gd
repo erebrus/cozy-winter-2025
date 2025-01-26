@@ -67,6 +67,9 @@ func _init_sequences() -> void:
 		sequences_by_id[sequence.id] = sequence
 		sequence.ready_changed.connect(_on_sequence_ready_changed.bind(sequence))
 		sequence.triggered.connect(_on_sequence_triggered.bind(sequence))
+		
+		if sequence.id == "second_day_dialogue:Day_end":
+			sequence.finished.connect(func(): Globals.do_win())
 	
 
 func _on_sequence_ready_changed(is_ready: bool, sequence: StorySequence) -> void:
