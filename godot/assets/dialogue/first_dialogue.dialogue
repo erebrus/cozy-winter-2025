@@ -165,7 +165,11 @@ You: Noted, I'll go make it for you!
 ~ Indigo_deliver_correct
 You: Here's your drink. Hope you like it!
 Indigo: Oh it looks amazing! *slurp* And it tastes even better! Thank you! 
-=> Indigo_deliver_correct
+=> outro1
+
+~ outro1
+The day is finished, all customers had their drinks and enjoyed the snowy day at your cafe. You did a great job as a cafe owner!
+=> END
 
 ~ Day_end
 => END
