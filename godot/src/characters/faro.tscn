@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://co2n13mn24ofx"]
+
+[ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_crgs3"]
+[ext_resource type="Texture2D" uid="uid://ddxuw70f3xeqw" path="res://assets/gfx/characters/FaroIdle.png" id="2_iw553"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4eoi"]
+atlas = ExtResource("2_iw553")
+region = Rect2(0, 0, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcsad"]
+atlas = ExtResource("2_iw553")
+region = Rect2(750, 0, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcmmq"]
+atlas = ExtResource("2_iw553")
+region = Rect2(1125, 0, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dumug"]
+atlas = ExtResource("2_iw553")
+region = Rect2(1500, 0, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272gf"]
+atlas = ExtResource("2_iw553")
+region = Rect2(1875, 0, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fwer"]
+atlas = ExtResource("2_iw553")
+region = Rect2(2250, 0, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf28r"]
+atlas = ExtResource("2_iw553")
+region = Rect2(0, 628, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r26f"]
+atlas = ExtResource("2_iw553")
+region = Rect2(375, 628, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spy5d"]
+atlas = ExtResource("2_iw553")
+region = Rect2(750, 628, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lovv"]
+atlas = ExtResource("2_iw553")
+region = Rect2(1125, 628, 375, 628)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeapq"]
+atlas = ExtResource("2_iw553")
+region = Rect2(1500, 628, 375, 628)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lk4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4eoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcsad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcmmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dumug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fwer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf28r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r26f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spy5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lovv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeapq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Faro" instance=ExtResource("1_crgs3")]
+id = 5
+character_name = "Faro"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(6, -277)
+sprite_frames = SubResource("SpriteFrames_7lk4e")
+autoplay = "default"
+
+[node name="CollisionShape2D" parent="." index="1"]
+polygon = PackedVector2Array(-189, -5, -105, -377, -169, -549, -117, -603, 73, -545, 141, -447, 65, -333, 125, -107, 193, 1)

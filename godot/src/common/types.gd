@@ -22,7 +22,9 @@ enum NPC {
 	HICKORY,
 	ORCHIDIA,
 	FLUTTER,
-	INDIGO
+	INDIGO, 
+	FARO,
+	BERYL,
 }
 
 enum Item {

@@ -1,29 +1,85 @@
-[gd_scene load_steps=5 format=3 uid="uid://caqupjjwyqum2"]
+[gd_scene load_steps=13 format=3 uid="uid://caqupjjwyqum2"]
 
 [ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_cx0ms"]
-[ext_resource type="Texture2D" uid="uid://cr3g6tn6c5dei" path="res://assets/gfx/characters/character_1.png" id="2_1j4pk"]
+[ext_resource type="Texture2D" uid="uid://bbwwnlubr8u3j" path="res://assets/gfx/characters/BuzzIdle.png" id="2_0aqkt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wc7k2"]
-atlas = ExtResource("2_1j4pk")
-region = Rect2(0, 0, 414, 344)
+[sub_resource type="AtlasTexture" id="AtlasTexture_tasin"]
+atlas = ExtResource("2_0aqkt")
+region = Rect2(0, 0, 733, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wb7w"]
+atlas = ExtResource("2_0aqkt")
+region = Rect2(733, 0, 733, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xioum"]
+atlas = ExtResource("2_0aqkt")
+region = Rect2(1466, 0, 733, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txavo"]
+atlas = ExtResource("2_0aqkt")
+region = Rect2(0, 666, 733, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2gmo"]
+atlas = ExtResource("2_0aqkt")
+region = Rect2(733, 666, 733, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khs1u"]
+atlas = ExtResource("2_0aqkt")
+region = Rect2(1466, 666, 733, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6j32"]
+atlas = ExtResource("2_0aqkt")
+region = Rect2(0, 1332, 733, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di8tc"]
+atlas = ExtResource("2_0aqkt")
+region = Rect2(733, 1332, 733, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpsoi"]
+atlas = ExtResource("2_0aqkt")
+region = Rect2(1466, 1332, 733, 666)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cyb2d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wc7k2")
+"texture": SubResource("AtlasTexture_tasin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wb7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xioum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txavo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2gmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khs1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6j32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di8tc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpsoi")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Buzz" instance=ExtResource("1_cx0ms")]
 character_name = "Buzz"
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(2, -161)
+position = Vector2(-5, -311)
 sprite_frames = SubResource("SpriteFrames_cyb2d")
 
 [node name="CollisionShape2D" parent="." index="1"]
-polygon = PackedVector2Array(-196, -10, -126, -129, -158, -165, -16, -317, 28, -315, 164, -150, 137, -123, 199, 8, -184, 6)
+polygon = PackedVector2Array(-380, 14, -312, -311, -61, -647, 98, -640, 283, -305, 266, -268, 369, 10)

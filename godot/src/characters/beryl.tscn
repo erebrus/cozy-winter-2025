@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://1axw2l00sa0f"]
+
+[ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_eroep"]
+[ext_resource type="Texture2D" uid="uid://gqycccja71uj" path="res://assets/gfx/characters/BerylIdle.png" id="2_wynm4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub2d6"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(0, 0, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx07g"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(415, 0, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xnln"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(830, 0, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pupfm"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(1245, 0, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0cmj"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(1660, 0, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjf5r"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(2075, 0, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_603xo"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(0, 650, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlo4p"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(415, 650, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm12p"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(830, 650, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkck8"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(1245, 650, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3uge"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(1660, 650, 415, 650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2ol0"]
+atlas = ExtResource("2_wynm4")
+region = Rect2(2075, 650, 415, 650)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2o8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub2d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx07g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xnln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pupfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0cmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjf5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_603xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlo4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm12p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkck8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3uge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2ol0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Beryl" instance=ExtResource("1_eroep")]
+id = 6
+character_name = "Beryl"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-40, -313)
+sprite_frames = SubResource("SpriteFrames_d2o8a")
+autoplay = "default"
+
+[node name="CollisionShape2D" parent="." index="1"]
+polygon = PackedVector2Array(-85, 1, -105, -104, -266, -211, -151, -448, -188, -521, 91, -651, 187, -564, 129, -396, 151, -285, 62, -146, 126, 2)

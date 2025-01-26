@@ -1,21 +1,84 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5l1rci2ucdvn"]
+[gd_scene load_steps=14 format=3 uid="uid://c5l1rci2ucdvn"]
 
 [ext_resource type="PackedScene" uid="uid://ba6w7khg6qcmj" path="res://src/characters/character.tscn" id="1_jxc48"]
-[ext_resource type="Texture2D" uid="uid://df2ntdsfdrxw" path="res://assets/gfx/characters/character_3.png" id="2_7g7g0"]
+[ext_resource type="Texture2D" uid="uid://2vy58uqgipxi" path="res://assets/gfx/characters/OrchidIdle.png" id="2_tbku6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1cv1"]
-atlas = ExtResource("2_7g7g0")
-region = Rect2(0, 0, 254, 310)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfp2l"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(0, 0, 433, 600)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_45ifh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jwnj"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(433, 0, 433, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4prh"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(866, 0, 433, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d16ha"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(1299, 0, 433, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r55n8"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(1732, 0, 433, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtyjd"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(2165, 0, 433, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xph2n"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(0, 600, 433, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dokik"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(433, 600, 433, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5i4j"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(866, 600, 433, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_102e7"]
+atlas = ExtResource("2_tbku6")
+region = Rect2(1299, 600, 433, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mc21f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o1cv1")
+"texture": SubResource("AtlasTexture_pfp2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jwnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4prh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d16ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r55n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtyjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xph2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dokik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5i4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_102e7")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Orchidia" instance=ExtResource("1_jxc48")]
@@ -23,8 +86,9 @@ id = 2
 character_name = "Orchidia"
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(13, -132)
-sprite_frames = SubResource("SpriteFrames_45ifh")
+position = Vector2(6, -297)
+sprite_frames = SubResource("SpriteFrames_mc21f")
+autoplay = "default"
 
 [node name="CollisionShape2D" parent="." index="1"]
-polygon = PackedVector2Array(-88, -6, -56, -42, -47, -187, -104, -213, -83, -238, 8, -281, 64, -263, 31, -144, 58, -150, 138, -40, 108, 16, 48, 14, 47, -4)
+polygon = PackedVector2Array(-210, 0, -84, -359, -230, -536, -184, -574, 178, -588, 182, -483, 86, -327, 243, -304, 182, 2)
