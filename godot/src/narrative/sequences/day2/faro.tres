@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="StorySequence" load_steps=9 format=3 uid="uid://cd20hi8pgqhjn"]
+
+[ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_i5brm"]
+[ext_resource type="Script" path="res://src/narrative/action/enter_character.gd" id="2_sw1ki"]
+[ext_resource type="Script" path="res://src/narrative/sequence.gd" id="2_wgkng"]
+[ext_resource type="Resource" uid="uid://dwvs22v2kd8fl" path="res://assets/dialogue/second_day_dialogue.dialogue" id="3_t0pgo"]
+[ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="5_tjw1i"]
+
+[sub_resource type="Resource" id="Resource_6nc1f"]
+script = ExtResource("2_sw1ki")
+character_id = 0
+
+[sub_resource type="Resource" id="Resource_qbq4r"]
+script = ExtResource("2_sw1ki")
+character_id = 1
+
+[sub_resource type="Resource" id="Resource_g5jvm"]
+script = ExtResource("5_tjw1i")
+npc = 5
+give_drink_on = "Faro_deliver"
+
+[resource]
+script = ExtResource("2_wgkng")
+dialogue = ExtResource("3_t0pgo")
+start_title = "start_Faro"
+trigger = SubResource("Resource_g5jvm")
+repeat = false
+actions = Array[ExtResource("1_i5brm")]([SubResource("Resource_6nc1f"), SubResource("Resource_qbq4r")])
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])

@@ -72,6 +72,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kgjk")
+}],
+"loop": true,
+"name": &"drink",
+"speed": 10.0
 }]
 
 [node name="Hickory" instance=ExtResource("1_ltxrt")]
@@ -81,6 +89,7 @@ character_name = "Hickory"
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(2, -222)
 sprite_frames = SubResource("SpriteFrames_sgpbv")
+animation = &"drink"
 autoplay = "default"
 
 [node name="CollisionShape2D" parent="." index="1"]

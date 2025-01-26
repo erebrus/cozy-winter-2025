@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="StorySequence" load_steps=8 format=3 uid="uid://c533x5jcbhjns"]
+
+[ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_eiui1"]
+[ext_resource type="Script" path="res://src/narrative/action/enter_character.gd" id="2_2j25g"]
+[ext_resource type="Resource" uid="uid://dwvs22v2kd8fl" path="res://assets/dialogue/second_day_dialogue.dialogue" id="2_8mlsb"]
+[ext_resource type="Script" path="res://src/narrative/sequence.gd" id="2_u6uip"]
+[ext_resource type="Script" path="res://src/narrative/triggers/interact_with_npc_trigger.gd" id="4_cr1l7"]
+
+[sub_resource type="Resource" id="Resource_ylv4s"]
+script = ExtResource("2_2j25g")
+character_id = 6
+
+[sub_resource type="Resource" id="Resource_xr4x1"]
+script = ExtResource("4_cr1l7")
+npc = 1
+give_drink_on = "Hickory_deliver"
+
+[resource]
+script = ExtResource("2_u6uip")
+dialogue = ExtResource("2_8mlsb")
+start_title = "start_Hickory"
+trigger = SubResource("Resource_xr4x1")
+repeat = false
+actions = Array[ExtResource("1_eiui1")]([SubResource("Resource_ylv4s")])
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])

@@ -86,6 +86,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4eoi")
+}],
+"loop": true,
+"name": &"drink",
+"speed": 10.0
 }]
 
 [node name="Faro" instance=ExtResource("1_crgs3")]
@@ -95,6 +103,7 @@ character_name = "Faro"
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(6, -277)
 sprite_frames = SubResource("SpriteFrames_7lk4e")
+animation = &"drink"
 autoplay = "default"
 
 [node name="CollisionShape2D" parent="." index="1"]

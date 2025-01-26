@@ -32,6 +32,7 @@ character_id = 3
 [sub_resource type="Resource" id="Resource_ereps"]
 script = ExtResource("4_mvai5")
 npc = 0
+give_drink_on = "Buzz_deliver_chocolate"
 
 [resource]
 script = ExtResource("2_6ywrj")

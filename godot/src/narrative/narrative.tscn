@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://y7n82k7uopcl"]
+[gd_scene load_steps=21 format=3 uid="uid://y7n82k7uopcl"]
 
 [ext_resource type="Script" path="res://src/narrative/narrative.gd" id="1_p0wp7"]
 [ext_resource type="Script" path="res://src/narrative/sequence.gd" id="4_vxvc0"]
@@ -11,14 +11,19 @@
 [ext_resource type="PackedScene" uid="uid://caqupjjwyqum2" path="res://src/characters/buzz.tscn" id="8_ctxr6"]
 [ext_resource type="Resource" uid="uid://dbceb8t1e38q2" path="res://src/narrative/sequences/day1/day_end.tres" id="8_k7tug"]
 [ext_resource type="PackedScene" uid="uid://7l4l8p0ithfl" path="res://src/characters/flutter.tscn" id="9_koqkb"]
+[ext_resource type="Resource" uid="uid://cacihkdk7h7bd" path="res://src/narrative/sequences/day2/intro.tres" id="9_qjxe1"]
 [ext_resource type="PackedScene" uid="uid://c5l1rci2ucdvn" path="res://src/characters/orchidia.tscn" id="9_vr5ot"]
 [ext_resource type="PackedScene" uid="uid://dhm2557sr8bls" path="res://src/characters/indigo.tscn" id="10_0fgi6"]
+[ext_resource type="Resource" uid="uid://cd20hi8pgqhjn" path="res://src/narrative/sequences/day2/faro.tres" id="10_l27ub"]
+[ext_resource type="Resource" uid="uid://bwgs52rckkpks" path="res://src/narrative/sequences/day2/buzz.tres" id="11_cfybx"]
+[ext_resource type="Resource" uid="uid://c533x5jcbhjns" path="res://src/narrative/sequences/day2/hickory.tres" id="12_knwa4"]
+[ext_resource type="Resource" uid="uid://bfnu7yo35ry77" path="res://src/narrative/sequences/day2/beryl.tres" id="13_q78c1"]
 [ext_resource type="PackedScene" uid="uid://co2n13mn24ofx" path="res://src/characters/faro.tscn" id="14_q02mn"]
 [ext_resource type="PackedScene" uid="uid://1axw2l00sa0f" path="res://src/characters/beryl.tscn" id="15_c4qng"]
 
 [node name="Narrative" type="Node"]
 script = ExtResource("1_p0wp7")
-sequences = Array[ExtResource("4_vxvc0")]([ExtResource("5_thfgb"), ExtResource("5_vbem2"), ExtResource("6_k4aoj"), ExtResource("6_c6w2d"), ExtResource("7_spsdy"), ExtResource("8_k7tug")])
+sequences = Array[ExtResource("4_vxvc0")]([ExtResource("5_thfgb"), ExtResource("5_vbem2"), ExtResource("6_k4aoj"), ExtResource("6_c6w2d"), ExtResource("7_spsdy"), ExtResource("8_k7tug"), ExtResource("9_qjxe1"), ExtResource("10_l27ub"), ExtResource("11_cfybx"), ExtResource("12_knwa4"), ExtResource("13_q78c1")])
 
 [node name="Characters" type="Node2D" parent="."]
 visible = false

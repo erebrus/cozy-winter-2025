@@ -27,6 +27,7 @@ correct_sequence = "Orchidia_deliver_correct"
 [sub_resource type="Resource" id="Resource_u1p4r"]
 script = ExtResource("8_g8qeb")
 npc = 2
+give_drink_on = "Orchidia_deliver_correct"
 
 [resource]
 script = ExtResource("7_um017")

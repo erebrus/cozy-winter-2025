@@ -72,6 +72,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tasin")
+}],
+"loop": true,
+"name": &"drink",
+"speed": 10.0
 }]
 
 [node name="Buzz" instance=ExtResource("1_cx0ms")]
@@ -80,6 +88,8 @@ character_name = "Buzz"
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-5, -311)
 sprite_frames = SubResource("SpriteFrames_cyb2d")
+animation = &"drink"
+autoplay = "default"
 
 [node name="CollisionShape2D" parent="." index="1"]
 polygon = PackedVector2Array(-380, 14, -312, -311, -61, -647, 98, -640, 283, -305, 266, -268, 369, 10)

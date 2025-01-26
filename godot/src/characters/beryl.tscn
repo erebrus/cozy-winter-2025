@@ -93,6 +93,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub2d6")
+}],
+"loop": true,
+"name": &"drink",
+"speed": 10.0
 }]
 
 [node name="Beryl" instance=ExtResource("1_eroep")]
@@ -102,6 +110,7 @@ character_name = "Beryl"
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-40, -313)
 sprite_frames = SubResource("SpriteFrames_d2o8a")
+animation = &"drink"
 autoplay = "default"
 
 [node name="CollisionShape2D" parent="." index="1"]

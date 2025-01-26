@@ -21,7 +21,7 @@ Buzz: What?! Are you for real?! I feel even colder now, after hearing this. Can 
 
 ~ answer_chocolate
 You: Of course! Right on it! 
-=> END
+=> Buzz_deliver_chocolate
 
 # dialogue starts after ~start_Buzz is done and we give drink with chocolate and milk to Buzz
 ~ Buzz_deliver_chocolate

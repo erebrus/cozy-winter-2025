@@ -29,6 +29,7 @@ correct_sequence = "deliver_strong_sweet"
 [sub_resource type="Resource" id="Resource_t1ax3"]
 script = ExtResource("8_3m6jw")
 npc = 3
+give_drink_on = "deliver_strong_sweet"
 
 [resource]
 script = ExtResource("7_wwthd")

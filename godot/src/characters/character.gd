@@ -13,6 +13,7 @@ var in_scene: bool = false:
 			return
 		in_scene = value
 		if in_scene:
+			$Sprite2D.play("default")
 			character_entered.emit()
 		else:
 			character_left.emit()
@@ -28,6 +29,10 @@ func leave() -> void:
 func interact() -> void:
 	Logger.info("Interacted with %s" % Types.npc_key(id))
 	Events.interacted_with_npc.emit(id)
+	
+
+func give_drink() -> void:
+	$Sprite2D.play("drink")
 	
 
 func _input_event(_viewport: Viewport, event: InputEvent, shape_idx: int) -> void:

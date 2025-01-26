@@ -72,6 +72,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge84e")
+}],
+"loop": true,
+"name": &"drink",
+"speed": 10.0
 }]
 
 [node name="Flutter" instance=ExtResource("1_r0owd")]
@@ -82,6 +90,8 @@ character_name = "Flutter"
 position = Vector2(52, -282)
 sprite_frames = SubResource("SpriteFrames_ef170")
 autoplay = "default"
+frame_progress = 0.0600608
 
 [node name="CollisionShape2D" parent="." index="1"]
+visible = false
 polygon = PackedVector2Array(-208, 1, -166, -212, -36, -354, -117, -502, 170, -582, 324, -439, 92, -282, 257, -3)

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="StorySequence" load_steps=8 format=3 uid="uid://cacihkdk7h7bd"]
+
+[ext_resource type="Script" path="res://src/narrative/action/sequence_action.gd" id="1_ahmcj"]
+[ext_resource type="Script" path="res://src/narrative/sequence.gd" id="2_exq6f"]
+[ext_resource type="Script" path="res://src/narrative/action/enter_character.gd" id="2_qeivv"]
+[ext_resource type="Resource" uid="uid://dwvs22v2kd8fl" path="res://assets/dialogue/second_day_dialogue.dialogue" id="3_npfj5"]
+[ext_resource type="Script" path="res://src/narrative/triggers/day_started_trigger.gd" id="5_8ry30"]
+
+[sub_resource type="Resource" id="Resource_0crgh"]
+script = ExtResource("2_qeivv")
+character_id = 5
+
+[sub_resource type="Resource" id="Resource_p5afn"]
+script = ExtResource("5_8ry30")
+day = 2
+
+[resource]
+script = ExtResource("2_exq6f")
+dialogue = ExtResource("3_npfj5")
+start_title = "Day_start"
+trigger = SubResource("Resource_p5afn")
+repeat = false
+actions = Array[ExtResource("1_ahmcj")]([SubResource("Resource_0crgh")])
+require_passed_titles = Array[String]([])
+require_npcs_present = Array[int]([])
+require_npcs_missing = Array[int]([])
+require_flags_true = Array[String]([])
+require_flags_false = Array[String]([])

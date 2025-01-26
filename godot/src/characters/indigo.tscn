@@ -79,6 +79,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmnil")
+}],
+"loop": true,
+"name": &"drink",
+"speed": 10.0
 }]
 
 [node name="Indigo" instance=ExtResource("1_e6n2m")]
@@ -89,7 +97,6 @@ character_name = "Indigo"
 position = Vector2(18, -242)
 sprite_frames = SubResource("SpriteFrames_kqqr8")
 autoplay = "default"
-frame_progress = 0.836271
 
 [node name="CollisionShape2D" parent="." index="1"]
 polygon = PackedVector2Array(-183, -1, -225, -69, -159, -257, -43, -253, -53, -300, -28, -323, -90, -330, -116, -414, -52, -480, 2, -470, 65, -497, 132, -492, 241, -418, 260, -354, 207, -277, 164, -272, 258, -41, 226, 5, -17, 3, -52, 17, -81, 1)

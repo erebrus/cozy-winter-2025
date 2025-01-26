@@ -79,6 +79,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfp2l")
+}],
+"loop": true,
+"name": &"drink",
+"speed": 10.0
 }]
 
 [node name="Orchidia" instance=ExtResource("1_jxc48")]
@@ -88,6 +96,7 @@ character_name = "Orchidia"
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(6, -297)
 sprite_frames = SubResource("SpriteFrames_mc21f")
+animation = &"drink"
 autoplay = "default"
 
 [node name="CollisionShape2D" parent="." index="1"]
