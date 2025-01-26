@@ -69,13 +69,8 @@ You: Good! I’m gonna prepare it for you! => END
 
 #dialogue starts after ~ start_Faro is done and we give the drink to Faro
 ~ Faro_deliver
-
 You: Here’s your drink! Enjoy!
-#if we made the black tea with added ingredients
 Faro: It smells so good! So different than green tea! *sip* Oh my wings! It’s so good! I’ve never had something like this before! => END
-
-#if we made the wrong drink
-Faro: It looks really nice but… I think I wanted a specially made black tea blend. Well, it’s alright! I’m abroad so I’ll try it and I’m sure I’ll enjoy it anyway! => END
 
 #  dialogue starts only after ~ start_Faro is done and Buzz arrived
 ~ start_Buzz_day2
@@ -124,32 +119,8 @@ You: Alright then, I know what you may want in that case. => END
 #dialogue ~ start_Buzz_day2 has to be done and we give the drink to Buzz
 ~ Buzz_deliver2
 You: There you go, it should help you.
-#we give the correct drink - tea with lemon and cinnamon
 Buzz: ACHOO!
-Buzz: *sniff* Thank you… *sip* Ohhh, it’s good. I already feel better. => Buzz_gift
-
-#we give the wrong drink
-Buzz: Oh thank - ACHOO!
-Buzz: Thank you. *sniff* Hmm, I hope it’ll help. It’s not what my mom’s drinking, but I trust you! => Buzz_gift
-
-~ Buzz_gift
-Buzz: Oh, by the way, I have something for you. 
-#Buzz gives the gift - a small vase.
-You: Oh you didn’t have to! Thank you! => Buzz_thank_you
-You: It’s so pretty! Did you buy it on a trip? => Buzz_trip
-
-~ Buzz_thank_you
-Buzz: I’m happy you like it! My mom painted it, she’s talented, isn’t she?
-You: She is indeed! That’s so pretty! => Buzz_vase_put
-
-~ Buzz_trip
-Buzz: Oh no, my mom painted it. She loves painting on ceramics. I thought you might like it. 
-You: I do! Thank you! => Buzz_vase_put
-
-~ Buzz_vase_put
-Buzz: Maybe you can put it on the counter? If you want of course.
-- You: That’s a great idea! Thanks for the gift! => END
-- You: I’ll see where I can put it, thank you! => END
+Buzz: *sniff* Thank you… *sip* Ohhh, it’s good. I already feel better. => END
 
 #  dialogue starts only after ~ start_Buzz_day2 is done and Hickory arrived
 ~ start_Hickory
@@ -193,9 +164,6 @@ You: There’s your drink!
 # if we made the correct drink
 Hickory: Ah, thank you! Amazing, just as I wanted! *sip* Ohhh, the oat milk hits the spot!
 You: I’m glad you like it! => Hickory_crochet
-
-#if we deliver the wrong drink
-Hickory: Does it have an oat milk? *sip* Oh, I think it doesn’t. But it’s alright, it’s tasty anyway! Thanks! => Hickory_crochet
 
 ~ Hickory_crochet
 Hickory: You don’t mind if I sit by the fireplace and crochet, right?
@@ -277,10 +245,5 @@ You: It will, you’ll see! => END
 # the dialogue can start only after ~ start_Beryl is done and we make the coffee
 ~ Beryl_deliver
 You: Here’s your drink, I hope it’ll help you feel better! 
-
-#If we make the correct drink
 Beryl: *slurp* Ohhhh yes. Mmm, it’s delicious. I already feel a bit better, thank you so much!
 You: I’m so happy to hear that! => END
-
-#if we deliver the wrong drink
-Beryl: Oh, hmm… *slurp* It’s good, not what I wanted, but I feel a bit better. Thanks anyway! => END

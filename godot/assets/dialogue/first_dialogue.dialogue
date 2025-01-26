@@ -1,7 +1,7 @@
 # We could have a little scene for each day start
 ~ intro
 It's another winter day. The snow slowly falls from the sky, creating fluffy, white piles on the ground. The air is crisp and cold, slightly irritating the nostrils of the one breathing. 
-Days like this, make the "Snug as a Bug Cafe" a lively place,inviting with the warmth of the fireplace, sounds of cracking wood, and the smell of freshly brewed coffee and homemade hot chocolate.
+Days like this, make the "Snug as a Bug Cafe" a lively place, inviting with the warmth of the fireplace, sounds of cracking wood, and the smell of freshly brewed coffee and homemade hot chocolate.
 => END
 
 # After Buzz enters the cafe first and sits at the bar -> we DONT need to link from intro because there might be other thigs going on, we'll trigger this dialog when the start-of-day animations are done, and the character is seated
@@ -100,16 +100,11 @@ Orchidia: I'm allergic to chocolate, so no. => END
 ~ Orchidia_order_bad_nuts
 Orchidia: Hmm, could be interesting. I believe you can make something delicious! => END
 
-#dialogue starts after ~ start_Orchidia is done and we give the correct drink, without chocolate
+#dialogue starts after ~ start_Orchidia is done and we give the drink
 ~ Orchidia_deliver_correct 
 You: There you go, a coffee with milk and something crunchy on top.
 Orchidia: Oh it smells so good! And no chocolate! Perfect! 
 => END
-
-#dialogue starts after ~ start_Orchidia is done and we give the incorrect drink, with chocolate
-~ Orchidia_deliver_incorrect
-You: There you go, a coffee with milk and something crunchy on top.
-Orchidia: It looks amazing, but it has chocolate. It's alright, I'll scoop it out with a spoon, as I cannot eat it. Thank you anyway! => END
 
 ~ start_Indigo
 Indigo: Oh it's so lovely here! So warm and cozy, and the smell is amazing!
@@ -150,10 +145,6 @@ You: Noted, I'll go make it for you! => END
 ~ Indigo_deliver_correct
 You: Here's your drink. Hope you like it!
 Indigo: Oh it looks amazing! *slurp* And it tastes even better! Thank you! => END
-
-~ Indigo_deliver_incorrect
-You: Here's your drink. Hope you like it!
-Indigo: Wow, look at this! *slurp* Hmm, it's good, but I think there's something not right. Well, it tastes nice anyway! => END
 
 ~ Day_end
 => END
