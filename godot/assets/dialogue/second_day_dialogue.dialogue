@@ -3,7 +3,7 @@
 ~ start_Faro
 Faro: Oh my, what a place! The light, the fireplace, the smell! Ah!
 - You: Hello!
-	You: Hello! Welcome to "Snug as a Bug Cafe"! Glad you like it, can I get you something? => Faro_start_good
+	You: Hello! Welcome to "Chrysalis Cafe"! Glad you like it, can I get you something? => Faro_start_good
 - You: That's how cafe's are.
 	You: You’ve never been to a cafe before? => Faro_start_bad
 
@@ -150,7 +150,7 @@ Buzz: *sniff* Thank you… *sip* Ohhh, it’s good. I already feel better.
 #  dialogue starts only after ~ start_Buzz_day2 is done and Hickory arrived
 ~ start_Hickory
 Hickory: Hello! This weather is so cozy, isn’t it? Oh, I love winter!
-You: Hello! Welcome to "Snug as a Bug Cafe"! How can I help you? 
+You: Hello! Welcome to "Chrysalis Cafe"! How can I help you? 
 => start_Hickory_good
 You: Hi! Well, it’s a bit cold but the cafe is warm at least. 
 => start_Hickory_bad
@@ -204,7 +204,7 @@ You: I’m glad you like it!
 ~ Hickory_crochet
 Hickory: You don’t mind if I sit by the fireplace and crochet, right?
 - You: Of course not! 
-	You: Of course not! Enjoy your stay at "Snug as a Bug Cafe"! => END
+	You: Of course not! Enjoy your stay at "Chrysalis Cafe"! => END
 - You: I think it’s alright!
 	You: I think it’s alright! You can enjoy your hobby here! => END
 
