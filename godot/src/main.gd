@@ -4,6 +4,7 @@ class_name Cafe extends Node
 var seats: Array[Marker2D]
 
 @onready var door_sfx := %DoorSfx
+@onready var cups_sfx := %CupsSfx
 
 
 func _ready() -> void:
@@ -14,15 +15,19 @@ func _ready() -> void:
 		if seat is Marker2D:
 			seats.append(seat)
 	
+	
 
 func seat_character(character: Character) -> void:
 	Logger.info("%s enters the cafe" % character.character_name)
-	door_sfx.play()
-	await get_tree().create_timer(0.2).timeout
 	var seat = _find_free_seat(character)
-	await seat.seat_character()
+	character.visible = false
 	character.reparent(seat)
 	character.position = Vector2.ZERO
+	
+	door_sfx.play()
+	await get_tree().create_timer(0.2).timeout
+	await seat.seat_character()
+	character.visible = true
 	character.in_scene = true
 	
 
@@ -45,3 +50,7 @@ func _find_free_seat(_character: Character) -> Marker2D:
 func _is_seat_occupied(seat: Marker2D) -> bool:
 	return seat.get_child_count() > 0
 	
+
+
+func _on_cups_timer_timeout():
+	cups_sfx.play()

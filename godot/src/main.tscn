@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=20 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_p2o0a"]
 [ext_resource type="PackedScene" uid="uid://cnx7lim3cg7gj" path="res://src/environment/counter.tscn" id="2_2nu2v"]
@@ -10,12 +10,25 @@
 [ext_resource type="PackedScene" uid="uid://b85iy5itdkklv" path="res://src/match3/board.tscn" id="7_wtyv4"]
 [ext_resource type="AudioStream" uid="uid://c2esphgi13a4l" path="res://assets/sfx/Door_open.wav" id="8_abce7"]
 [ext_resource type="AudioStream" uid="uid://dqt6yobul1th8" path="res://assets/sfx/Door_close.wav" id="9_6553j"]
+[ext_resource type="AudioStream" uid="uid://ce65igy44utor" path="res://assets/sfx/Cups_clanking_1.wav" id="11_ab6j3"]
+[ext_resource type="AudioStream" uid="uid://dxl48wp6uoj8f" path="res://assets/sfx/Cups_clanking_2.wav" id="12_35ici"]
+[ext_resource type="AudioStream" uid="uid://c2pt3clqcsxu2" path="res://assets/sfx/Cups_clanking_3.wav" id="13_sytwd"]
+[ext_resource type="Script" path="res://addons/random_timers/RandomRangeTimer.gd" id="13_xpo0s"]
+[ext_resource type="AudioStream" uid="uid://dtqi2tnft40uw" path="res://assets/sfx/Snowstorm_loop.wav" id="14_tfn1c"]
+[ext_resource type="AudioStream" uid="uid://bwsp2n2c5hgb7" path="res://assets/sfx/Chatter_loop.wav" id="15_so2y7"]
+[ext_resource type="AudioStream" uid="uid://16xmh0h6qkri" path="res://assets/sfx/Fireplace_loop.wav" id="16_ppidq"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hbq5w"]
 playback_mode = 1
 streams_count = 2
 stream_0/stream = ExtResource("8_abce7")
 stream_1/stream = ExtResource("9_6553j")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lvwfb"]
+streams_count = 3
+stream_0/stream = ExtResource("11_ab6j3")
+stream_1/stream = ExtResource("12_35ici")
+stream_2/stream = ExtResource("13_sytwd")
 
 [node name="Cafe" type="Node"]
 script = ExtResource("1_p2o0a")
@@ -76,6 +89,39 @@ script = ExtResource("5_53gr4")
 unique_name_in_owner = true
 position = Vector2(1679, 310)
 stream = SubResource("AudioStreamRandomizer_hbq5w")
+bus = &"Sfx"
+
+[node name="Ambient" type="Node" parent="."]
+
+[node name="CupsSfx" type="AudioStreamPlayer" parent="Ambient"]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_lvwfb")
+bus = &"Ambient"
+
+[node name="CupsTimer" type="Timer" parent="Ambient"]
+wait_time = 10.0
+autostart = true
+script = ExtResource("13_xpo0s")
+min_wait_time = 10.0
+max_wait_time = 100.0
+is_initially_random = false
+
+[node name="WinterStorm" type="AudioStreamPlayer" parent="Ambient"]
+stream = ExtResource("14_tfn1c")
+autoplay = true
+bus = &"Ambient"
+
+[node name="Chatter" type="AudioStreamPlayer" parent="Ambient"]
+stream = ExtResource("15_so2y7")
+volume_db = -5.0
+autoplay = true
+bus = &"Ambient"
+
+[node name="Fireplace" type="AudioStreamPlayer2D" parent="Ambient"]
+position = Vector2(-586, 580)
+stream = ExtResource("16_ppidq")
+autoplay = true
+bus = &"Ambient"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -95,3 +141,5 @@ grow_vertical = 2
 
 [node name="Board" parent="CanvasLayer/Control" instance=ExtResource("7_wtyv4")]
 visible = false
+
+[connection signal="timeout" from="Ambient/CupsTimer" to="." method="_on_cups_timer_timeout"]

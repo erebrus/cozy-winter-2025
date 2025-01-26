@@ -16,3 +16,4 @@ script = ExtResource("1_2wipc")
 
 [node name="StepsSfx" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_yxfks")
+bus = &"Sfx"
