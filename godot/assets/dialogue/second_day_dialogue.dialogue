@@ -199,5 +199,88 @@ Hickory: Does it have an oat milk? *sip* Oh, I think it doesn’t. But it’s al
 
 ~ Hickory_crochet
 Hickory: You don’t mind if I sit by the fireplace and crochet, right?
-- You: Of course not! Enjoy your stay at "Snug as a Bug Cafe"! = END
+- You: Of course not! Enjoy your stay at "Snug as a Bug Cafe"! => END
 - You: I think it’s alright! You can enjoy your hobby here! => END
+
+#  dialogue starts only after ~ start_Hickory is done and Beryl arrives
+~ start_Beryl
+Beryl: Ugh, this snow. [# shivers] With weather like this, no customers are coming! 
+Beryl: Well, I guess it doesn’t apply to you.
+- You: Hello! Heh, yeah, the cafe is pretty lively. => start_Beryl_good
+- You: Hi! Yes, I cannot complain! => start_Beryl_bad
+
+~ start_Beryl_good
+Beryl: I can tell! Lots of people here. It’s quite nice here, actually.
+- You: Thank you! I put lots of work into this cafe! => Beryl_good_work
+- You: I hope your business won’t suffer because of the snow! => Beryl_good_business
+
+~ start_Beryl_bad
+Beryl: Oh yes, definitely you cannot complain! Today I had only 2 customers, I’m a little bit worried.
+- You: I’m sure when the snow melts, your customers will come back! => Beryl_bad_customers
+- You: Oh I’m sorry to hear that. => Beryl_bad_sorry
+
+~ Beryl_good_work
+Beryl: Yes, I can see it. I love the fireplace. 
+Beryl: Well, let me see what you have on the menu…
+Beryl: I think I’ll get a black coffee with a hit of chocolate. 
+- You: Okay, anything else to it? => Beryl_good_anything_else
+- You: Alright, black coffee with chocolate, got it. => Beryl_good_coffee
+
+~ Beryl_good_business
+Beryl: I hope so too… I think I’ll get some coffee with chocolate to cheer me up a bit.
+- You: I hope this will help. => Beryl_good_help
+- You: Don’t worry, I’m sure it’ll be all good. => Beryl_good_dont_worry
+
+~ Beryl_bad_customers
+Beryl: I really hope so too…
+Beryl: Ehh… Can you make me a black coffee with some chocolate, please?
+- You: Of course. Only this? => Beryl_bad_only_this
+- You: Yes of course! Some chocolate will definitely boost your mood! => Beryl_bad_boost
+
+~ Beryl_bad_sorry
+Beryl: Ehh, it’s okay. I think some coffee with chocolate will help me feel less worried.
+- You: You’re totally right! => Beryl_bad_right
+- You: I think so too, chocolate always makes me feel better too. => Beryl_bad_better
+
+~ Beryl_good_anything_else
+Beryl: No, that will be all. Thanks! 
+You: Alright, I’ll be right back! => END
+
+~ Beryl_good_coffee
+Beryl: Correct, thank you.
+You: Just give me a moment, please! => END
+
+~ Beryl_good_help
+Beryl: I have high hopes for the chocolate too, heh.
+You: I’ll do my best! => END
+
+~ Beryl_good_dont_worry
+Beryl: Thank you. It’s nice to hear it from another business owner.
+You: Of course! Now give me a moment, I’ll be right back! => END
+
+~ Beryl_bad_only_this
+Beryl: Yes, just that, please.
+You: Noted! => END
+
+~  Beryl_bad_boost
+Beryl: Hah, I hope you’re right.
+You: I’m sure! Be right back! => END
+
+~ Beryl_bad_right
+Beryl: I hope I am. Chocolate is supposed to be a mood booster, right?
+You: Correct! Just wait here and I’ll be back with your drink! => END
+
+~ Beryl_bad_better
+Beryl: Good to hear that, I hope it’ll work on me too.
+You: It will, you’ll see! => END
+
+# the dialogue can start only after ~ start_Beryl is done and we make the coffee
+~ Beryl_deliver
+You: Here’s your drink, I hope it’ll help you feel better! 
+
+#If we make the correct drink
+Beryl: *slurp* Ohhhh yes. Mmm, it’s delicious. I already feel a bit better, thank you so much!
+You: I’m so happy to hear that! => END
+
+#if we deliver the wrong drink
+Beryl: Oh, hmm… *slurp* It’s good, not what I wanted, but I feel a bit better. Thanks anyway! => END
